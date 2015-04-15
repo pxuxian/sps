@@ -1,0 +1,75 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin: 0; padding: 0;}
+fieldset, img { border: medium none;}
+address, caption, cite, code, dfn, th, var { font-style: normal;font-weight: normal;}
+input { padding-bottom: 0; padding-top: 0;}
+input::-moz-focus-inner {  border: medium none;    padding: 0;}
+select, input {  vertical-align: middle;}
+select, input, textarea { font-size: 12px;    margin: 0;}
+input[type="text"], input[type="password"], textarea { outline-style: none;}
+textarea { resize: none;}
+.clearfix:after { clear: both; content: "."; display: block;  height: 0; visibility: hidden;}
+.clearit { clear: both; font-size: 0;  height: 0;overflow: hidden;}
+
+img{border: 0 none; vertical-align:middle; }
+table { border-collapse: collapse; border-spacing: 0;}
+fieldset{ border: 0;}
+address, caption cite, code, dfn, strog, th, var {font-style: normal; font-weight: normal;}
+h1, h2, h3, h4, h5, h6,b { font-size: 100%; font-weight: normal;}
+ul,li{ list-style: none; float:left;}
+caption, th { text-align: left;}
+body, input, select, button, textarea { font-size: 12px; font-family:arial,"Hiragino Sans GB",sans-serif;}
+button { cursor: pointer; }
+i, em, cite { font-style: normal; }
+body {color:#333;}
+
+
+a, a:link{color:#333; text-decoration: none;}
+a:visited{ }
+a:active, a:hover { text-decoration: underline;}
+a:focus { outline: none; }
+input, textarea, select {font-size:100%; vertical-align:middle; }
+legend { color: #000;}
+table { font-size: inherit; font: 100%;}
+pre, code, kbd, samp, tt{ font-family: monospace; font-size:100%; line-height:100%;}
+.clear,.ht5,.ht1, .ht2, .ht10,.ht16{font:0px/0px serif;clear: both;display: block;height:0px;}
+.ht5{ height:5px;}
+.ht10{ height:10px;}
+.ht16{ height:16px;}
+.ht30{ height:30px;}
+.ht1{ height:21px; width:923px; position:relative; left:12px;}
+.ht2{ clear:both; height:16px; width:923px; position:relative; left:12px;}
+a, *:focus, *:active{ outline:none}
+
+textarea{ border:none; border:1px solid #ebebeb;}
+select{ border:none; border:1px solid #ebebeb; line-height:25px; height:25px; vertical-align:middle}
+input[type="text"], input[type="password"], input[type="file"], textarea, select {
+	border:1px solid #ccc; background:none; color:#777; font-size:12px; line-height:29px; height:29px; background:#fff; padding-left:3px;
+	font-family:inherit; /*corner*/
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius:2px;}
+input[type="button"]{ cursor:pointer}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="file"]:hover, textarea:hover, select:hover { color:#666; background: #fff none; border-color:#c6c6c6;}
+input[type="text"]:focus, input[type="password"]:focus,  input[type="file"]:focus,  textarea:focus, select:focus  {
+	color:#333; background: #fff none; border-color:#659ec9 #70aedd #a8cfec; outline: 0; }
+.container-01pic-three input[type="text"]{ line-height:18px; height:18px;}
+.container-xiaopic-three input[type="text"]{ line-height:18px; height:18px;}
+	
+
+.add input[type="text"]{ width:23px; line-height:16px; height:16px; text-align:center}
+
+.green{ color:#669933;}	
+.red{ color:#dd1517}
+.white{ color:#fff;}
+.gray{ color:#999;}
+.gray-line{ color:#888; text-decoration:line-through; font-size:12px;}
+.blue{ color:#3366cc}
+.blackbrown01{ color:#6a3906; clear:both; font-size:14px;}
+.green01{ color:#669933; font-size:18px; font-weight:bold}
+.gray01{ color:#888; font-size:14px; padding-left:10px; text-decoration:line-through}
+.juli{ padding:0px 5px;}
+.big16{ font-size:16px; line-height:20px;}
+.big24{ font-size:24px; line-height:30px;}
+.big30{ font-size:22px; line-height:30px; color:#669933; font-weight:bold}
+.welcome-start a{cursor: pointer;}
+
+.order-default-addr{background-color: #ea5514;border-radius: 2px;color: #fff;display: inline;font-size: 11px;height: 18px;padding: 1px 6px;margin-left: 6px;}
