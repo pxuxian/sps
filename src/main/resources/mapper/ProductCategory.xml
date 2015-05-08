@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gail.sps.dao.ProductCategoryDao">
+	<resultMap type="ProductCategory" id="ProductCategoryRs">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+	</resultMap>
+
+	<sql id="fields">
+		id, name
+	</sql>
+	<sql id="fieldsWithAlias">
+		c.id, c.name
+	</sql>
+	<sql id="baseSearchCondition">
+		<where>
+			<if test="name!=null and name!=''">
+				and c.name like CONCAT('%','${name}','%' )
+			</if>
+		</where>
+	</sql>
+	
+	<select id="getById" parameterType="Integer" resultMap="ProductCategoryRs">
+		select <include refid="fields" />
+		from t_product_category where id=#{id}
+	</select>
+
+	<select id="count" parameterType="ProductCategory" resultType="Integer">
+		select count(1) from t_product_category c 
+		<include refid="baseSearchCondition" />
+	</select>
+
+	<select id="limitSelect" parameterType="ProductCategory" resultMap="ProductCategoryRs">
+		select <include refid="fieldsWithAlias" />
+		from t_product_category c
+		<include refid="baseSearchCondition" />
+		limit #{startPos}, #{pageSize}
+	</select>
+	
+	<insert id="save" parameterType="ProductCategory">
+		insert into t_product_category (id, name) values (null, #{name})
+	</insert>
+	
+	<update id="update" parameterType="ProductCategory">
+		update t_product_category
+		<set>
+			<if test="name!=null">
+				name=#{name}
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_product_category where id=#{id}
+	</delete>
+
+</mapper>

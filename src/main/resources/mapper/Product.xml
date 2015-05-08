@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gail.sps.dao.ProductDao">
+	<resultMap type="Product" id="ProductRs">
+		<result column="id" property="id" />
+		<result column="code" property="code" />
+		<result column="name" property="name" />
+		<result column="detail" property="detail" />
+		<result column="status" property="status" />
+		<result column="section_id" property="sectionId" />
+		<result column="descrip" property="descrip" />
+		<result column="price" property="price" />
+		<result column="logo" property="logo" />
+		<association column="category_id" property="category" select="getProductCategory" />
+	</resultMap>
+
+	<sql id="table_name">
+		t_product
+	</sql>
+	<sql id="fields">
+		p.id, p.category_id, p.code, p.name, p.detail, p.status, p.section_id, p.descrip, p.price, p.logo
+	</sql>
+	
+	<sql id="baseSearchCondition">
+		<where>
+			<if test="name!=null and name!=''">
+				and p.name like CONCAT('%','${name}','%' )
+			</if>
+			<if test="code!=null and code!=''">
+				and p.code like CONCAT('%','${code}','%' )
+			</if>
+			<if test="sectionId!=null and sectionId!=''">
+				and p.section_id = #{sectionId}
+			</if>
+			 and p.status=1
+		</where>
+	</sql>
+	
+	<select id="getProductCategory" parameterType="Integer" resultType="ProductCategory">
+		select id, name from t_product_category where id=#{id}
+	</select>
+
+	<select id="getById" parameterType="Integer" resultMap="ProductRs">
+		select <include refid="fields" /> 
+		from <include refid="table_name" /> p 
+		where id=#{id}
+	</select>
+
+	<select id="count" parameterType="Product" resultType="Integer">
+		select count(1) 
+		from <include refid="table_name" /> p
+		<include refid="baseSearchCondition" />
+	</select>
+
+	<select id="limitSelect" parameterType="Product" resultMap="ProductRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> p
+		<include refid="baseSearchCondition" />
+		limit #{startPos}, #{pageSize}
+	</select>
+	
+	<insert id="save" parameterType="Product">
+		insert into <include refid="table_name" />
+		values (null, #{code}, #{categoryId}, #{sectionId}, #{name}, #{descrip}, #{price}, #{logo}, #{detail}, #{status})
+	</insert>
+	
+	<update id="update" parameterType="Product">
+		update <include refid="table_name" />
+		<set>
+			<if test="categoryId!=null">
+				category_id=#{categoryId},
+			</if>
+			<if test="sectionId!=null">
+				section_id=#{sectionId},
+			</if>
+			<if test="code!=null">
+				code=#{code},
+			</if>
+			<if test="name!=null">
+				name=#{name},
+			</if>
+			<if test="descrip!=null">
+				descrip=#{descrip},
+			</if>
+			<if test="price!=null">
+				price=#{price},
+			</if>
+			<if test="logo!=null">
+				logo=#{logo},
+			</if>
+			<if test="detail!=null">
+				detail=#{detail}
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		update <include refid="table_name" />
+		set status=0 where id=#{id}
+	</delete>
+
+</mapper>

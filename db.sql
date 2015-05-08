@@ -1,0 +1,46 @@
+drop database if exists sps;
+create database sps;
+use sps;
+drop table if exists t_product_category;
+create table t_product_category (
+	id int(11) primary key auto_increment,
+	name varchar(50) not null
+);
+insert into t_product_category values (null, '水果');
+
+drop table if exists t_product;
+create table t_product (
+	id int(11) primary key auto_increment,
+	code varchar(30),
+	category_id int(11) not null,
+	section_id int(11),
+	name varchar(50) not null,
+	descrip varchar(100),
+	price double(10,2),
+	logo text,
+	detail text,
+	status int(11) not null
+);
+
+drop table if exists t_order;
+create table t_order (
+	id int(11) primary key auto_increment,
+	receiver varchar(20) not null,
+	address varchar(100) not null,
+	mobile varchar(20),
+	phone varchar(20),
+	amount double(10,2) not null,
+	postage double(10,2) not null,
+	discount double(10,2) not null,
+	total double(10,2) not null,
+	status int(11)
+);
+
+drop table if exists t_order_product;
+create table t_order_product (
+	id int(11) primary key auto_increment,
+	order_id int(11) not null, 
+	product_id int(11) not null,
+	price double(10,2) not null,
+	count int(11) not null
+);

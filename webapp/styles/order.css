@@ -1,0 +1,2255 @@
+﻿@charset "utf-8";
+/*购物车头部*/
+.cartMain h3, .paymentMode1 .payMore i, .InfoTitle-1 i, .settlementList li .settlementWrap .settlementTitle i,
+	.subBtn i, .dOrder-city .dOrder-city-sel i, .h5_dptctdrp a i,
+	.select_more .more i {
+	background: url(../../images/order.png) no-repeat 0 0;
+}
+
+.paymentMode1 li label b, .paymentMode2 li label b {
+	background: url(../../images/bank.png) no-repeat 0 0;
+	width: 126px;
+	height: 30px;
+	display: inline-block;
+	float: right;
+}
+
+.orderFlow {
+	width: 534px;
+	height: 66px;
+	float: right;
+	margin-top: 40px;
+}
+
+.of-bg1 {
+	background: url(../../images/order.jpg) no-repeat left 32px;
+}
+
+.orderFlow span {
+	display: inline-block;
+	width: 178px;
+	line-height: 34px;
+	text-align: center;
+}
+
+.orderFlow .oStatus {
+	color: #cc0000;
+}
+/*购物车头部结束*/
+.cartWrap {
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.cartMain {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.cartMain h3 {
+	background-position: 0 0;
+	width: 120px;
+	height: 20px;
+	overflow: hidden;
+	text-indent: -999em;
+	margin: 20px 0;
+}
+
+.orderInfo {
+	background: #fff;
+}
+
+.step-1, .step-2, .step3-5, .step-6, .step-7, .step-8 {
+	border: 1px solid #ddd;
+}
+
+.step-7 {
+	position: relative;
+}
+
+.step-2, .step3-5, .step-6, .step-7, .step-8 {
+	margin-top: 10px;
+}
+
+.step-8 {
+	border-bottom: none;
+}
+
+.receipt-alter {
+	padding-left: 10px;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.receipt-alter, .receipt-alter:hover {
+	color: #0066CA;
+}
+
+.orderAddress {
+	padding: 10px 0 0;
+	background: #fff;
+}
+
+.stepTitle0 {
+	height: 38px;
+	line-height: 38px;
+	font-weight: bold;
+	color: #323232;
+	font-size: 14px;
+	background: #f7f7f7;
+	padding-left: 20px;
+}
+
+.stepTitle {
+	height: 38px;
+	line-height: 38px;
+	font-weight: bold;
+	color: #323232;
+	font-size: 14px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #ddd;
+	padding-left: 20px;
+}
+
+.one {
+	padding-bottom: 7px;
+}
+
+.orderItem-use {
+	height: 40px;
+	line-height: 40px;
+}
+
+.orderItem {
+	line-height: 30px;
+	color: #999;
+	padding: 0 33px;
+}
+
+.orderItem.on {
+	color: #333;
+	background: #eaf7ff;
+}
+
+.orderItem .orderBox, .orderItem label {
+	float: left;
+	display: inline-block;
+	float: left
+}
+
+.orderItem label {
+	overflow: hidden;
+	white-space: normal;
+}
+
+.orderItem .update_delete {
+	float: right;
+	display: inline-block;
+}
+
+.update {
+	margin-right: 15px;
+}
+
+.orderItem .orderBox {
+	margin: 9px 5px 0 0;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+}
+
+.update_delete .update {
+	margin-right: 15px;
+}
+
+.update_delete {
+	padding-left: 18px;
+}
+
+.orderItem-use b {
+	float: left;
+	display: inline-block;
+	width: 52px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.orderItem label b {
+	float: left;
+	display: inline-block;
+	height: 30px;
+	overflow: hidden;
+	margin-right: 10px;
+	width: 60px;
+}
+
+.orderItem label span {
+	padding-left: 18px;
+	float: left;
+	display: inline-block;
+	width: 720px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+
+.orderItem label .addressMore {
+	max-width: 650px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.orderItem span a, .orderItem span a:hover {
+	color: #0066ca;
+}
+
+.select_more {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.select_more .more {
+	display: inline-block;
+	width: 65px;
+	padding: 0 5px;
+	height: 20px;
+	border: 1px solid #dadada;
+	background: #fbfbfb;
+	line-height: 20px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.select_more .more span {
+	float: left;
+}
+
+.select_more .more i {
+	float: left;
+	height: 15px;
+	width: 12px;
+	display: inline-block;
+	margin: 2px 0 0 3px;
+	background-position: -99px -23px;
+}
+
+.select_more .more i.on {
+	background-position: -86px -23px;
+	margin-top: 0;
+}
+
+.orderAddressForm, .paymentInfo .selected, .giftWrap {
+	background: url(../../images/shadow.jpg) no-repeat top center scroll
+		#fbfbfb;
+}
+
+.orderAddressForm {
+	padding: 16px 0 16px 33px;
+	margin-top: 15px;
+}
+
+.orderList {
+	height: 24px;
+	padding: 4px 0 4px 55px;
+	line-height: 24px;
+	position: relative;
+}
+
+.order_index {
+	z-index: 30;
+}
+
+.orderList .tip {
+	height: 22px;
+	width: 150px;
+	line-height: 22px;
+	position: absolute;
+	left: 150px;
+	top: 5px;
+	z-index: 2;
+	display: none;
+	background: #ffffff;
+}
+
+.orderList .tip1 {
+	height: 22px;
+	width: 320px;
+	line-height: 22px;
+	position: absolute;
+	left: 150px;
+	top: 5px;
+	z-index: 2;
+	display: none;
+	background: #ffffff;
+}
+
+.orderList span, .orderList .field {
+	float: left;
+}
+
+.orderList .field {
+	position: relative;
+	z-index: 15;
+}
+
+.orderList span {
+	color: #666;
+	display: inline-block;
+}
+
+.orderList span em {
+	color: #cc0000;
+	font-style: normal;
+	padding-right: 5px;
+	font-family: "simsun";
+}
+
+.orderList .title {
+	width: 80px;
+	text-align: right;
+	height: 24px;
+	line-height: 24px;
+	margin-right: 5px;
+}
+
+.orderList .field .form-1 {
+	height: 22px;
+	line-height: 22px;
+	width: 325px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding-left: 5px;
+	color: #888;
+	position: relative;
+	z-index: 10;
+}
+
+.orderList .note {
+	height: 24px;
+	line-height: 24px;
+	padding-left: 5px;
+	color: #cc0000;
+}
+
+.orderList .field .form-2 {
+	width: 155px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding-left: 5px;
+	color: #888;
+	position: relative;
+	z-index: 10;
+}
+
+.orderList .field .form-3 {
+	width: 60px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding-left: 5px;
+	color: #888;
+}
+
+.orderList .field .form-4 {
+	width: 100px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding-left: 5px;
+	color: #888;
+}
+
+.orderList .field .form-5 {
+	float: left;
+	margin-top: 5px;
+	_margin-top: 0;
+	*margin-top: 0;
+}
+
+.orderList .field .sure, .orderList .cancel, .giftWrap .giftItem .sure,
+	.giftWrap .giftItem .cancel {
+	display: inline-block;
+	float: left;
+	width: 50px;
+	height: 24px;
+	margin-right: 10px;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 24px;
+	text-align: center;
+}
+
+.orderList .field .usefulAdd {
+	float: left;
+	padding-left: 5px;
+}
+
+.orderList .field .sure:hover, .orderList .cancel:hover, .giftWrap .giftItem .sure:hover,
+	.giftWrap .giftItem .cancel:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.orderList .field .sure, .giftWrap .giftItem .sure {
+	background: #cc0000;
+}
+
+.step-1 .stepTitle .field-pro {
+	height: 38px;
+	line-height: 38px;
+	color: #ff6633;
+	font-weight: normal;
+	font-size: 12px;
+	text-align: right;
+	float: right;
+	padding-right: 15px;
+	display: none
+}
+
+.step-1 .stepTitle .field-tit {
+	float: left;
+}
+
+.orderList .cancel, .giftWrap .giftItem .cancel {
+	background: #cccccc;
+}
+
+.addAddress {
+	height: 34px;
+	line-height: 34px;
+	padding-left: 33px;
+}
+
+.addAddress a, .addAddress a:hover {
+	color: #0066cc;
+	text-decoration: none;
+}
+
+.paymentInfo {
+	background: #fff;
+}
+
+.paymentInfo li {
+	line-height: 20px;
+	padding: 10px 0 10px 33px;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.paymentInfo .selected .paymentList2, .paymentInfo .selected .paymentList3
+	{
+	color: #333;
+}
+
+.paymentInfo li .paymentList4 {
+	color: #333;
+}
+
+.paymentInfo li:after {
+	content: '...';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.paymentInfo li span, .paymentInfo li label {
+	float: left;
+	display: inline-block;
+}
+
+.paymentInfo li label {
+	width: 850px;
+}
+
+.paymentInfo li .paymentList1 {
+	width: 20px;
+}
+
+.giftInfo li .paymentList1.single {
+	padding-left: 100px;
+}
+
+.paymentInfo li .paymentList1 input {
+	margin-top: 3px;
+	_margin-top: -2px;
+	*margin-top: -2px;
+}
+
+.paymentInfo li label .paymentList2 {
+	width: 65px;
+	line-height: 20px;
+	color: #999;
+	font-weight: bold;
+}
+
+.paymentInfo li label .paymentList3 {
+	padding-left: 20px;
+	color: #999;
+	line-height: 20px;
+}
+
+.paymentInfo li label .paymentList3 font {
+	color: #cc0000;
+	font-size: 12px;
+}
+
+.paymentInfo li .paymentWrap {
+	height: 20px;
+}
+
+.paymentMode1, .paymentMode2 {
+	padding-left: 20px;
+}
+
+.paymentMode1 {
+	margin-top: 10px;
+}
+
+.paymentMode1 li, .paymentMode2 li {
+	float: left;
+	width: 158px;
+	border: 1px solid #ddd;
+	margin: 10px 24px 0 0;
+	display: inline;
+	height: 30px;
+	padding: 0;
+	background: #fff;
+}
+
+.paymentMode1 li label, .paymentMode2 li label {
+	width: 158px;
+	height: 30px;
+}
+
+.paymentMode1 li label input, .paymentMode2 li label input {
+	float: left;
+	display: inline-block;
+	margin: 8px 0 0 10px;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+}
+
+.paymentMode1 .payment_1 label b, .paymentMode2 .payment_1 label b {
+	background-position: 0 -36px;
+}
+
+.paymentMode1 .payment_2 label b, .paymentMode2 .payment_2 label b {
+	background-position: 0 -72px;
+}
+
+.paymentMode1 .payment_3 label b, .paymentMode2 .payment_3 label b {
+	background-position: 0 -112px;
+}
+
+.paymentMode1 .payment_4 label b, .paymentMode2 .payment_4 label b {
+	background-position: 0 -151px;
+}
+
+.paymentMode2 .payment_5 label b {
+	background-position: 0 -231px;
+}
+
+.paymentMode2 .payment_6 label b {
+	background-position: 0 -272px;
+}
+
+.paymentMode2 .payment_7 label b {
+	background-position: 0 -311px;
+}
+
+.paymentMode2 .payment_8 label b {
+	background-position: 0 -352px;
+}
+
+.paymentMode2 .payment_9 label b {
+	background-position: 0 -391px;
+}
+
+.paymentMode2 .payment_10 label b {
+	background-position: 0 -432px;
+}
+
+.paymentMode2 .payment_11 label b {
+	background-position: 0 -472px;
+}
+
+.paymentMode2 .payment_12 label b {
+	background-position: 0 -512px;
+}
+
+.paymentMode2 .payment_13 label b {
+	background-position: 0 -552px;
+}
+
+.paymentMode2 .payment_14 label b {
+	background-position: 0 -585px;
+}
+
+.paymentMode2 .payment_15 label b {
+	background-position: 0 -624px;
+}
+
+.paymentMode2 .payment_16 label b {
+	background-position: 0 -663px;
+}
+
+.paymentMode2 .payment_17 label b {
+	background-position: 0 -704px;
+}
+
+.paymentMode2 .payment_18 label b {
+	background-position: 0 -744px;
+}
+
+.paymentMode2 .payment_19 label b {
+	background-position: 0 -780px;
+}
+
+.paymentMode2 .payment_20 label b {
+	background-position: 0 -811px;
+}
+
+.paymentMode2 .payment_21 label b {
+	background-position: 0 -844px;
+}
+
+.paymentMode2 .payment_22 label b {
+	background-position: 0 -879px;
+}
+
+.paymentMode2 .payment_23 label b {
+	background-position: 0 -913px;
+}
+
+.paymentMode2 .payment_24 label b {
+	background-position: 0 -947px;
+}
+
+.paymentMode2 .payment_25 label b {
+	background-position: 0 -980px;
+}
+
+.paymentMode2 .payment_26 label b {
+	background-position: 0 -1015px;
+}
+
+.paymentMode2 .payment_27 label b {
+	background-position: 0 -1049px;
+}
+
+.paymentMode2 .payment_28 label b {
+	background-position: 0 -1083px;
+}
+
+.paymentMode2 .payment_29 label b {
+	background-position: 0 -1184px;
+}
+
+.paymentMode1 .payMore {
+	border: none;
+	line-height: 30px;
+	cursor: pointer;
+	background-color: #FBFBFB;
+	margin: 10px 20px 0 0;
+}
+
+.paymentMode1 #xuanzeqita01, .paymentMode1 #xuanzeqita02 {
+	width: 70px;
+}
+
+.paymentMode1 #xuanzeqita03 {
+	width: 108px;
+}
+
+.paymentMode1 .payMore a, .paymentMode1 .payMore a:hover {
+	float: left;
+	display: inline-block;
+	color: #666;
+	text-decoration: none;
+}
+
+.paymentMode1 .payMore.on a, .paymentMode1 .payMore.on a:hover {
+	color: #0066cc;
+}
+
+.paymentMode1 .payMore i {
+	float: left;
+	background-position: 0 -26px;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin: 7px 0 0 5px;
+}
+
+.paymentMode1 .payMore.on i {
+	background-position: -18px -26px;
+}
+
+.paymentMode2 h4 {
+	color: #666;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.giftWrap {
+	padding: 10px 0 10px 33px;
+	margin-top: 10px;
+}
+
+.giftWrap .giftItem {
+	height: 24px;
+	padding: 4px 0 4px 20px;
+	line-height: 24px;
+}
+
+.giftWrap .advice {
+	height: 52px;
+}
+
+.giftWrap .giftItem span, .giftWrap .giftItem .field {
+	float: left;
+}
+
+.giftWrap .giftItem span {
+	width: 96px;
+	text-align: right;
+	height: 24px;
+	line-height: 24px;
+	margin-right: 5px;
+}
+
+.giftWrap .giftItem .field i {
+	font-style: normal;
+	color: #999;
+	padding-left: 5px;
+}
+
+.giftWrap .field .form-6 {
+	width: 261px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding-left: 5px;
+	color: #888;
+}
+
+.giftWrap .field .form-7 {
+	width: 560px;
+	height: 50px;
+	border: 1px solid #ddd;
+	background: #fff;
+	resize: none;
+	font-size: 12px;
+	padding: 0 5px;
+	color: #888;
+}
+
+.giftInfo {
+	background: #fff;
+}
+
+.giftInfo li {
+	line-height: 20px;
+	padding: 10px 0;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.giftInfo li .paymentList4 {
+	color: #333;
+}
+
+.giftInfo .pb {
+	padding-bottom: 0;
+}
+
+.giftInfo li:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.giftInfo li span, .paymentInfo li label {
+	float: left;
+	display: inline-block;
+}
+
+.giftInfo li label {
+	width: 850px;
+}
+
+.giftInfo li .paymentList1 {
+	width: 20px;
+}
+
+.giftInfo li .paymentList1 input {
+	margin-top: 3px;
+	_margin-top: -2px;
+	*margin-top: -2px;
+}
+
+.giftInfo li label .paymentList3 {
+	padding-left: 20px;
+	color: #999;
+	line-height: 20px;
+}
+
+.giftInfo li label .paymentList3 font {
+	color: #cc0000;
+	font-size: 12px;
+}
+
+.giftInfo li .paymentWrap {
+	height: 20px;
+	padding-left: 33px;
+}
+/*.giftInfo li .paymentWrapLam{ padding-left:33px; position:relative; height:65px;}*/
+.giftWrap .giftItem .field label {
+	margin-right: 10px;
+	width: auto;
+	float: left;
+}
+
+.giftWrap .giftItem .field .paylogo {
+	float: left;
+	display: inline-block;
+	margin: 5px 5px 0 0;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+}
+
+.giftWrap .giftItem .field .invoice {
+	text-align: left;
+	width: auto;
+}
+
+.giftWrap .giftItem .field .invoice-form {
+	width: 260px;
+	height: 22px;
+	border: 1px solid #ddd;
+	line-height: 22px;
+}
+
+.giftBtn, .giftBtn:hover {
+	width: 94px;
+	height: 24px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+	background: #cc0000;
+	text-align: center;
+	line-height: 24px;
+	display: block;
+}
+/*.paymentWrapLam .form-8{ width:500px; height:50px; border:1px solid #ddd; background:none; resize:none; font-size:12px; padding:5px; color:#888;position:absolute; left:33px; top:0; z-index:2;}
+.paymentWrapLam span{ position:absolute; left:40px; top:5px; color:#888; z-index:1;}*/
+.backCart {
+	position: absolute;
+	top: 0;
+	height: 40px;
+	display: inline-block;
+	line-height: 40px;
+	right: 12px;
+	color: #0068ce;
+}
+
+.backCart:hover {
+	color: #0068ce;
+	text-decoration: none;
+}
+
+.productInfoWrap {
+	padding-bottom: 10px;
+}
+
+.productInfoDis {
+	height: 30px;
+	line-height: 30px;
+	padding: 5px 0 5px 33px;
+	color: #333;
+}
+
+.productInfoTitle {
+	height: 30px;
+	padding-left: 33px;
+}
+
+.InfoTitle-1, .InfoTitle-2, .InfoTitle-3, .InfoTitle-4, .InfoTitle-5 {
+	float: left;
+	display: inline;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	margin-right: 25px;
+}
+
+.InfoTitle-1 {
+	width: 54px;
+	overflow: hidden;
+	margin-right: 13px;
+}
+
+.InfoTitleWrap {
+	width: 44px;
+	margin-top: 6px;
+}
+
+.InfoTitle-1 span {
+	display: inline-block;
+	background: #cc0100;
+	width: 44px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+}
+
+.InfoTitle-1 i {
+	display: block;
+	background-position: 0 -50px;
+	width: 5px;
+	height: 3px;
+	margin: 0 auto;
+}
+
+.InfoPackage {
+	width: 54px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: -19px;
+	_top: -18px;
+}
+
+.InfoTitleWrap {
+	width: 44px;
+}
+
+.InfoPackage span {
+	display: inline-block;
+	background: #cc0100;
+	width: 44px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+}
+
+.InfoPackage i {
+	display: block;
+	background-position: 0 -50px;
+	width: 5px;
+	height: 3px;
+	margin: 0 auto;
+}
+
+.InfoTitle-2 {
+	width: 235px;
+	padding-left: 188px;
+}
+
+.InfoTitle-3 {
+	width: 77px;
+	padding-left: 64px;
+}
+
+.InfoTitle-4 {
+	width: 64px;
+	padding-left: 43px;
+}
+
+.InfoTitle-5 {
+	width: 89px;
+	margin-right: 0;
+	padding-left: 63px;
+}
+/*套装显示新增样式*/
+.productListW {
+	margin-bottom: 15px;
+}
+
+.productList {
+	border-top: 1px solid #ddd;
+	position: relative;
+}
+
+.productList .bg {
+	background: #;
+}
+
+.productList .productTable {
+	width: 998px;
+	height: auto;
+	position: relative;
+}
+
+.productTable table {
+	width: 998px;
+	border-top: 1px solid #ddd;
+	border-top: 0px;
+}
+
+.productTable table td {
+	height: 70px;
+	border-bottom: 1px dotted #ddd;
+	border-right: 1px dotted #ddd;
+	background: #fff;
+	text-align: left;
+	overflow: hidden;
+}
+
+.productTable table td.bb {
+	border-right: 0px;
+}
+
+.productTable table .bb td {
+	border-bottom: 0px;
+}
+
+.productTable table .bg td {
+	background: #FBFBFB;
+}
+
+.productTable td .productImg, .productTable td .productName,
+	.productTable td .productPriM, .productTable td .productNum,
+	.productTable td .productPri {
+	height: 54px;
+	line-height: 54px;
+	float: left;
+	margin: 0 10px;
+	vertical-align: top;
+	display: inline;
+}
+
+.productTable td .productImg {
+	width: 52px;
+	height: 52px;
+	border: 1px solid #ddd;
+	margin: 0 12px 0 33px;
+	text-align: center;
+	float: left;
+}
+
+.productTable td .productName {
+	width: 411px;
+	margin: 0 25px 0 5px;
+}
+
+.productTable td .productPriM {
+	width: 145px;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+
+.productTable td .productNum {
+	width: 110px;
+	text-align: center;
+}
+
+.productTable td .productNum span {
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+
+.productTable td .productPri {
+	width: 130px;
+	font-family: "微软雅黑";
+	color: #cc0000;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.productTable td .productName .oneName {
+	width: 411px;
+	overflow: hidden;
+	height: 54px;
+}
+
+.productTable td .productName .twoName {
+	width: 411px;
+	height: 27px;
+	line-height: 27px;
+	overflow: hidden;
+}
+
+.productTable td .productName .twoName span {
+	color: #cc0000;
+}
+
+.tabBotLine {
+	width: 998px;
+	height: 3px;
+	background: url(../../images/tabBotLine.jpg) repeat-x bottom;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+}
+/*套装显示新增样式结束*/
+.settlementList {
+	width: 934px;
+	margin: 0 auto;
+	padding: 10px 0 20px;
+}
+
+.settlementList li:after {
+	content: '...';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.settlementList li {
+	line-height: 20px;
+	vertical-align: top;
+}
+
+.settlementList .bb {
+	border-bottom: none;
+}
+
+.settlementList li .settlementWrap {
+	height: 20px;
+	padding: 10px 0 10px 3px;
+}
+
+.settlementList li .settlementWrap .settlementTitle {
+	float: left;
+	height: 20px;
+	cursor: pointer;
+	padding-left: 3px;
+}
+
+.settlementList li .settlementWrap .settlementTitle span {
+	float: left;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.settlementList li .settlementWrap .settlementTitle .invoiceIntro {
+	float: left;
+	margin-left: 20px;
+	color: #0066cc;
+}
+
+.settlementList li .settlementWrap .settlementTitle .on {
+	background-position: -40px -26px;
+	width: 16px;
+	height: 16px;
+	float: left;
+	display: inline-block;
+	margin: 2px 3px 0 0;
+}
+
+.settlementList li .settlementWrap .settlementTitle .off {
+	background-position: -64px -26px;
+	width: 16px;
+	height: 16px;
+	float: left;
+	display: inline-block;
+	margin: 2px 3px 0 0;
+}
+
+.settlementList li .settlementWrap .settlementPri, .settlementCon li .settlementMinus,
+	.packagePri {
+	float: right;
+	font-family: "微软雅黑";
+}
+
+.settlementCon {
+	margin-bottom: 10px;
+}
+
+.settlementCon li .settlementMinus {
+	color: #999;
+}
+
+.settlementCon .gray {
+	background: #fbfbfb;
+}
+
+.giftCardWrap {
+	padding-left: 20px;
+}
+
+.settlementCon li {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: none;
+	padding: 0;
+	padding-left: 20px;
+}
+
+.settlementCon li .settlementRule {
+	float: left;
+}
+
+.giftCardWrap .giftCardTitleWrap {
+	width: 100%;
+	height: 27px;
+}
+
+.giftCardWrap .giftCardTitle {
+	cursor: pointer;
+	display: inline-block;
+	background: #fbfbfb;
+	width: 120px;
+	text-align: center;
+	height: 26px;
+	line-height: 26px;
+	margin-bottom: -1px;
+	border: 1px solid #ddd;
+	margin-right: 8px;
+	float: left;
+	position: relative;
+}
+
+.giftCardWrap .giftCardTitle.gctitOn {
+	color: #cc0000;
+	border-bottom: 1px solid #FBFBFB;
+}
+
+.giftCardWrap .giftCardTitle b {
+	color: #cc0000;
+}
+
+.giftCardWrap .giftCardCon {
+	width: 910px;
+}
+
+.giftCardWrap .giftCardBox {
+	background-color: #fbfbfb;
+	border: 1px solid #ddd;
+	padding: 10px 25px;
+	width: 860px;
+}
+
+.giftCardWrap .giftCardBox p {
+	height: 26px;
+	line-height: 26px;
+	color: #999;
+}
+
+.giftCardWrap .giftCardBox .giftCardTit {
+	color: #666;
+}
+
+.giftCardWrap .giftCardBox .giftCardRule span {
+	color: #cc0000;
+}
+
+.giftCardWrap .giftCardBox .giftCardRule a, .giftCardBox .giftCardRule a:hover,
+	.giftCardBox .giftCardW a, .giftCardBox .giftCardW a:hover,
+	.giftCardBox .giftCardStqTit a, .giftCardBox .giftCardStqTit a:hover {
+	color: #005ea7;
+	padding-left: 10px;
+}
+
+.giftCardWrap .giftCardBox .giftCardW {
+	color: #999;
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 5px;
+}
+
+.giftCardWrap .giftCardBox .giftCard {
+	border: 1px solid #DDDDDD;
+	background: #fff;
+	width: 850px;
+	height: auto;
+	padding: 3px 0 3px 10px;
+	height: 130px;
+	overflow: hidden;
+	position: relative;
+}
+
+.giftCardWrap .giftCardBox .giftCard .open {
+	position: absolute;
+	right: 10px;
+	top: 3px;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	width: 40px
+}
+
+.giftCardWrap .giftCardBox .giftCard span {
+	display: block;
+}
+
+.giftCardWrap .giftCardBox .giftCard span input {
+	vertical-align: middle;
+}
+
+.giftCardWrap .giftCardBox .giftCard span b {
+	vertical-align: middle;
+	padding-top: 1px;
+}
+
+.giftCardWrap .giftCardBox .giftCard span font {
+	color: #CC0000;
+	font-size: 12px;
+	padding: 0 2px 0 10px;
+}
+
+.giftCardWrap .giftCardBox .giftCard span em {
+	font-style: normal;
+	padding-left: 50px;
+	vertical-align: middle;
+}
+
+.giftCardWrap .giftCardBox .giftCard span .ggname {
+	display: inline-block;
+	width: 300px;
+	height: 26px;
+	overflow: hidden;
+}
+
+.giftCardWrap .giftCardBox .giftCardStqTit {
+	padding: 3px 0;
+}
+
+.giftCardWrap .giftCardBox .giftCardStq {
+	padding: 0 0 5px;
+}
+
+.giftCardWrap .giftCardBox .giftCardStq em {
+	font-style: normal;
+}
+
+.giftCardWrap .giftCardBox .giftCardStq .num input {
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	width: 180px;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 5px;
+}
+
+.giftCardWrap .giftCardBox .giftCardStq .useBtn {
+	background: #CC0000;
+	border-radius: 3px;
+	color: #FFFFFF;
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	margin-left: 10px;
+	padding-left: 0px;
+	text-align: center;
+	width: 50px;
+}
+
+.giftCardWrap .giftCardBox .giftCardStq .useBtn {
+	color: #fff;
+	text-decoration: none;
+}
+
+.giftCardWrap .giftCardBox .giftCardPwIn {
+	padding-top: 5px;
+	border-top: 1px dotted #ccc;
+}
+
+.giftCardWrap .giftCardBox .giftCardPwIn b {
+	font-weight: normal;
+	color: #cc0000;
+	padding: 0 3px;
+}
+
+.InputBorder1 {
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	width: 65px;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 5px;
+}
+
+.orderSubPro {
+	font-style: normal;
+	color: #f00;
+	padding-left: 10px;
+	line-height: 26px;
+}
+
+.comTotalBox {
+	float: right;
+	text-align: right;
+	padding-top: 10px;
+}
+
+.comTotalBox p {
+	height: 26px;
+	line-height: 26px;
+}
+
+.comTotalBox p span {
+	display: inline-block;
+	padding-left: 15px;
+}
+
+.comTotalBox p .comTotalSum {
+	width: 100px;
+	font-family: "微软雅黑";
+}
+
+.comTotalBox p span b {
+	color: #cc0000;
+	padding-right: 3px;
+}
+
+.step-9 {
+	height: 66px;
+	background: #f6f6f6;
+	padding: 0 10px 0 33px;
+	line-height: 66px;
+	border: 1px solid #ddd;
+	border-top: none;
+	*position: relative;
+	*float: left;
+	zoom: 1
+}
+
+.settleGold {
+	float: left;
+	color: #666;
+	font-weight: bold;
+}
+
+.settleGold span {
+	color: #cc0000;
+}
+
+.subBtnBox {
+	width: 157px;
+	height: 40px;
+	float: right;
+	margin: 13px 18px 0 0;
+	display: inline;
+	z-index: 100;
+	position: relative;
+}
+
+.subBtnBox .subBtn {
+	background: #cf000d;
+	border-radius: 3px;
+	width: 157px;
+	height: 40px;
+	font-family: "微软雅黑";
+	display: inline-block;
+}
+
+.subBtnBox .subBtn i {
+	background-position: 0 -60px;
+	display: inline-block;
+	width: 115px;
+	height: 24px;
+	margin: 9px 0 0 22px;
+	cursor: pointer;
+}
+
+.subBtnBox .submit-pro {
+	width: 800px;
+	height: 30px;
+	position: absolute;
+	top: -37px;
+	right: 0;
+	z-index: 111;
+	text-align: right;
+	zoom: 1;
+	display: none;
+}
+
+.subBtnBox .submit-pro span {
+	background: #FFFDEE;
+	border: 1px solid #EDD28B;
+	color: #FF6600;
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 15px;
+}
+
+.subBtnBox .submit-pro span a {
+	color: #0068CE;
+}
+
+.subBtnBox .submit-pro span a:hover {
+	color: #0068CE;
+}
+
+.toPay {
+	float: right;
+	padding-right: 25px;
+}
+
+.toPay strong {
+	font-size: 14px;
+	position: relative;
+	top: -5px;
+}
+
+.toPay span {
+	font-size: 28px;
+	color: #cc0000;
+	font-family: "微软雅黑";
+}
+
+.packageCon {
+	height: 20px;
+	margin-top: 5px;
+}
+
+.packageWrap {
+	float: left;
+	height: 20px;
+}
+
+.packageWrap span {
+	background: #cc0000;
+	float: left;
+	display: inline-block;
+	color: #fff;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 3px;
+	padding: 0 5px;
+}
+
+.balanceWrap {
+	background: #fbfbfb;
+	padding: 10px 20px;
+}
+
+.invoiceWrap {
+	background: #fbfbfb;
+	padding: 10px 20px;
+}
+
+.invCon01 {
+	padding: 0 0 10px;
+}
+
+.invCon02 {
+	padding: 10px 0;
+}
+
+.invCon03 {
+	padding: 10px 0;
+}
+
+.invoiceCon .giftItem {
+	height: 24px;
+	line-height: 24px;
+	padding: 4px 0 4px;
+}
+
+.invoiceCon .giftItem a {
+	margin-left: 20px;
+	color: #0066cc
+}
+
+.invoiceCon .invoiceTit input {
+	margin: 0 5px 0 15px;
+}
+
+.invoiceCon .giftItem01 {
+	height: 24px;
+	line-height: 24px;
+}
+
+.invoiceCon .giftItem span {
+	margin-right: 5px;
+	text-align: right;
+}
+
+.invoiceCon span, .invoiceCon .giftItem .field, .invoiceCon select {
+	float: left;
+	display: inline-block;
+}
+
+.invoiceCon .giftItem .field label {
+	margin-left: 10px;
+	width: auto;
+	float: left;
+}
+
+.invoiceCon .giftItem .field select {
+	margin: 0px;
+	width: 80px;
+	border: 1px solid #ddd;
+	padding: 2px;
+	background: #fff;
+}
+
+.invoiceCon .giftItem .field .invoice {
+	text-align: left;
+	width: auto;
+}
+
+.invoiceCon .giftItem .field .invoice-form {
+	width: 260px;
+	height: 22px;
+	border: 1px solid #ddd;
+	line-height: 22px;
+	background: #fff;
+}
+
+.invoiceCon .giftItem.border {
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #ccc;
+}
+
+.invoiceCon .paymentList1 {
+	width: 20px;
+}
+
+.invoiceCon .paymentList1 input {
+	margin-top: 5px; *+
+	margin-top: 2px;
+	_margin-top: 1px;
+}
+
+.invoiceCon .paymentWrapLam {
+	height: 28px;
+}
+
+.invoiceCon .paymentWrapLam .psValBg {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 28px;
+	width: 662px;
+	background: #fff;
+	z-index: 1;
+	float: left;
+}
+
+.invoiceCon .paymentWrapLam .form-8 {
+	position: absolute;
+	background: none;
+	border: 1px solid #ddd;
+	color: #888;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	padding: 3px 5px;
+	resize: none;
+	width: 650px;
+	z-index: 3;
+}
+
+.invoiceCon .paymentWrapLam span {
+	line-height: 24px;
+	*line-height: 26px;
+	_line-height: 26px;
+	color: #888;
+	left: 5px;
+	position: absolute;
+	top: 2px;
+	z-index: 2;
+}
+
+.invoiceCon .paymentWrapLam em {
+	display: inline-block;
+	line-height: 28px;
+	color: #888;
+	font-style: normal;
+	padding-left: 10px;
+	float: left;
+}
+
+.balanceBox {
+	height: 26px;
+	padding: 5px 0;
+}
+
+.giftTabBox {
+	height: auto;
+}
+
+.balanceBox div {
+	float: left;
+}
+
+.balanceBox p {
+	color: #cc0000;
+	line-height: 26px;
+}
+
+.balanceBox span {
+	line-height: 26px;
+}
+
+.balanceBox .g span {
+	padding: 0 2px;
+}
+
+.balanceBox .giftTab {
+	border-color: #CDCDCD;
+	border-style: solid;
+	border-width: 1px 0 0 1px;
+}
+
+.balanceBox .giftTab th, .balanceBox .giftTab td {
+	height: 32px;
+	border-color: #CDCDCD;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	text-align: center;
+}
+
+.balanceBox .giftTab th {
+	background: #F5F5F5;
+	font-weight: 100;
+}
+
+.balanceBox .giftTab td {
+	background: #fff;
+}
+
+.tc1 {
+	width: 170px;
+}
+
+.tc2 {
+	width: 90px;
+}
+
+.balanceBox .m {
+	width: 84px;
+	text-align: right;
+	line-height: 26px;
+}
+
+.giftCard .balanceBox .m {
+	width: 96px;
+}
+
+.balanceBox .form-9, .balanceBox .form-10, .balanceBox .form-11,
+	.balanceBox .form-12 {
+	width: 85px;
+	height: 24px;
+	border: 1px solid #ddd;
+	background: #fff;
+	line-height: 24px;
+}
+
+.balanceBox .form-10 {
+	width: 160px;
+}
+
+.balanceBox .form-11 {
+	width: 400px;
+}
+
+.balanceBox .form-12 {
+	width: 60px;
+}
+
+.balanceBox .h {
+	line-height: 26px;
+	padding-left: 5px;
+	color: #999;
+}
+
+.balanceBox .forget, .balanceBox .forget:hover {
+	float: left;
+	line-height: 26px;
+	color: #999;
+	padding-left: 10px;
+}
+
+.balanceBox .useBtn {
+	width: 50px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	color: #fff;
+	border-radius: 3px;
+	background: #cc0000;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+}
+
+.balanceBox .useBtn:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.code {
+	border-bottom: 1px dotted #ddd;
+	padding-bottom: 15px;
+}
+
+.codeYzm {
+	float: left;
+	cursor: pointer;
+	display: inline;
+	margin-left: 10px;
+	border: 1px solid #ddd;
+}
+
+.balanceBox .s {
+	color: #cc0000;
+	padding-left: 12px;
+}
+/*选择区域样式*/
+.dOrder-city {
+	float: left;
+	height: 24px;
+	position: relative;
+	z-index: 20;
+}
+
+.dOrder-city .dOrder-city-sel {
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	background: #fff;
+	padding-left: 5px;
+	position: relative;
+	z-index: 1;
+}
+
+.dOrder-city .dOrder_city_on {
+	border: 1px solid #ddd;
+	background-color: #fff;
+	box-shadow: 0 -1px 2px #ddd;
+	border-bottom: none;
+	z-index: 3;
+	position: relative;
+}
+
+.dOrder-city .dOrder-city-sel:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+.dOrder-city .dOrder-city-sel b {
+	font-weight: normal;
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+.dOrder-city .dOrder-city-sel i {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background-position: 0 -94px;
+	vertical-align: middle;
+}
+
+.dOrder-city span {
+	float: left;
+	line-height: 24px;
+	padding-left: 15px;
+}
+
+.depit_citydrp {
+	padding: 10px;
+	width: 340px;
+	position: absolute;
+	left: 0;
+	top: 22px;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 6px #ddd;
+	background: #fff;
+	z-index: 1;
+}
+
+.h5_dptctdrp {
+	margin-bottom: 8px;
+	line-height: 20px;
+	font-size: 100%;
+	font-weight: normal;
+	position: relative;
+	z-index: 22;
+}
+
+.h5_dptctdrp a {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 10px;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.h5_dptctdrp a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+.h5_dptctdrp a em {
+	font-style: normal;
+	float: left;
+	display: inline-block;
+}
+
+.h5_dptctdrp a i {
+	float: left;
+	display: inline-block;
+	background-position: 0 -123px;
+	width: 6px;
+	height: 4px;
+	margin: 9px 0 0 5px;
+	overflow: hidden;
+}
+
+.h5_dptctdrp a.h5_dptdrp_on {
+	border: 1px solid #cc0000;
+	border-bottom: 1px solid #fff;
+}
+
+.h5_dptctdrp a.h5_dptdrp_on i {
+	background-position: 0 -136px;
+	width: 6px;
+	height: 4px;
+	margin: 9px 0 0 5px;
+}
+
+.dptctdrp_list {
+	padding: 5px 4px;
+	overflow: hidden;
+	zoom: 1;
+	position: relative;
+	z-index: 20;
+	margin-top: -9px;
+	border: 1px solid #fff;
+	border-top: 1px solid #cc0000;
+}
+
+.dptctdrp_list li {
+	float: left;
+	line-height: 24px;
+	width: 110px;
+}
+
+.dptctdrp_list li a {
+	display: inline-block;
+	padding: 0 7px;
+}
+
+.dptctdrp_list li a:hover {
+	background: #c00;
+	color: #fff;
+	text-decoration: none;
+}
+
+.dptctdrp_list2 {
+	padding: 5px;
+}
+
+.dptctdrp_list2 li {
+	width: 82px;
+}
+
+.successstyle {
+	font-style: normal;
+	color: #2DD700;
+	padding-left: 10px;
+}
+/*提交验证*/
+.popMask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	background: url(../../images/maskBg.png) repeat left top;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+
+.popBox {
+	width: 410px;
+	height: 280px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 4px 0px #666;
+	background: #fff;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 1001;
+	margin: -140px 0 0 -205px;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop) +300);
+}
+
+.popCon {
+	text-align: left;
+	padding: 30px 0 0 60px;
+}
+
+.popTop {
+	line-height: 30px;
+	border-bottom: 1px solid #ccc;
+	margin: 10px 20px 0;
+}
+
+.popTop h3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	padding-left: 5px;
+}
+
+.popItem {
+	font-size: 14px;
+	padding: 20px 0 0 0;
+}
+
+.popItem .popItem-form {
+	border: 1px solid #e4e4e4;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #888;
+	font-weight: 600;
+	padding: 0 5px;
+}
+
+.popItem em {
+	font-style: normal;
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+.popItem a {
+	color: #0066cc;
+	font-size: 12px;
+	padding-left: 5px;
+}
+
+.popItem a:hover {
+	color: #0066cc;
+	text-decoration: underline;
+}
+
+.popItem img {
+	border: 1px solid #e4e4e4;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.popCode-pro {
+	color: #cc0000;
+	font-size: 12px;
+	padding-top: 10px;
+}
+
+.popItem .popCodeBut {
+	border: 1px solid #e4e4e4;
+	height: 34px;
+	line-height: 32px;
+	background: #f6f6f6;
+	padding: 0 22px;
+	color: #333;
+	font-size: 16px;
+}
+
+.popBox .pop-close {
+	background-position: -162px 0;
+	width: 22px;
+	height: 22px;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 102;
+}
+
+/*自定义alert弹窗start*/
+.popIcon {
+	background: url(/img/usercenter/popIcon.png) no-repeat 0 0;
+} /*公共icon*/
+.pop-modal {
+	display: none;
+	background: #000;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+/*弹层样式1*/
+.pop-wrap1 {
+	display: none;
+	width: 400px;
+	height: 220px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -105px 0 0 -205px;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop) +400);
+	background: url(/img/usercenter/popBg.png);
+	border-radius: 5px;
+	box-shadow: 0 0 6px 1px #828282;
+	z-index: 10001;
+	padding: 5px;
+}
+
+.pop-wrap1 .pop-layer {
+	width: 400px;
+	height: 220px;
+	background: #fff;
+	border-radius: 3px;
+}
+
+.pop-wrap1 .pop-title {
+	height: 40px;
+	line-height: 40px;
+	background: #c40001;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	padding-left: 16px;
+}
+
+.pop-wrap1 .pop-title p {
+	float: left;
+	color: #fff;
+	font-size: 14px;
+}
+
+.pop-wrap1 .pop-title i {
+	background-position: 0 -45px;
+	display: inline-block;
+	float: right;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+	margin: 13px 13px 0 0;
+}
+
+.pop-wrap1 .pop-main {
+	height: 99px;
+	background: #fff;
+	padding: 41px 25px 0 25px;
+}
+
+.pop-wrap1 .pop-main i {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	float: left;
+}
+
+.pop-wrap1 .pop-main .success {
+	background-position: 0 0;
+}
+
+.pop-wrap1 .pop-main .alarm {
+	background-position: -41px 0;
+}
+
+.pop-wrap1 .pop-main .fail {
+	background-position: -81px 0;
+}
+
+.pop-wrap1 .pop-main .confirm {
+	background-position: -121px 0;
+}
+
+.pop-wrap1 .pop-main p {
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #000;
+	float: right;
+	width: 300px;
+}
+
+.pop-wrap1 .pop-main p span {
+	display: inline-block;
+	width: 100%;
+	vertical-align: middle;
+	height: auto;
+}
+
+.pop-wrap1 .pop-main p b {
+	font-weight: normal;
+	padding: 0 3px;
+}
+
+.pop-wrap1 .pop-bottom {
+	height: 40px;
+	background: #f1f1f1;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	text-align: right;
+	padding-right: 25px;
+}
+
+.pop-wrap1 .pop-bottom span {
+	display: inline-block;
+	width: 58px;
+	height: 22px;
+	font-size: 0;
+	border-radius: 2px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+	margin: 8px 0 0 5px;
+}
+
+.pop-wrap1 .pop-bottom .confirm {
+	border: 1px solid #c40001;
+	color: #c40001;
+	background: #ffe6e6;
+}
+
+.pop-wrap1 .pop-bottom span b {
+	font-size: 12px;
+	font-weight: normal;
+	display: inline-block;
+}
+
+.pop-wrap1 .pop-bottom .cancel {
+	border: 1px solid #ccc;
+	color: #666666;
+	background: #fff;
+}
+
+.btn-submit-order {
+	display: inline-block;
+	float: right;
+	width: 150px;
+	height: 50px;
+	margin-top: 8px;
+	margin-right: 3px;
+	border-radius: 3px;
+	background-color:#FF0000;
+	line-height: 24px;
+	text-align: center;
+}

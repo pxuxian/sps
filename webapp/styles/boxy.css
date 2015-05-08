@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* CSS Document */
+.boxy-wrapper {
+	position: absolute;
+}
+
+.boxy-wrapper.fixed {
+	position: fixed;
+}
+/* Modal */
+.boxy-modal-blackout {
+	position: absolute;
+	background-color: black;
+	left: 0;
+	top: 0;
+}
+/* Border */
+.boxy-wrapper {
+	empty-cells: show;
+}
+
+.boxy-wrapper .top-left, .boxy-wrapper .top-right, .boxy-wrapper .bottom-right,
+	.boxy-wrapper .bottom-left {
+	width: 5px;
+	height: 5px;
+	padding: 0
+}
+/*.boxy-wrapper .top-left{background:url(../images/boxy-nw.png);}
+.boxy-wrapper .top-right{background:url(../images/boxy-ne.png);}
+.boxy-wrapper .bottom-right{background:url(../images/boxy-se.png);}
+.boxy-wrapper .bottom-left{background:url(../images/boxy-sw.png);}*/
+/* IE6+7 hacks for the border. IE7 should support this natively but fails in conjuction with modal blackout bg. */
+/* NB:these must be absolute paths or URLs to your images */
+.boxy-wrapper .top-left { #
+	background: none; #
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=. ./images/boxy-nw.png);
+}
+
+.boxy-wrapper .top-right { #
+	background: none; #
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=. ./images/boxy-ne.png);
+}
+
+.boxy-wrapper .bottom-right { #
+	background: none; #
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=. ./images/boxy-se.png);
+}
+
+.boxy-wrapper .bottom-left { #
+	background: none; #
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=. ./images/boxy-sw.png);
+}
+
+.boxy-wrapper .top, .boxy-wrapper .bottom {
+	height: 5px;
+	background-color: black;
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+	padding: 0
+}
+
+.boxy-wrapper .left, .boxy-wrapper .right {
+	width: 5px;
+	background-color: black;
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+	padding: 0
+}
+/* Title bar */
+.boxy-wrapper .title-bar {
+	background-color: #68B82E;
+	padding: 6px;
+	position: relative;
+}
+
+.boxy-wrapper .title-bar.dragging {
+	cursor: move;
+}
+
+.boxy-wrapper .title-bar h2 {
+	font-size: 16px;
+	color: white;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+.boxy-wrapper .title-bar .close {
+	color: #FFFF96;
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	top: 5px;
+	right: 6px;
+	font-size: 12px;
+}
+
+.boxy-wrapper .title-bar .close:hover {
+	color: #FFFFFF;
+}
+/* Content Region */
+.boxy-inner {
+	background-color: white;
+	padding: 0
+}
+
+.boxy-content {
+	padding: 15px 0;
+}
+/* Question Boxes */
+.boxy-wrapper .question {
+	width: 350px;
+	min-height: 60px;
+	_height: 60px;
+}
+
+.boxy-wrapper .answers {
+	text-align: right;
+}
+/*confirm btn by zhangxinxu http://www.zhangxinxu.com*/
+.boxy-btn1, .boxy-btn2, .boxy-btn3 {
+	padding: 3px 12px 1.9px;
+	border-width: 1px;
+	border-style: solid;
+	letter-spacing: 1px;
+	line-height: 15px;
+	cursor: pointer;
+	overflow: visible;
+}
+
+.boxy-btn1 {
+	background-color: #425f99;
+	border-color: #5A7EC6 #2C3E5F #2C3E5F #5A7EC6;
+	color: white;
+}
+
+.boxy-btn2 {
+	background-color: #ECE9D8;
+	border-color: #eeeeee #bbbbbb #bbbbbb #eeeeee;
+	color: #333333;
+}
+
+.boxy-btn3 {
+	background-color: #EAEAEA;
+	border-color: #EAEAEA #aaaaaa #aaaaaa #EAEAEA;
+	color: #333333;
+	padding: 3px 5px 1.9px;
+}
+
+.boxy-btn3:hover {
+	background-color: #cad5eb;
+	border-color: #CED8E3 #A2ADBC #A2ADBC #CED8E3;
+}
+
+/*fday*/
+.order_addr {
+	width: 550px;
+	height: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	max-height: 325px;
+	padding: 0px 5px;
+}
+
+.order_addr a {
+	color: #0086D1;
+}
+
+.pay_body {
+	width: 800px;
+}
+
+.pay_body li {
+	width: 780px;
+}
+
+.place {
+	width: 530px;
+	line-height: 25px;
+}
+
+.grid_1, .grid_5 {
+	float: left;
+	display: inline;
+	margin-right: 15px;
+}
+
+.new_address ul {
+	margin-left: 25px;
+}
+
+.new_address ul li {
+	width: 500px;
+	line-height: 25px;
+}
+
+.sorry {
+	margin: 15px 0px;
+	text-align: center;
+	font: bold 14px/36px Verdana, Geneva, sans-serif;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.not_dis_table {
+	width: 450;
+	margin: 0px 15px 5px;
+	border: 1px solid rgb(212, 212, 212);
+	border-collapse: collapse;
+	padding: 0px;
+	font-size: 12px;
+	color: rgb(102, 102, 102);
+}
+
+.not_dis_table th {
+	padding: 6px 0px;
+	border-bottom: 1px solid rgb(212, 212, 212);
+	border-right: 1px solid rgb(212, 212, 212);
+	background-color: rgb(231, 231, 231);
+	text-align: center;
+}
+
+.not_dis_table td {
+	text-align: center;
+	border-right: 1px solid rgb(212, 212, 212);
+}
+
+.headline {
+	overflow: hidden;
+	display: inline-block;
+	width: 324px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	color: rgb(51, 51, 51);
+	padding: 0px;
+	margin: 0px;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.sorry_button_p {
+	text-align: center;
+}
+
+.sorry_button {
+	padding-top: 0px;
+	margin: 0px 5px 0px 5px;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gail.sps.dao.OrderDao">
+	<resultMap type="Order" id="OrderRs">
+		<result column="id" property="id" />
+		<result column="receiver" property="receiver" />
+		<result column="address" property="address" />
+		<result column="mobile" property="mobile" />
+		<result column="phone" property="phone" />
+		<result column="amount" property="amount" />
+		<result column="postage" property="postage" />
+		<result column="discount" property="discount" />
+		<result column="total" property="total" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<sql id="table_name">
+		t_order
+	</sql>
+	<sql id="fields">
+		o.id, o.receiver, o.address, o.mobile, o.telphone, o.amount, o.postage, o.discount, o.total, o.status
+	</sql>
+	
+	<sql id="baseSearchCondition">
+		<where>
+			<if test="receiver!=null and receiver!=''">
+				and o.receiver like CONCAT('%','${receiver}','%' )
+			</if>
+		</where>
+	</sql>
+	
+	<select id="getById" parameterType="Integer" resultMap="OrderRs">
+		select <include refid="fields" /> 
+		from <include refid="table_name" /> o
+		where id=#{id}
+	</select>
+
+	<select id="count" parameterType="Order" resultType="Integer">
+		select count(1) 
+		from <include refid="table_name" /> o
+		<include refid="baseSearchCondition" />
+	</select>
+
+	<select id="limitSelect" parameterType="Order" resultMap="OrderRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> o
+		<include refid="baseSearchCondition" />
+		limit #{startPos}, #{pageSize}
+	</select>
+	
+	<insert id="save" parameterType="Order">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into <include refid="table_name" />
+		values (null, #{receiver}, #{address}, #{mobile}, #{telphone}, #{amount}, #{postage}, #{discount}, #{total}, #{status })
+	</insert>
+	
+	<insert id="saveOrderProduct" parameterType="OrderProduct">
+		insert into t_order_product (order_id, product_id, price, count) values
+		(#{order.id}, #{product.id}, #{price}, #{count})
+	</insert>
+	
+</mapper>
