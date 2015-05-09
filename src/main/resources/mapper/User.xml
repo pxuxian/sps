@@ -41,6 +41,12 @@
 		from <include refid="table_name" /> u
 		where username=#{username}
 	</select>
+	
+	<select id="getLoginUser" parameterType="User" resultMap="UserRs">
+		select <include refid="fields" /> 
+		from <include refid="table_name" /> u
+		where username=#{username} and password=#{password}
+	</select>
 
 	<select id="count" parameterType="User" resultType="Integer">
 		select count(1) 

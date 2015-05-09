@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.gail.sps.model.Order;
 import com.gail.sps.model.OrderProduct;
 import com.gail.sps.model.Product;
+import com.gail.sps.service.OrderService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
@@ -20,9 +21,11 @@ public class OrderDaoTest {
     @Autowired
     private OrderDao orderDao;
     @Autowired
+    private OrderService orderService;
+    @Autowired
     private ProductDao productDao;
 
-    @Test
+//    @Test
     public void save() throws Exception {
         List<OrderProduct> orderProductList = new ArrayList<OrderProduct>();
         Product p = productDao.getById(1);
@@ -39,6 +42,13 @@ public class OrderDaoTest {
         for (OrderProduct orderProduct : orderProductList) {
             orderDao.saveOrderProduct(orderProduct);
         }
+    }
+    @Test
+    public void list() throws Exception {
+    	Order order = new Order();
+    	order.setPage(1);
+    	order.setPageSize(10);
+    	List<Order> orderList = orderService.limitSelect();
     }
 
 }

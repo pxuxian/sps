@@ -20,6 +20,7 @@ public class UserDaoTest {
 	@Test
 	public void list() {
 		try {
+			
 			List<User> userList = userDao.select(new User());
 			System.out.println(userList);
 			User user = userDao.getByUserName("aaa");

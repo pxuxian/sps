@@ -8,8 +8,6 @@
 <title>今日特供-用户注册</title>
 
 <meta name="keywords" content="水果,果切,鲜果,新鲜,健康" />
-<!-- <link rel="stylesheet"
-	href="http://www.guocool.com/v5/source/css/reg.css"></link> -->
 <link href="./styles/reg.css" rel="stylesheet" type="text/css"></link>
 <link href="./styles/login.css" rel="stylesheet" type="text/css"></link>
 <script src="./styles/jquery-1.6.2.min.js" type="text/javascript"></script>
@@ -104,7 +102,7 @@ $('document').ready(function() {
 						</div>
 						<div class="control-group">
 							<div class="controls">
-								<input type="button" style="border: none" id="sub" value="注册" />
+								<input type="button" id="sub" value="注册" />
 							</div>
 						</div>
 					</form>

@@ -75,6 +75,39 @@ public class UserAction extends BaseAction {
 		}
 	}
 
+	@Action(value = "ajax_login")
+	public void ajaxLogin() {
+		try {
+			response.setContentType("text/html;charset=UTF-8");
+			response.setHeader("Cache-Control", "no-cache");
+			PrintWriter out = response.getWriter();
+			String msg = userService.login(user);
+			out.write(msg);
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Action(value = "login", results = { @Result(name = "success", location = "/success.jsp") })
+	public String login() {
+		try {
+			this.init();
+			String msg = userService.login(user);
+			if (!"".equals(msg)) {
+				return "error";
+			}
+			this.user = userService.getByUserName(user.getUsername());
+			session.put("sessionUser", user);
+			this.msg = "登录成功";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
+
 	public User getUser() {
 		return user;
 	}

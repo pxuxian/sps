@@ -5,4 +5,6 @@ import com.gail.sps.model.User;
 public interface UserDao extends GenericDao<User, Integer> {
 
 	public User getByUserName(String username) throws Exception;
+	
+	public User getLoginUser(User user) throws Exception;
 }

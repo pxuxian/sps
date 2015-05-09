@@ -7,21 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gail.sps.constant.OrderStatus;
+import com.gail.sps.dao.GenericDao;
 import com.gail.sps.dao.OrderDao;
 import com.gail.sps.model.Cart;
 import com.gail.sps.model.CartItem;
 import com.gail.sps.model.Order;
 import com.gail.sps.model.OrderProduct;
+import com.gail.sps.model.User;
 import com.gail.sps.service.OrderService;
+import com.gail.sps.util.PaginatedList;
 
 @Component
 @Transactional
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implements OrderService {
 
     @Autowired
     private OrderDao orderDao;
-
-    public Order generaterOrder(Cart cart) throws Exception {
+    
+    @Override
+	public GenericDao<Order, Integer> getDao() {
+		return orderDao;
+	}
+    
+    @Override
+	public Order generaterOrder(Cart cart) throws Exception {
         Order order = new Order();
         if (cart == null) {
             return order;
@@ -44,7 +54,8 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
-    @Transactional
+    @Override
+	@Transactional
     public void submit(Order order, Cart cart) throws Exception {
         Order od = this.generaterOrder(cart);
         orderDao.save(order);
@@ -54,5 +65,25 @@ public class OrderServiceImpl implements OrderService {
             orderDao.saveOrderProduct(orderProduct);
         }
     }
+
+	@Override
+	public PaginatedList<Order> limitSelect() throws Exception {
+		return this.limitSelect(new Order());
+	}
+
+	@Override
+	public List<Order> listByUser(User user) throws Exception {
+		if (user != null) {
+			Order order = new Order();
+			order.setUser(user);
+			List<Order> orderList = this.limitSelect(order);
+			for (Order od : orderList) {
+				od.setOrderProducts(orderDao.listOrderProduct(od.getId()));
+				od.setStatusStr(OrderStatus.getString(od.getStatus()));
+			}
+			return orderList;
+		}
+		return null;
+	}
 
 }

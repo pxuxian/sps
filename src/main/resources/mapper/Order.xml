@@ -7,25 +7,34 @@
 		<result column="receiver" property="receiver" />
 		<result column="address" property="address" />
 		<result column="mobile" property="mobile" />
-		<result column="phone" property="phone" />
+		<result column="telphone" property="telphone" />
 		<result column="amount" property="amount" />
 		<result column="postage" property="postage" />
 		<result column="discount" property="discount" />
 		<result column="total" property="total" />
 		<result column="status" property="status" />
 	</resultMap>
+	<resultMap type="OrderProduct" id="OrderProductRs">
+		<result column="order_id" property="orderId" />
+		<result column="product_id" property="productId" />
+		<result column="price" property="price" />
+		<result column="count" property="count" />
+	</resultMap>
 
 	<sql id="table_name">
 		t_order
 	</sql>
 	<sql id="fields">
-		o.id, o.receiver, o.address, o.mobile, o.telphone, o.amount, o.postage, o.discount, o.total, o.status
+		o.id, o.user_id, o.receiver, o.address, o.mobile, o.telphone, o.amount, o.postage, o.discount, o.total, o.status
 	</sql>
 	
 	<sql id="baseSearchCondition">
 		<where>
 			<if test="receiver!=null and receiver!=''">
 				and o.receiver like CONCAT('%','${receiver}','%' )
+			</if>
+			<if test="user!=null">
+				and o.user_id=#{user.id}
 			</if>
 		</where>
 	</sql>
@@ -54,12 +63,17 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 		insert into <include refid="table_name" />
-		values (null, #{receiver}, #{address}, #{mobile}, #{telphone}, #{amount}, #{postage}, #{discount}, #{total}, #{status })
+		values (null, #{user.id}, #{receiver}, #{address}, #{mobile}, #{telphone}, #{amount}, #{postage}, #{discount}, #{total}, #{status })
 	</insert>
 	
 	<insert id="saveOrderProduct" parameterType="OrderProduct">
 		insert into t_order_product (order_id, product_id, price, count) values
 		(#{order.id}, #{product.id}, #{price}, #{count})
 	</insert>
+	
+	<select id="listOrderProduct" parameterType="Integer" resultMap="OrderProductRs">
+		select id, order_id, product_id, price, count
+		from t_order_product where order_id=#{orderId}
+	</select>
 	
 </mapper>

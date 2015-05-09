@@ -8,106 +8,128 @@ import java.util.List;
  * @author pxuxian
  */
 public class Order extends BaseModel {
-    private static final long serialVersionUID = -7894012960696879502L;
+	private static final long serialVersionUID = -7894012960696879502L;
 
-    private Integer id;
-    private String receiver; // 收货人
-    private String address;
-    private String mobile;
-    private String telphone;
-    private List<OrderProduct> orderProducts;
-    private double amount; // 商品金额
-    private double postage; // 邮费
-    private double discount; // 优惠
-    private double total; // 总计
-    private int status;
+	private Integer id;
+	private User user;
+	private String receiver; // 收货人
+	private String address;
+	private String mobile;
+	private String telphone;
+	private List<OrderProduct> orderProducts;
+	private double amount; // 商品金额
+	private double postage; // 邮费
+	private double discount; // 优惠
+	private double total; // 总计
+	private int status;
+	private String statusStr;
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public List<OrderProduct> getOrderProducts() {
-        return orderProducts;
-    }
+	public User getUser() {
+		return user;
+	}
 
-    public void setOrderProducts(List<OrderProduct> orderProducts) {
-        this.orderProducts = orderProducts;
-    }
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-    public String getReceiver() {
-        return receiver;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
+	public List<OrderProduct> getOrderProducts() {
+		return orderProducts;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public void setOrderProducts(List<OrderProduct> orderProducts) {
+		this.orderProducts = orderProducts;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public String getReceiver() {
+		return receiver;
+	}
 
-    public String getMobile() {
-        return mobile;
-    }
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+	}
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public String getTelphone() {
-        return telphone;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public void setTelphone(String telphone) {
-        this.telphone = telphone;
-    }
+	public String getMobile() {
+		return mobile;
+	}
 
-    public double getPostage() {
-        return postage;
-    }
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
-    public void setPostage(double postage) {
-        this.postage = postage;
-    }
+	public String getTelphone() {
+		return telphone;
+	}
 
-    public double getDiscount() {
-        return discount;
-    }
+	public void setTelphone(String telphone) {
+		this.telphone = telphone;
+	}
 
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
+	public double getPostage() {
+		return postage;
+	}
 
-    public double getTotal() {
-        return total;
-    }
+	public void setPostage(double postage) {
+		this.postage = postage;
+	}
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
+	public double getDiscount() {
+		return discount;
+	}
 
-    public double getAmount() {
-        return amount;
-    }
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
+	public double getTotal() {
+		return total;
+	}
 
-    public int getStatus() {
-        return status;
-    }
+	public void setTotal(double total) {
+		this.total = total;
+	}
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getStatusStr() {
+		return statusStr;
+	}
+
+	public void setStatusStr(String statusStr) {
+		this.statusStr = statusStr;
+	}
 
 }

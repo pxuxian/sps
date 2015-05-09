@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Scope;
 import com.gail.sps.model.Cart;
 import com.gail.sps.model.Order;
 import com.gail.sps.model.ProductCategory;
+import com.gail.sps.model.User;
 import com.gail.sps.service.OrderService;
 import com.gail.sps.service.ProductCategoryService;
 import com.opensymphony.xwork2.ActionContext;
@@ -31,6 +32,7 @@ public class OrderAction extends BaseAction {
     private Map session = ActionContext.getContext().getSession();
     private Order order;
     private List<ProductCategory> pcList;
+    private List<Order> orderList;
 
     private void init() throws Exception {
         this.pcList = productCategoryService.limitSelect();
@@ -41,11 +43,7 @@ public class OrderAction extends BaseAction {
     public String toOrder() {
         try {
             this.init();
-            Object sessionCart = session.get("sessionCart");
-            Cart cart = null;
-            if (sessionCart != null) {
-                cart = (Cart) sessionCart;
-            }
+            Cart cart = (Cart) session.get("sessionCart");
             this.order = orderService.generaterOrder(cart);
             session.put("sessionOrder", this.order);
         } catch (Exception e) {
@@ -58,11 +56,9 @@ public class OrderAction extends BaseAction {
     public String submitOrder() {
         try {
             this.init();
-            Object sessionCart = session.get("sessionCart");
-            Cart cart = null;
-            if (sessionCart != null) {
-                cart = (Cart) sessionCart;
-            }
+            Cart cart = (Cart) session.get("sessionCart");
+            // TODO
+            order.setUser(new User(1));
             orderService.submit(order, cart);
             session.remove("sessionCart");
         } catch (Exception e) {
@@ -76,8 +72,9 @@ public class OrderAction extends BaseAction {
     public String myOrder() {
         try {
             this.init();
-
-
+            // TODO
+            User user = (User)session.get("sessionUser");
+            this.orderList = orderService.listByUser(user);
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
@@ -100,5 +97,13 @@ public class OrderAction extends BaseAction {
     public void setPcList(List<ProductCategory> pcList) {
         this.pcList = pcList;
     }
+
+	public List<Order> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(List<Order> orderList) {
+		this.orderList = orderList;
+	}
 
 }

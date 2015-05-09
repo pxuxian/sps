@@ -10,7 +10,7 @@
 <meta http-equiv="cache-control"
 	content="no-cache,no-store, must-revalidate" />
 <meta http-equiv="expires" content="0" />
-<title>今日特供-订单提交成功</title>
+<title>今日特供-成功</title>
 </head>
 
 <body>

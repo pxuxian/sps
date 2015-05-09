@@ -62,7 +62,7 @@
 	
 	<insert id="save" parameterType="Product">
 		insert into <include refid="table_name" />
-		values (null, #{code}, #{categoryId}, #{sectionId}, #{name}, #{descrip}, #{price}, #{logo}, #{detail}, #{status})
+		values (null, #{categoryId}, #{code}, #{sectionId}, #{name}, #{descrip}, #{price}, #{logo}, #{detail}, #{status})
 	</insert>
 	
 	<update id="update" parameterType="Product">

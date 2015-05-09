@@ -9,6 +9,13 @@ public class User extends BaseModel {
 	private Role Role;
 	private int status;
 
+	public User() {
+	}
+
+	public User(int id) {
+		this.id = id;
+	}
+
 	public int getId() {
 		return id;
 	}
