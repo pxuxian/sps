@@ -1,0 +1,110 @@
+/* CSS Document */
+.topHeader,.ban_cter,.midHeaderBox,.nav,.mainBox,.top_pic, .dingtongContent,.footer_ad a{ width:1200px;}
+.navBox{ margin-left:50px; width:500px;}
+.seoNav{ width:500px; overflow:hidden;}
+.searchBg{ width:417px;}
+.indexTabBox,.indexTabNav{ width:920px;}
+.indexTabNav li{ width:183px;}
+.indexTabNav .n2{ left:184px;}
+.indexTabNav .n3{ left:368px;}
+.indexTabNav .n4{ left:552px; width:183px;}
+.indexTabNav .n5{ left:736px; width:182px;}
+.indexTabNav .on{ width:183px;}
+.indexTabCon{ width:910px;}
+.indexTabCon li,.raceList li{ width:182px;}
+.indexTabCon li .indexTabPic{ padding:0 11px;}
+.indexTabCon li .indexTabTit,.indexTabCon li .indexTabPrice{ padding:0 6px;}
+.storeList{ width:1199px;}
+.raceBox,.raceListWrap{ width:918px;}
+.raceList{ width:910px; padding:0 4px;}
+.raceList li .raceListPic{ padding:0 11px;}
+.raceList li .raceListTit,.raceList li .raceListPrice{ width:170px; padding:0 6px;}
+.raceList li .raceListTime{ width:170px;}
+.spiritList{ width:985px;}
+.topTenBox,.topTenCon,.topTenConWrap{ width:985px;}
+.goods_mnudl{ overflow:hidden; zoom:1; width:1198px;}
+.goods_mnudl dt.goods_mnudtit,.goods_mnudl dt.goods_mnudtit3,.goods_mnudl dt.goods_mnudtit2{ width:63px; padding:10px 2px 0 55px;}
+.goods_mnudl dt.goods_mnudtit4{ width:65px; padding:10px 0 0 55px;}
+.goods_mnudl dd.goods_mnudd1,.goods_mnudl dd.goods_mnudd2{ padding:5px 8px; width:463px;}
+.goods_mnudl dd p a{ padding:0 8px;}
+.goods_mnudl dt.goods_mnudtit{background-position:29px -398px;}
+.goods_mnudl dt.goods_mnudtit3{background-position:29px -495px}
+.goods_mnudl dt.goods_mnudtit2{background-position:-147px -397px;}
+.goods_mnudl dt.goods_mnudtit4{ background-position:-150px -496px;}
+.indexAdBox p{ overflow:hidden; width:595px; height:70px;}
+.indexAdLeft{ float:left;}
+.indexAdRight{ float:right;}
+.searchCon{ width:423px;}
+.topRight li a{ padding:0 5px;}
+/*页脚*/
+.footer_ex,.footer_links{ width:1200px; padding:0;}
+.footer_ex li,.footer_ex li .ex_con{ width:142px;}
+.footer_links li{ width:100px; padding:0 25px 0 75px;}
+.footer_ex{padding:28px 0 0 0;}
+/*返回顶部*/
+.toTopBox{ margin-left:610px;}
+
+
+/*首页1200样式*/
+.user{width: 1200px;}
+.user .account{width: 759px;}
+.money li{width:189px;}
+.money li.first{width:188px;}
+.money li.first .title i{margin-left: 65px;}
+.money li.second .title i{margin-left: 65px;}
+.money li.third .title i{margin-left: 63px;}
+.money li.fourth .title i{margin-left: 64px;}
+.security .improve{margin-left: 35px;}
+.security .yzHome{margin-right: 62px;}
+.security .yzHome .phone{margin-right: 65px;}
+.middle .line .title i{margin-left: 18px;}
+.proListUc ul.img{margin-left: 30px;margin-right: 35px;}
+.proListUc .name,.proListUc .payWay, .proListUc .time, .proListUc .type{margin-right: 33px;}
+.colList ul li{ width:128px;}
+.colList ul li.first{margin-left: 0;}
+.colList .colFrame{width: 640px;margin-left:40px;}
+.prev{margin-left: 30px;}
+.next{margin-right: 30px;}
+.user .main,.commentAll{width: 985px;}
+.show .info{width: 871px;}
+.commentW .part1{width: 560px;}
+.commentW .part2{width: 200px;}
+.commentW .part3 {width: 223px;}
+
+.rightBox{ width:985px;}
+.userBotBox{ width:1200px;}
+.uBotRecommend{ width:1000px;}
+.ubRemList{ width:900px;}
+.ubRemList ul li{ width:115px;}
+.listWarp .listBox .msgContent{ width:832px;}
+.commentAll .listLeft,.rightConTitle .titleLeft{ width:100px;}
+.commentAll .listRight{width: 865px;}
+.commentBox .commentDetail{ width:790px;}
+.writeComment{ width:778px;}
+.replyList li .writeComment{ width:748px;}
+.replyList li .replyCon{ width:757px;}
+.zpContent table{ width:1105px;}
+.upPhLeft{ width:436px;}
+.upPhRight{ width:416px;}
+.upPhRecom-con a{ margin:0 7px 10px 0; }
+.question p,.answer p{width: 820px;}
+.xd textarea{ width:830px;}
+.sd .addItem-pro{ width:455px;}
+.commentCon_tr .commentCon_td2 .xscommentInter{ width:280px;}
+/*.mycolBox .mycConInt{ width:330px;}*/
+.infoDetail .infoDetail-r{ width:775px;}
+.ord-point .ordPointCancle{margin-right: 38px;}
+.ord-point .ope04{margin: 4px 36px 4px 0;}
+.ord-point b{margin-right:40px}
+.ord-point .ord-pointB{margin-left:26px}
+
+
+.uGuideBox{ width:1200px; margin-left:-600px;}
+.uGuideWrap01 .uGuide{ left:320px;}
+.uGuideWrap05{ width:759px; background:url(../../img/usercenter/guide/guideWrap05.jpg) no-repeat center center;}
+
+/*私人订制*/
+.myWorkCate li{ width:210px;}
+.myWorkPic{ width:921px;}
+.myWorkPic ul{ width:1050px;}
+.myWorkPic li{ margin-right:43px;}

@@ -1,0 +1,126 @@
+/* CSS Document */
+.topCollect p i,.topRight li i,.topBanner span,.logoAll,#nav_list i,.column span,.storeNav .on,.goods_mnudl dt,.gdhot_icon,.mainWrap .rightNavBox .rightNav li,.rightNavBox p,.raceListTime i,.hotSellNav .on i,.rightBtn,.topRight li em,.topRightM p i{background:url(../image/index_icon8.png) no-repeat 0 0;}
+/*头部*/
+.topHeaderWrap{ width:100%; height:27px; background:#f6f6f6; min-width:1000px;}
+.topHeader{ width:1000px; height:27px; line-height:27px; margin:0 auto; position:relative; z-index:104;}
+.topCollect{ float:left; height:27px; position:relative; z-index:100;width:290px;overflow: hidden;}
+.topCollect ul li{float:left;margin-right: 5px;}
+._login_status_panel .userName{display: inline-block;height: 27px;width: 81px;overflow: hidden;}
+.topCollect p{ float:left; margin-right:10px; display:inline; height:27px;}
+.topCollect p .star{ background-position:0 7px; display:block; width:13px; height:27px; float:left;}
+.topCollect p em{ float:left; font-style:normal; padding-left:5px;}
+.topCollect p .cell{ float:left; padding-left:5px;}
+.topCollect p span{ padding:0 3px; font-weight:bold; float:left;}
+.topCollect p .repCity{ font-weight:normal;}
+.topCollect p span a{ padding:0 5px;}
+.topCollect p .deli{ background-position:-27px 7px; display:block; width:25px; height:27px; float:left;}
+.topRight{ float:right; height:27px; position:relative;}
+.topRight li{ float:left; height:27px; position:relative; z-index:9998;}
+.topRight li span{ float:left;}
+.topRight li a{ padding:0 3px;}
+.topRight li i{ background-position:-77px 8px; width:1px; height:27px; display:inline-block; float:left; margin:0 5px;}
+.topRight li .userCenter{ float:left;}
+.topRight li .wholeSale{ float:left;}
+.topRight li .mobilePhone{ float:left;}
+.topRight li .wineRe{float:left;color:#cc0000; }
+.topRight li .mobile{ background-position:0 -27px; width:13px; height:27px; margin:0 0 0 5px;}
+.topRight li .car{ float:left; background-position:-33px -22px; width:13px; height:27px; margin:0 0 0 5px;}
+.topRight li .qty{ float:left; font-size:12px; color:#f22e00; font-weight:bold; line-height:27px; height:27px; padding-right:5px;}
+.topRight li .cartHand{ float:left; padding-right:0;}
+.topRight li .siteNav{ float:left;}
+.topRight li strong{ color:#ca1926; font-style:italic; font-size:16px; position:relative; top:2px; padding-left:5px;}
+.topRight .hotTel{ padding-left:5px;}
+.topRight li em{ background-position:0 -184px; float:left; width:9px; height:7px; display:block; margin-top:12px; overflow:hidden; transition:all 0.5s ease-in-out 0s; -webkit-transition:all 0.5s ease-in-out 0s;}
+.topRight li:hover em{ transform:rotate(180deg); -webkit-transform:rotate(180deg); margin-top:10px;}
+.topRight li .topRightHover{ background-position:0 -192px; margin-top:11px;}
+.hd_mobile_list .dd{ background:#fff;}
+.topRight li font{ float:left; display:block; font-size:12px;}
+.topRight li .userName{ width:60px; height:27px; overflow:hidden; text-align:right;}
+.home a{ float:left; color:#CA1926; }
+/*通栏*/
+.topBanner{ width:100%; background:url(../image/topbanner.jpg) no-repeat top center scroll; height:90px; overflow:hidden;}
+.topBanner a{ width:1000px; margin:0 auto; height:90px; display:block; position:relative;}
+.topBanner .topOpen{ background-position:-120px 0; display:block; width:17px; height:40px; position:absolute; right:0; top:5px; cursor:pointer; z-index:10;}
+.topBanner .topClose{ background-position:-141px 0; display:block; width:17px; height:40px; position:absolute; right:0; top:5px; cursor:pointer; z-index:10;}
+.top_banbox{ background: url(../image/topbanner.jpg) no-repeat top center scroll; display:none;opacity:0.2; height:90px; overflow:hidden;}
+.top_banbox2{ height:0px; overflow:hidden;}
+.top_banner{ position:relative; zoom:1; background:#fff; z-index:9;}
+.top_pic,.dingtongContent{ width:1000px; margin:0 auto; overflow:hidden;}
+.top_pic area,.dingtongContent area{ cursor:pointer;}
+.top_pic img,.dingtongContent img{ display:block;}
+.hdban_close,.hdban_close2{ position:absolute; right:5px; color:#fff !important; text-decoration:none; display:block; line-height:20px; width:40px; height:25px; text-indent:-9999px; background:url(http://img01.jiuxian.com/img1/nsy/untitled0.jpg) 0 -35px no-repeat; border-radius:1px; overflow:hidden;}
+.hdban_close{ top:5px;}
+.hdban_close2{ background-position:0 0; top:5px;}
+/*搜索层*/
+.midHeader{ width:100%; height:90px; background:#fff;}
+.midHeaderBox{ width:1000px; height:90px; margin:0 auto;  position:relative; z-index:102;}
+.jxwLogo{ float:left; width:257px; height:63px; margin-top:13px;}
+.jxwLogo p{ float:left;}
+.jxwLogo .jxwIndex{ width:140px;}
+.jxwLogo .jxwTopic{ width:117px; float:right;}
+.jxwLogo .jxwIndex a{ width:140px;}
+.jxwLogo .jxwTopic a{ width:117px;}
+.jxwLogo p a{ display:block; height:63px;}
+.navBox{ width:350px; float:left; margin:15px 0 0 25px; display: inline;}
+.searchBox{ height:41px;position: relative; z-index:10;}
+.searchLeft{ background: url(../image/searchleft.jpg) no-repeat; float:left; width:3px; height:41px;}
+.searchBg{ background:url(../image/searchbg.jpg) repeat-x; width:267px; height:41px; float:left; border:none; line-height:41px; padding-left:5px; color:#434343;}
+.searchBtn{ background:url(../image/searchBtn.jpg) no-repeat; width:75px; height:41px; float:left; cursor:pointer; line-height:41px; font-size:14px; color:#fff; text-align:center; font-weight:bold; border:none;}
+.seoNav{ width:350px; height:24px; line-height:24px; color:#999; overflow:hidden;}
+.seoNav a{ padding:0 5px; color:#999;}
+.seoNav a:hover{ color:#cc0001;}
+.seoNav .red{ color:#c41921;}
+.logoAll{ background-position:0 -115px; width:342px; height:42px; float:right; margin-top:22px;}
+.logoAll a{ width:114px; height:42px; display:block; float:left;}
+/*搜索框*/
+.topCollect p{position: relative;}
+.topCollect p .repCity {position: relative;}
+.deli_citybx { display: none; position: absolute; left: 117px; top: 27px; z-index: 9999; background: #fff; width: 300px; padding: 5px 10px; border: 1px solid #ccc; box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4); overflow: hidden; border-radius: 2px;}
+.deli_citylt li { line-height: 24px; clear: both; zoom: 1; overflow: hidden; border-bottom: 1px solid #D6D6D6;}
+.deli_citylt li em { float: left; font-style: normal; width: 50px; text-align: center; font-weight: bold; display: block; color: #666;}
+.deli_citylt li p a { display: inline-block; vertical-align: baseline; padding: 0 5px; color: #444;}
+.delcty_close, .delcty_close:hover { cursor: pointer;}
+.delcty_close, .delcty_close:hover { clear: both; position: absolute; text-align: center; font-size: 16px; width: 15px; height: 15px; line-height: 15px; font-family: Verdana, Geneva, sans-serif; right: 5px; top: 0; text-decoration: none; color: #F00;}
+/*搜索下拉框*/
+.searchCon{display:block;background: #FFFFFF;border: #B8000E solid 1px;border-top: none;width:273px;position: absolute;top: 41px;left: 1px; z-index: 200}
+.searchCon ul a {display: block;line-height: 30px;border-bottom: #E7E7E7 dashed 1px;height: 30px;background-color: rgb(255, 255, 255); text-decoration: none;}
+.searchCon .searchName{float: left;width:162px;line-height: 30px;padding-left: 5px;height: 30px;color: #000000;cursor: pointer;cursor: hand;display: block;overflow: hidden;}
+.searchCon .searchSum{float: right;width: 100px;text-align: right;padding-right: 5px;color: #B6B6B6;}
+.searchCon .searchSum font{color: #B6B6B6;font-size: 12px;}
+.searchCon .searchClose{float:right;text-align: right;display: block; width:40px; padding-right: 10px;color: #999999; height:30px; line-height:30px; cursor: pointer;}
+/*网站导航*/
+.webNav{position: relative; z-index:900;}
+.webNav .siteNavs{ display: none; clear: both; background: #fff; border-top: none; position: absolute; top: 27px; left: -3px; width: 86px; z-index: 999;}
+.webNav .siteNav p { height: 26px; width: 73px;}
+.webNav .siteNavs a{display: block; width: 80px;height: 25px; border: 1px solid #ccc; padding: 0; padding-left: 5px; }
+/*购物车列表*/
+.carList{ border:1px solid #ddd; border-top: none; width:250px; background:#fff; padding:10px 8px; position:absolute; left:-6px; top:27px; z-index:9999;}
+.carList h3{ height:30px; line-height:20px; font-size:12px; color:#222;}
+.proList{}
+.proList li{ border-bottom:1px solid #ddd; height:auto; padding:5px 0; border-bottom:1px dashed #ddd; overflow:hidden;}
+.proList li .proListDb div{ float:left;}
+.proList li .proListDb{ height:auto;}
+.proList li .proPic{ width:40px; height:40px; overflow:hidden; text-align:center;}
+.proList li .proPic a img{ width:40px; height:40px;}
+.proList li .proTit{ width:120px; margin-left:10px; height:40px; line-height:18px; overflow:hidden; display:inline; text-align:left;}
+.proList li .proPrice{ width:80px; float:right; height:40px; line-height:20px; overflow:hidden; text-align:right;}
+.proList li .proPrice .proPriceD{ font-weight:bold; color:#CD0100; font-family:"Verdana"; width:80px; height:20px; overflow:hidden;}
+.proList li .proPrice .proD{ cursor:pointer;}
+.carList .carFt{ font-weight:bold; text-align:right; height:20px; line-height:20px; margin-top:10px; color:#222;}
+.carList .carFt span{ float:none; color:#CD0100;}
+.carList .carBtn{ height:24px; margin-top:5px;}
+.carList .carBtn a{ color:#fff; float:right; display:block; background:#CD0100; border-radius:5px; width:90px; height:24px; text-align:center; line-height:24px;}
+.carList .carBtn a:hover{ color:#fff; text-decoration:none;}
+/*手机酒仙网*/
+.hd_mobile_list { clear: both; background: #fff; border: #ddd solid 1px; border-top: none; border-left: none; position: absolute; top: 27px; left: -8px; width: 112px; z-index: 999;}
+.hd_mobile_list p { border-left: #ddd solid 1px; height:26px; padding-left: 3px; width: 103px;}
+#dd1 a,#dd2 a,#dd3 a { height: 25px; line-height: 25px; float: left; font-family: Arial, Helvetica, sans-serif; text-align: left; padding:0 0 0 5px;}
+#dd3 a{ height:26px; line-height:26px;}
+#dd1 i,#dd2 i,#dd3 i{ display: inline-block; float:left; height:20px; margin:5px 0 0 2px;}
+#dd1 i{ background-position: -403px -169px; width:9px;}
+#dd2 i{ background-position: -403px -200px; width:12px;}
+#dd3 i{ background-position: -403px -230px; width:11px;}
+#dd1{ border-bottom:1px solid #ddd;}
+#dd3{ border-top:1px solid #ddd;}
+.hd_mobile_pix { clear: both; background: #f9f9f9; border: #ddd solid 1px; border-right: none; padding: 4px; height: 72px; width: 72px; position: absolute; top: 26px; left: -86px; z-index: 1000;}
+
