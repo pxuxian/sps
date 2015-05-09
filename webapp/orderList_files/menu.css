@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+/*导航*/
+#nav_list{ background:#a6050d; width:210px; box-shadow:1px 2px 6px #222; cursor:pointer; z-index:10; position:relative;}
+#nav_list i{ background-position:0 -201px; width:12px; height:40px; display: inline-block; float:left; margin-left:17px;}
+#nav_list p{ float:left; height:40px; line-height:40px; text-indent:10px; font-size:14px; color:#fff; font-weight:bold;}
+.nav_bg{ height:40px; background:#c41921; min-width:1000px; z-index:101; position:relative;}
+.nav{ width:1000px; height:40px; margin:auto; position:relative; top:0px; left:0px; z-index:1;}
+.column{ height:40px; width:100%;}
+.column .mjqc{ position:relative; z-index:1;}
+.column .hlg{ position:relative; z-index:2;}
+.column ul li{ float:left;}
+.column ul li a{ background:url(../image/nnav_abg.jpg) no-repeat right; display:block; float:left; height:40px; line-height:40px; padding:0 14px; font-size:14px; text-align:center; color:#fff;}
+.column ul li .on{ background:#a6050d;}
+.column .mjqc .hot{ background-position:0 -69px; position:absolute; top:-5px; right:0px; font-size:0; z-index:2; line-height:0; display:block; width:29px; height:17px;}
+.column .mjqc .new{ background-position:-44px -69px; position:absolute; top:-5px; right:0px; font-size:0; z-index:2; line-height:0; display:block; width:29px; height:17px;}
+.column .mjqc .qing{background:url(../image/qing.gif) center no-repeat; position:absolute; top:-5px; right:0px; font-size:0; z-index:2; line-height:0; display:block; width:29px; height:17px;}
+.column ul li a:link,.nnav1 ul li a:visited{ color:#fff;}
+.column ul li a:hover{ background:#a6050d; text-decoration:none; color:#fff;}
+/*去结算*/
+.goHome{ width:109px; height:40px; position: absolute; top:0; right:0;}
+#mainbody{ min-width:1000px;}
+/*menu*/
+.jnavleft {position: absolute;top: 40px;left: 0px;z-index: 1010;}
+#nav {display: none;position: absolute;left: 0;top: 0;width: 208px;border: 1px solid #dadada;border-top: none;box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);background: #fff;}
+#nav .item{width: 208px;float: left;padding-bottom: 5px;cursor: pointer;height:69px; overflow:hidden;}
+#nav .last{ height:47px;padding-bottom: 3px;}
+#nav li h3 {position: relative;display:block;width: 185px;margin-left: 16px;height: 25px;line-height: 25px;font-size: 14px;font-family: "微软雅黑";color: #333;}
+#nav .cateCon p a {padding: 0 5px;float: left;display: inline-block;height: 20px;line-height: 20px;overflow:hidden;position:relative;}
+#nav .impot{background: #76665f;color: #fff;border-radius: 9px;}
+#nav li p {clear: both;width: 185px;height: 22px;line-height: 22px;margin: 0 auto;padding: 0;}
+#nav .item h3 i {background: url(http://misc.jiuxian.com/img/icon-hot.png) no-repeat;display: inline-block;width: 24px;height: 10px;margin-left: 10px;_margin-top: 8px;position: relative;vertical-align: middle;}
+#nav li h3 span {width: 18px;font-weight: 200;font-size: 12px;font-family: "新宋体";position: absolute;right: 0px;top: 0px;}
+#nav .single{background: #f1f1f1;}
+#nav .double{background: #fff;}
+.menu_eject {z-index: 1011;clear: both;zoom: 1;box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);position: absolute;left: 209px;top: 0px;width: 750px;*width: 760px;_width: 760px;background: #fff;border: #ddd solid 1px;}
+.sub_menu_left {width: 520px;*width: 530px;_width: 530px;float: left;padding: 10px 0px 10px 0;}
+.sub_menu_right {background:#FAFAFA;width: 202px;float: left;margin-left: 9px;overflow:hidden;padding-top:10px;padding-right:9px;padding-left:9px;display:inline;}
+.sub_menu_left .sub_menu_line{margin-left: 20px;height: 25px;line-height: 25px;font-weight: bold;font-size: 14px;border-bottom: #000 solid 2px;font-family: "微软雅黑";text-align: left;color: #333;clear: both;}
+.sub_menu_box{display: inline-block;padding-left: 20px;padding-top: 5px;vertical-align: top;}
+.sub_menu_box a {color: #646464;margin-right: 5px;width: 72px;height:24px;overflow: hidden;display: block;float: left;line-height: 24px;white-space: nowrap;vertical-align: middle;}
+.sub_menu_box a.bh{color: red;}
+.sub_menu_left .sub_row{ width: 260px; float: left;}
+.sub_menu_right a{display: inline-block;}
+.sub_menu_right .sub_menu_line {height: 25px;line-height: 25px;font-weight: bold;font-size: 14px;font-family: "微软雅黑";text-align: left;color: #333;clear: both;}
+.sub_menu_right .sub_menu_rg li{margin-bottom: 5px;}
+.sub_menu_left .wideVersion{width: 529px;}
+.sub_menu_list .longLine{width: 500px;}
+.shortVersion .sub_menu_con .sub_menu_box a{ width: 48px;}
+.sub_menu_right .sub_menu_info{height: 25px;line-height: 25px;}
+#nav li.nav_menu_on{ background:#88766e;}
+#nav .nav_menu_on .cateCon p .impot{ color:#666; background:#fff;}
+#nav li.nav_menu_on h3 a,#nav li.nav_menu_on h3 span,#nav li.nav_menu_on p a{ color:#fff;}
+/*左侧导航菜单结束*/
+#turn{ height:420px; width:100%; position:relative; z-index:1;}
+#bigUl{ width:100%; height:420px; position:absolute; z-index:1}
+#bigUl li{ width:100%; position:absolute; z-index:0; height:420px;}
+#bigUl li .bigImg{ display:block; width:100%; height:100%; position:absolute; left:0; top:0px; overflow:hidden; }
+.ban_cter{ height:420px; width:1000px; position:relative; margin:0 auto; z-index:11;}
+.mav{ width:190px; height:390px; position:absolute; top:15px; right:0; z-index:7;}
+.mav a{ display:block; width:190px; height:130px; position:relative;}
+.mav a i{ position:absolute; left:10px; bottom:0; width:170px; height:1px; background:#cecece; overflow:hidden;}
+.mav span{ width:190px; height:130px; background:url(http://misc.jiuxian.com/img/ln_bg.png) no-repeat; display:none;}
+.mask1{ position:absolute; left:0; top:0;}
+.mask2{ position:absolute; left:0; top:130px;}
+.mask3{ position:absolute; left:0; top:260px;}
+.smallBtn{ position:absolute; width:100%; left:0; top:385px; height:25px; text-align:center; z-index:9999;}
+.smallBtn #small{position:relative; margin:0 auto; z-index:9999; height:25px; width:322px;}
+.smallBtn #small li{float:left; width:22px; height:22px;font-size:12px; font-weight:bold; margin-right:10px; border-radius:50%; background:#222222; opacity:0.8;  color:#fff; box-shadow:0 0 5px; line-height:22px; cursor:pointer;}
+.smallBtn #small li.on{ background:#C40000;}
+/* .smallBtn{ position:absolute; width:100%; left:0; top:385px; text-align:center; z-index:1010;}
+#small{ margin:0  auto; display:none;}
+#small li{    float: left; margin-right: 8px; display: inline; width: 22px; height: 22px; line-height: 22px;font-size: 12px;filter:alpha(opacity:80);opacity:0.8}
+#small li span{  display:block; width:100%px; height:100%; background:#222; border-radius:50%; box-shadow:0 0 5px rgba(57, 57, 57, 0.6); color:#ffffff; text-decoration:none; cursor:pointer}
+#small li.active span{ background:#c40000;} */
+.selectNav{ width:180px; margin:0 auto;}
+#nav .selectNav p .w1{ background:#76665f; color:#fff; border-radius:9px;}
+#nav .selectNav p a{ height:20px; line-height:20px;}
+#nav .nav_menu_on .selectNav p .w1{ color:#666; background:#fff;}
+#nav .nav_menu h3 i{ background:url(../image/icon-hot.png) no-repeat; display:inline-block; width:24px; height:10px; margin-left:10px; _margin-top:8px; position:relative; vertical-align:middle;}
