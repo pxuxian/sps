@@ -1,0 +1,231 @@
+@charset "gb2312"; 
+
+input, select, img {
+	vertical-align: middle
+}
+
+input, textarea, select {
+	font: 12px 'Î¢ÈíÑÅºÚ'
+}
+
+fieldset, img {
+	border: 0
+}
+
+ol, ul {
+	list-style: none
+}
+
+body {
+	font-family: "Î¢ÈíÑÅºÚ";
+	font-size: 12px;
+	line-height: 20px;
+	background: url(./images/logo/2013_bg.jpg);
+	color: #818181
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 1002px;
+	position: relative
+}
+
+.clearfix:after {
+	content: "";
+	height: 0;
+	visibility: hidden;
+	display: block;
+	clear: both
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.clear {
+	clear: both
+}
+
+a {
+	text-decoration: none;
+	color: #fd6600
+}
+
+a:hover {
+	text-decoration: none
+}
+
+.hidden {
+	line-height: 999px;
+	overflow: hidden
+}
+
+input {
+	*overflow: visible;
+	line-height: normal
+}
+
+.nav {
+	margin: 52px 0 40px 35px
+}
+
+.nav a {
+	color: #717171;
+	font-size: 14px;
+	margin: 0 5px
+}
+
+.nav a:hover, .nav a.on {
+	color: #5a3233
+}
+
+.main {
+	width: 945px;
+	background: #fff;
+	border: 1px #dfdfdf solid;
+	border-radius: 10px;
+	margin: 0 auto 30px;
+	box-shadow: 0 0 5px #ccc
+}
+
+.cooperation {
+	width: 400px;
+	height: 500px;
+	padding: 30px;
+	float: left;
+	color: #081119;
+	font-size: 16px
+}
+
+.cooperation span {
+	color: #5a3233
+}
+
+.coop_login {
+	margin: 30px 0 0 0
+}
+
+.coop_login .tx {
+	background-position: 0 -40px
+}
+
+.coop_login .tx:hover {
+	background-position: -194px -40px
+}
+
+.login_box {
+	font-size: 16px;
+	color: #1bafdf;
+	padding: 30px;
+	width: 400px;
+	float: left;
+	border-right: 1px #ccc solid
+}
+
+.login_box span {
+	color: #5a3233;
+	padding-bottom: 20px;
+	display: inline-block
+}
+
+.login_tab {
+	width: 250px;
+	margin: 20px auto
+}
+
+.login_tab li {
+	position: relative;
+	float: left;
+	width: 115px;
+	margin: 0 5px
+}
+
+.login_tab li a {
+	width: 115px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	text-align: center;
+	color: #757575
+}
+
+.login_tab li span {
+	display: none
+}
+
+.login_tab li.on a, .login_tab li:hover a {
+	width: 115px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	text-align: center;
+	background: #1bafdf;
+	color: #fff
+}
+
+.login_tab li.on span, .login_tab li:hover span {
+	position: absolute;
+	background: url(./images/logo/2013btn.jpg) no-repeat center;
+	width: 10px;
+	height: 5px;
+	bottom: -5px;
+	width: 115px;
+	left: 0;
+	display: block
+}
+
+.login_con {
+	width: 430px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #a1a1a1
+}
+
+.control-group .input-xlarge {
+	width: 290px;
+	height: 35px;
+	*line-height: 35px
+}
+
+.control-group .input-xsmall {
+	width: 100px;
+	height: 35px;
+	*line-height: 35px
+}
+
+.control-group {
+	margin-bottom: 10px
+}
+
+.control-label {
+	float: left;
+	width: 60px;
+	padding-top: 5px;
+	text-align: right;
+	cursor: pointer;
+	line-height: 35px
+}
+
+.controls {
+	margin-left: 80px
+}
+
+.help-block {
+	margin-bottom: 10px;
+	font-size: 12px
+}
+
+.zc_btn {
+	background: url(./images/logo/2013btn.jpg) no-repeat;
+	width: 182px;
+	height: 48px;
+	display: block
+}
+
+.zc_btn:hover {
+	background-position: 0 -48px
+}

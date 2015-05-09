@@ -10,6 +10,8 @@ public interface GenericDao<T extends BaseModel, ID extends Serializable> {
     T getById(ID id) throws Exception;
 
     List<T> limitSelect(T t) throws Exception;
+    
+    List<T> select(T t) throws Exception;
 
     int count(T t) throws Exception;
 

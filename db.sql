@@ -1,6 +1,24 @@
 drop database if exists sps;
 create database sps;
 use sps;
+
+drop table if exists t_role;
+create table t_role (
+	id int(11) primary key auto_increment,
+	name varchar(50) not null
+);
+insert into t_role values (1, "普通用户");
+insert into t_role values (100, "系统管理员");
+
+drop table if exists t_user;
+create table t_user (
+	id int(11) primary key auto_increment,
+	role_id int(11) not null,
+	username varchar(50) UNIQUE not null,
+	password varchar(50) not null,
+	status int(11) not null
+);
+
 drop table if exists t_product_category;
 create table t_product_category (
 	id int(11) primary key auto_increment,
