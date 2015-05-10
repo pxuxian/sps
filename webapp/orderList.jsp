@@ -2,19 +2,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="common.jsp"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="./orderList_files/base-order.css" type="text/css"
-	rel="stylesheet"></link>
-<link href="./orderList_files/header.css" rel="stylesheet"
+<link href="./styles/base-order.css" type="text/css" rel="stylesheet"></link>
+<link href="./styles/header.css" rel="stylesheet" type="text/css"></link>
+<link href="./styles/menu.css" type="text/css" rel="stylesheet"></link>
+<link href="./styles/user.css" rel="stylesheet" type="text/css"></link>
+<link href="./styles/user_nav.css" rel="stylesheet" type="text/css"></link>
+<link href="./styles/user_1200.css" id="newLink" rel="stylesheet"
 	type="text/css"></link>
-<link href="./orderList_files/menu.css" type="text/css" rel="stylesheet"></link>
-<link href="./orderList_files/user.css" rel="stylesheet" type="text/css"></link>
-<link href="./orderList_files/user_nav.css" rel="stylesheet"
-	type="text/css"></link>
-<link href="./orderList_files/user_1200.css" id="newLink"
-	rel="stylesheet" type="text/css"></link>
 <title>今日特供-我的订单</title>
 </head>
 
@@ -23,7 +21,7 @@
 
 	<div class="user clearfix">
 		<div class="uBread">
-			<a href="/"><b>我的特供</b></a><i>&gt;</i><a href="javascript:;">交易管理</a><i>&gt;</i><em>我的订单</em>
+			<a href="javascript:;">交易管理</a><i>&gt;</i><em>我的订单</em>
 		</div>
 		<!-- 左侧导航begin -->
 		<div class="sideNav">
@@ -45,7 +43,7 @@
 				<h2>
 					<i></i>我的订单
 				</h2>
-				<form id="orderForm" name="orderForm" action=""
+				<form id="orderForm" name="orderForm" action="myOrder.action"
 					onkeydown="if(event.keyCode==13) return false;">
 					<div class="myodSearch">
 						<!-- <div class="os-search">
@@ -60,74 +58,92 @@
 				<div class="myordCon">
 					<ul class="moConHead" style="width: 982px;">
 						<li class="moh1">商品信息</li>
-						<li class="moh2">收货人</li>
-						<li class="moh3">实付金额</li>
-						<li class="moh4">状态</li>
+						<li class="moh2">价格</li>
+						<li class="moh3">数量</li>
+						<li class="moh4">金额</li>
 						<li class="moh5">操作</li>
 					</ul>
-					<!-- <div class="moConBoxEmpty">
-						<div class="moConBoxEmptyFrame">
-							<i></i><span>暂无订单</span>
-						</div>
-					</div> -->
-					<div class="moConBox">
-						<div class="moCon-ord">
-							<div class="ord-num">
-								<!-- <span>订单编号：<a href="/" target="_blank">17150509082922815571</a></span><i>|</i><span
-									class="ord-tim">下单时间：<em>2015-05-09 20:29:23</em></span> -->
+					<c:if test="${empty orderList }">
+						<div class="moConBoxEmpty">
+							<div class="moConBoxEmptyFrame">
+								<i></i><span>暂无订单</span>
 							</div>
-							<table class="ord-detailTab" cellpadding="0" cellspacing="0"
-								border="0">
-								<tbody>
-									<c:forEach items="${orderList }" var="order">
-										<tr>
-											<td class="tdmoh1">
-												<div class="ordPicBox clearfix">
-													<a class="proId"
-														href="detail.action?id=$"
-														target="_blank"> <img
-														src="./orderList_files/62e75787c134447891e78555f1bbab371.jpg"
-														width="50" height="50" title="法国巴朗德公爵干红葡萄酒750ml" /></a>
-												</div>
-											</td>
-											<td class="tdmoh2">aaa</td>
-											<td class="tdmoh3">
-												<p class="ord-price">¥${order.total }</p>
-											</td>
-											<td class="tdmoh4">
-												<div class="opePending">
-													<span>${order.statusStr }</span>
-												</div>
-											</td>
-											<td class="tdmoh5">
-												<!-- <p>
-													<a class="ope01" target="_blank"
-														href="http://member.jiuxian.com/trademanage/order_detail-103399536.htm">查看</a>
-												</p> -->
-													<p>
-														<a class="ope04" href="javascript:;"
-															onclick="location.href=&#39;http://pay.jiuxian.com/gopay.htm?orderId=103399536&#39;">付款</a>
-													</p>
-													<p>
-														<a class="ope01 ordPointCancle" href="javascript:;"
-															onclick="is_cancel_order(103399536)">取消订单</a>
-													</p>
-											</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
 						</div>
-					</div>
+					</c:if>
+					<br /> <br />
+					<c:forEach items="${orderList }" var="order">
+						<div class="moConBox">
+							<div class="moCon-ord">
+								<div class="ord-num">
+									<span>订单编号：<a href="/" target="_blank">${order.number }</a></span><i>|</i><span
+										class="ord-tim">下单时间：<em><fmt:formatDate value="${order.createTime }" pattern="yyyy-MM-dd HH:mm:ss" /></em></span>
+								</div>
+								<table class="ord-detailTab" cellpadding="0" cellspacing="0"
+									border="0">
+									<tbody>
+										<c:forEach items="${order.orderProducts }" var="orderProduct"
+											varStatus="rownum">
+											<tr class="ord-detailTab">
+												<td class="tdmoh1">
+													<div class="ordPicBox clearfix">
+														<a class="proId" href="detail.action?id=$" target="_blank">
+															<img
+															src="/upload/img/product/logo/${orderProduct.product.logo }"
+															width="50" height="50" />
+														</a> <a class="proId" href="detail.action?id=$"
+															target="_blank"> ${orderProduct.product.name } </a>
+													</div>
+												</td>
+												<td class="tdmoh2">${orderProduct.product.price }</td>
+												<td class="tdmoh3">${orderProduct.count}</td>
+												<c:if test="${rownum.count == 1 }">
+													<td class="tdmoh4" rowspan="${order.count }">
+														<p class="ord-price">¥${order.total }</p>
+														<p class="ord-price">（含运费：${order.postage }）</p>
+													</td>
+													<td class="tdmoh5" rowspan="${order.count }">
+														<p class="opePending">
+															<span>${order.statusStr }</span>
+														</p>
+														<c:if test="${order.status == 0 }">
+															<p>
+																<a class="ope04" href="javascript:;"
+																	onclick="location.href=&#39;http://pay.jiuxian.com/gopay.htm?orderId=103399536&#39;">付款</a>
+															</p>
+															<p>
+																<a class="ope01 ordPointCancle" href="javascript:;"
+																	onclick="is_cancel_order(103399536)">取消订单</a>
+															</p>
+														</c:if>
+													</td>
+												</c:if>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- 翻页begin -->
-			<div class="uPageBox clearfix">
+			<!-- <div class="uPageBox clearfix">
 				<div class="uPage clearfix">
 					<a href="javascript:void(0);" class="uPrevpage">上一页</a> <a
-						class="num on">1</a> <a href="javascript:void(0)"
+						class="num off">1</a> <a href="javascript:void(0)"
 						class="uNnextpage">下一页</a>
 				</div>
+			</div> -->
+			<div align="center">
+				<s:include value="/pages.jsp">
+					<s:set var="commonPageList" value="orderList" />
+					<s:param name="formId">
+						orderForm
+					</s:param>
+					<s:param name="formaction">
+						/myOrder.action
+					</s:param>
+				</s:include>
 			</div>
 			<!-- 翻页end -->
 		</div>

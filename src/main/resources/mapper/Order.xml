@@ -4,6 +4,8 @@
 <mapper namespace="com.gail.sps.dao.OrderDao">
 	<resultMap type="Order" id="OrderRs">
 		<result column="id" property="id" />
+		<result column="number" property="number" />
+		<result column="create_time" property="createTime" />
 		<result column="receiver" property="receiver" />
 		<result column="address" property="address" />
 		<result column="mobile" property="mobile" />
@@ -25,7 +27,7 @@
 		t_order
 	</sql>
 	<sql id="fields">
-		o.id, o.user_id, o.receiver, o.address, o.mobile, o.telphone, o.amount, o.postage, o.discount, o.total, o.status
+		o.id, o.number, o.create_time, o.receiver, o.address, o.mobile, o.telphone, o.amount, o.postage, o.discount, o.total, o.status, o.user_id
 	</sql>
 	
 	<sql id="baseSearchCondition">
@@ -63,7 +65,7 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 		insert into <include refid="table_name" />
-		values (null, #{user.id}, #{receiver}, #{address}, #{mobile}, #{telphone}, #{amount}, #{postage}, #{discount}, #{total}, #{status })
+		values (null, #{number}, #{createTime}, #{receiver}, #{address}, #{mobile}, #{telphone}, #{amount}, #{postage}, #{discount}, #{total}, #{status }, #{user.id})
 	</insert>
 	
 	<insert id="saveOrderProduct" parameterType="OrderProduct">

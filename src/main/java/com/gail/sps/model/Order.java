@@ -1,5 +1,6 @@
 package com.gail.sps.model;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -11,12 +12,15 @@ public class Order extends BaseModel {
 	private static final long serialVersionUID = -7894012960696879502L;
 
 	private Integer id;
+	private String number;
+	private Date createTime;
 	private User user;
 	private String receiver; // 收货人
 	private String address;
 	private String mobile;
 	private String telphone;
 	private List<OrderProduct> orderProducts;
+	private int count;
 	private double amount; // 商品金额
 	private double postage; // 邮费
 	private double discount; // 优惠
@@ -30,6 +34,22 @@ public class Order extends BaseModel {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 
 	public User getUser() {
@@ -50,6 +70,14 @@ public class Order extends BaseModel {
 
 	public void setOrderProducts(List<OrderProduct> orderProducts) {
 		this.orderProducts = orderProducts;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	public String getReceiver() {

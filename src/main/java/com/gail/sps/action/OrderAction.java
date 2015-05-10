@@ -16,6 +16,7 @@ import com.gail.sps.model.ProductCategory;
 import com.gail.sps.model.User;
 import com.gail.sps.service.OrderService;
 import com.gail.sps.service.ProductCategoryService;
+import com.gail.sps.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 
 @Scope("prototype")
@@ -27,6 +28,8 @@ public class OrderAction extends BaseAction {
     private ProductCategoryService productCategoryService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private UserService userService;
 
     @SuppressWarnings("rawtypes")
     private Map session = ActionContext.getContext().getSession();
@@ -52,14 +55,22 @@ public class OrderAction extends BaseAction {
         return "success";
     }
 
-    @Action(value = "submitOrder", results = { @Result(name = "success", location = "/submitOrderSuccess.jsp")})
+    @SuppressWarnings("unchecked")
+	@Action(value = "submitOrder", results = { @Result(name = "success", location = "/submitOrderSuccess.jsp")})
     public String submitOrder() {
         try {
             this.init();
+            if (order.getUser() != null) {
+            	User u = order.getUser();
+            	userService.register(u);
+            	u = userService.getByUserName(u.getUsername());
+            	session.put("sessionUser", u);
+            }
             Cart cart = (Cart) session.get("sessionCart");
-            // TODO
-            order.setUser(new User(1));
+            User user = (User) session.get("sessionUser");
+            order.setUser(user);
             orderService.submit(order, cart);
+            
             session.remove("sessionCart");
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,16 +83,14 @@ public class OrderAction extends BaseAction {
     public String myOrder() {
         try {
             this.init();
-            // TODO
-            User user = (User)session.get("sessionUser");
-            this.orderList = orderService.listByUser(user);
+            this.orderList = orderService.listByUser((User)session.get("sessionUser"));
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
         return "success";
     }
-
+    
     public Order getOrder() {
         return order;
     }

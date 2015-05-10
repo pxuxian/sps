@@ -15,6 +15,7 @@
 <script type="text/javascript">
 $('document').ready(function() {
 	$('#sub').click(function() {
+		var flag = false;
 		var username = $('#username').val();
 		$('#username').focus(function(){$(this).next().text("");});
         if (username.length<=0){
@@ -37,8 +38,11 @@ $('document').ready(function() {
 				$('#password').next().text("用户名或密码不正确!");
 				return false;
 			}
+			flag = true;
 		});
-        $("#loginForm").submit();
+		if (flag == true) {
+			$("#loginForm").submit();
+		}
 	});
 });
 </script>

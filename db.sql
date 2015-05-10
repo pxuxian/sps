@@ -43,7 +43,8 @@ create table t_product (
 drop table if exists t_order;
 create table t_order (
 	id int(11) primary key auto_increment,
-	user_id int(11) not null,
+	number varchar(50) not null,
+	create_time datetime not null,
 	receiver varchar(20) not null,
 	address varchar(100) not null,
 	mobile varchar(20),
@@ -52,7 +53,8 @@ create table t_order (
 	postage double(10,2) not null,
 	discount double(10,2) not null,
 	total double(10,2) not null,
-	status int(11)
+	status int(11),
+	user_id int(11) not null
 );
 
 drop table if exists t_order_product;

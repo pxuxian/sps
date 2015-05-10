@@ -14,6 +14,11 @@
 </head>
 <body>
 	<div class="top-box">
+		<c:if test="${!empty sessionScope.sessionUser }">
+			<a href="myOrder.action">我的订单</a>
+			<a href="logout.action">退出</a>
+		</c:if>
+		
 		<div class="top-box01">
 			<div class="container-top">
 				<div class="logo-green">

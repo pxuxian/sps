@@ -69,6 +69,7 @@ public class UserAction extends BaseAction {
 			} else {
 				out.write("0");
 			}
+			this.user = null;
 			out.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -82,6 +83,7 @@ public class UserAction extends BaseAction {
 			response.setHeader("Cache-Control", "no-cache");
 			PrintWriter out = response.getWriter();
 			String msg = userService.login(user);
+			this.user = null;
 			out.write(msg);
 			out.close();
 		} catch (Exception e) {
@@ -101,6 +103,19 @@ public class UserAction extends BaseAction {
 			this.user = userService.getByUserName(user.getUsername());
 			session.put("sessionUser", user);
 			this.msg = "登录成功";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
+	
+	@Action(value = "logout", results = { @Result(name = "success", location = "/index.jsp") })
+	public String logout() {
+		try {
+			this.init();
+			session.remove("sessionUser");
+			this.user = null;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
