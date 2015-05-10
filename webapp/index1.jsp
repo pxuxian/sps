@@ -22,7 +22,7 @@ img {
 
 	<div class="box_body">
 		<!--广告位开始-->
-		<div class="container">
+		<%-- <div class="container">
 			<div class="show-banner statis_index_rotation">
 				<div class="showpic-x">
 					<ul class="showpic-num"
@@ -47,7 +47,7 @@ img {
 				</div>
 				<script src="./styles/showpic.js" type="text/javascript"></script>
 			</div>
-		</div>
+		</div> --%>
 		<!--广告位结束-->
 
 		<!--中间产品内容开始-->
@@ -130,7 +130,7 @@ img {
 								<div class="onelist-right-three ">
 									<dl>
 										<dt>
-											<a href="detail.jsp" target="_blank"><img
+											<a href="/" target="_blank"><img
 												src="/images/hot_1.jpg" width="80" height="78" /></a>
 										</dt>
 										<dd>

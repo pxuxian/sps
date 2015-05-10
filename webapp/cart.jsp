@@ -25,7 +25,7 @@
 <body>
 	<jsp:include page="top.jsp" />
 
-	<div>
+	<div style="font-family:微软雅黑;">
 		<div class="cen cart_gray_box mt20">
 			<table class="cart_list_tb">
 				<colgroup>

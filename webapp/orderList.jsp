@@ -14,6 +14,7 @@
 <link href="./styles/user_1200.css" id="newLink" rel="stylesheet"
 	type="text/css"></link>
 <title>今日特供-我的订单</title>
+
 </head>
 
 <body>
@@ -55,7 +56,7 @@
 				</form>
 			</div>
 			<div class="rightCon">
-				<div class="myordCon">
+				<div class="myordCon" style="font-family:微软雅黑;">
 					<ul class="moConHead" style="width: 982px;">
 						<li class="moh1">商品信息</li>
 						<li class="moh2">价格</li>
@@ -75,8 +76,8 @@
 						<div class="moConBox">
 							<div class="moCon-ord">
 								<div class="ord-num">
-									<span>订单编号：<a href="/" target="_blank">${order.number }</a></span><i>|</i><span
-										class="ord-tim">下单时间：<em><fmt:formatDate value="${order.createTime }" pattern="yyyy-MM-dd HH:mm:ss" /></em></span>
+									订单编号：<span style="color:blue;">${order.number }</span><i>|</i>
+									<span class="ord-tim">下单时间：<em><fmt:formatDate value="${order.createTime }" pattern="yyyy-MM-dd HH:mm:ss" /></em></span>
 								</div>
 								<table class="ord-detailTab" cellpadding="0" cellspacing="0"
 									border="0">
@@ -103,17 +104,17 @@
 													</td>
 													<td class="tdmoh5" rowspan="${order.count }">
 														<p class="opePending">
-															<span>${order.statusStr }</span>
+															<span style="color: #FFAA00;">${order.statusStr }</span>
 														</p>
 														<c:if test="${order.status == 0 }">
 															<p>
-																<a class="ope04" href="javascript:;"
-																	onclick="location.href=&#39;http://pay.jiuxian.com/gopay.htm?orderId=103399536&#39;">付款</a>
+																<a class="ope04" href="javascript:;" onclick="">付款</a>
 															</p>
-															<p>
-																<a class="ope01 ordPointCancle" href="javascript:;"
-																	onclick="is_cancel_order(103399536)">取消订单</a>
-															</p>
+															<%-- <p>
+																<a class="ope01 ordPointCancle"
+																	href="javascript:void(0);"
+																	onclick="cancelOrder(${order.id })">取消订单</a>
+															</p> --%>
 														</c:if>
 													</td>
 												</c:if>

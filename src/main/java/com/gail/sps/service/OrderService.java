@@ -14,4 +14,6 @@ public interface OrderService extends IGenericeService<Order, Integer> {
     
     public List<Order> listByUser(User user) throws Exception;
     
+    public String cancel(Integer id) throws Exception;
+    
 }

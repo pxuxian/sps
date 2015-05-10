@@ -74,7 +74,6 @@
 										onclick="addNum()" src="/images/bag_add.gif"></span>
 								</div>
 								<div class="detail-buy02">
-									<!-- <a class="btn-sure" style="text-decoration:none;" onclick="user_card('http://www.fruitday.com/');">立即购买</a> -->
 									<a href="javascript:void();" id="buy_now" class="buy-now"></a>
 								</div>
 								<div class="detail-xxfour">

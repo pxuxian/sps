@@ -99,4 +99,15 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 		return null;
 	}
 
+	@Override
+	public String cancel(Integer id) throws Exception {
+		Order order = this.getById(id);
+		if (order == null) {
+			return "取消订单出错，此订单不存在";
+		}
+		order.setStatus(OrderStatus.CANCEL);
+		orderDao.updateStatus(order);
+		return "";
+	}
+
 }

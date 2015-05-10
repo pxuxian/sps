@@ -92,6 +92,22 @@ public class OrderAction extends BaseAction {
         return "success";
     }
     
+    @Action(value = "cancelOrder", results = { @Result(name = "success", location = "/orderList.jsp")})
+    public String cancelOrder() {
+        try {
+            this.init();
+            String msg = orderService.cancel(id);
+            if (!"".equals(msg)) {
+            	return "error";
+            }
+            this.orderList = orderService.listByUser((User)session.get("sessionUser"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+        return "success";
+    }
+    
     public Order getOrder() {
         return order;
     }

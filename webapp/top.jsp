@@ -9,6 +9,12 @@
 		$("#cart_box").click(function() {
 			window.location.href = "/showCart.action";
 		});
+		$("#search_button").click(function() {
+			var wd = $('#search_keyword').val();
+				window.location.href = "/search.action?wd=" + wd;
+		});
+		
+		search_button
 	});
 </script>
 </head>
@@ -27,22 +33,24 @@
 			<div class="container-top">
 				<div class="logo-green">
 					<h1>
-						<a href="/"><img src="./images/fdaylogo.png" alt="今日特供-绿色网购" /></a>
+						<a href="/"><img src="./images/logo/logo.jpg" alt="今日特供-绿色网购" width="250px" height="80px" /></a>
 					</h1>
 				</div>
 				<div class="logo-adress">
 					<div class="logo-adress-one"></div>
 				</div>
 				<div class="search-wrap statis_search">
-					<div class="search-panel">
-						<div class="input-wrap" align="center">
-							<i class="sech"></i> <input id="search_keyword" type="text"
-								value="${wd }" class="logo-search-input" />
+					<form action="search.action" method="post" id="searchForm">
+						<div class="search-panel">
+							<div class="input-wrap" align="center">
+								<i class="sech"></i> <input id="search_keyword" type="text"
+									value="${wd }" name="wd" class="logo-search-input" />
+							</div>
+							<div class="search-button">
+								<button class="btn-search" id="search_button" type="button"></button>
+							</div>
 						</div>
-						<div class="search-button">
-							<button class="btn-search" id="search_button" type="button"></button>
-						</div>
-					</div>
+					</form>
 					<div class="search-ft">
 						<ul>
 							<li>热点搜索：</li>
@@ -50,7 +58,6 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="nav-mes">
 					<div class="nav-mes-cart">
 						<div class="menu-hd" id="cart_box">

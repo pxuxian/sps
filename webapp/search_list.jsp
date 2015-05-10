@@ -15,6 +15,13 @@
 	-moz-border-radius: 8px;
 } */
 </style>
+<script type="text/javascript">
+	$(function(){ 
+		$("#buy_now").click(function(){ 
+			$("#cartForm").submit();
+		}); 
+	}); 
+</script>
 </head>
 
 <body>
@@ -67,21 +74,22 @@
 						</div>
 						<div class="neilist-cp01-box">
 							<c:forEach items="${productList }" var="p">
+								<input type="hidden" name="cartItem.productId" value="${p.id }" />
 								<div class="neilist-pictu">
 									<ul>
 										<li class="cplist-p01"><a
 											href="detail.action?id=${p.id }" target="_blank"> <img
 												src="/upload/img/product/logo/${p.logo }" />
-										</a>
+										</a></li>
 										<li class="cplist-p02"><a
 											href="detail.action?id=${p.id }" target="_blank">${p.name }</a></li>
 										<li class="cplist-p04"><span class="green01"
 											id="pro_price_4058">￥${p.price }</span>
 											<div class="cplist-p05-btn02">
-												<a href="javascript:void(0)"
-													onclick="list_add_to_cart(&#39;http://127.0.0.1/&#39;,4058,5990,0,1)"
-													class="btn-buynow-other"></a>
-											</div></li>
+												<a href="addCart.action?cartItem.productId=${p.id }"
+													target="_blank" class="btn-buynow-other"></a>
+											</div>
+										</li>
 									</ul>
 								</div>
 							</c:forEach>
