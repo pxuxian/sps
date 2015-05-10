@@ -35,6 +35,17 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 	}
 
 	@Override
+	public PaginatedList<Order> limitSelect(Order t) throws Exception {
+		List<Order> orderList = super.limitSelect(t);
+		if (orderList != null) {
+			for (Order order : orderList) {
+				order.setStatusStr(OrderStatus.getString(order.getStatus()));
+			}
+		}
+		return (PaginatedList<Order>) orderList;
+	}
+
+	@Override
 	public Order generaterOrder(Cart cart) throws Exception {
 		Order order = new Order();
 		if (cart == null) {

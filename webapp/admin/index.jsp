@@ -66,6 +66,14 @@
 						text : '产品列表',
 						href : '/admin/product/list.action'
 					} ]
+				},
+				{
+					text : '订单管理',
+					items : [ {
+						id : '13',
+						text : '订单列表',
+						href : '/admin/order/list.action'
+					} ]
 				}]
 			} ];
 			new PageUtil.MainPage({

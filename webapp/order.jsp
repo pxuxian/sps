@@ -15,8 +15,8 @@
 			if (needReg == '1') {
 				var userNameFlag = true;
 				var username = $('#uname').val();
-				if (username.length<4 || username.length>12) {
-					alert("用户名长度应大于4个字符或小于12个字符，谢谢!");
+				if (username.length<=0) {
+					alert("请输入注册用户名，谢谢!");
 					return false;
 				}
 				$.ajaxSetup({
@@ -38,8 +38,8 @@
 				}
 				var pass = $('#password').val();
 				var pass2 = $('#password2').val();
-				if (pass.length<6 || pass.length>18) {
-					alert("为了您的账户安全，密码至少得设置6个字符，谢谢!");
+				if (pass.length<=0) {
+					alert("请输入密码，谢谢!");
 					return false;
 				} else if (pass != pass2) {
 					alert("您两次输入的密码不一致，谢谢!");
@@ -77,8 +77,8 @@
 					<c:if test="${empty sessionScope.sessionUser }">
 						<div class="step-1">
 							<div class="stepTitle">
-								<div class="field-tit">顺便注册一下，才能购买 ): </div>&nbsp;&nbsp;
-								<a href="login.jsp">去登录</a>
+								<div class="field-tit">你还没有登录 ，顺便注册一下 ): </div>&nbsp;&nbsp;&nbsp;
+								已经注册过，<a href="login.jsp"><font color="#FF8800">去登录</font></a>
 								<input type="hidden" id="needReg" value="1" />
 							</div>
 							<div class="orderAddressForm">

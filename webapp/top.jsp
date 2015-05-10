@@ -26,6 +26,7 @@
 				<a href="logout.action">退出</a>
 			</c:if>
 			<c:if test="${empty sessionScope.sessionUser }">
+				<a href="reg.jsp">注册</a>
 				<a href="login.jsp">登录</a>
 			</c:if>
 		</div>

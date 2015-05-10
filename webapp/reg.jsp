@@ -19,8 +19,8 @@ $('document').ready(function() {
 	$('#username').blur(function(){
 		var username = $('#username').val();
 		$('#username').focus(function(){$(this).next().text("");});
-        if (username.length<4 || username.length>12){
-			$(this).next().text("用户名长度不符合，长度应大于4个字符或小于12个字符");
+        if (username.length <=0 ){
+			$(this).next().text("请输入用户名");
 			userNameFlag = false;
             return false;
 		}
@@ -48,8 +48,8 @@ $('document').ready(function() {
         $('#password').focus(function(){$(this).next().text("");});
         $('#password2').focus(function(){$(this).next().text("");});
         //var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-		if(pass.length<6 || pass.length>18){
-			$('#password').next().text("为了您的账户安全，密码至少得设置6个字符");
+		if(pass.length<=0){
+			$('#password').next().text("请输入密码");
 			flogs = false;
 		}else if(pass != pass2){
 			$('#password2').next().text("sorry,您两次输入的密码不一致");
