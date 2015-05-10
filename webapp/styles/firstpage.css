@@ -56,8 +56,8 @@
 .all_right{float:right; width:288px; text-align:right; margin-top:20px;}
 .all_right a{float:right; width:288px; text-align:right; margin-top:20px;}
 .all_right a:hover{float:right; width:288px; text-align:right; margin-top:20px; background:none;}
-.all_left ul{ width:580px; height:auto;font-size:12px; font-family:"宋体"; color:#C00; line-height:36px;}
-.all_left ul li{font-size:12px; font-family:"宋体"; width:80px; text-align:left;}
+.all_left ul{ width:580px; height:auto;font-size:12px; font-family:"微软雅黑"; color:#C00; line-height:36px;}
+.all_left ul li{font-size:12px; font-family:"微软雅黑"; width:80px; text-align:left;}
 .all_left ul li a{color:#666;display:block; width:80px; text-align:left;}
 .all_left ul li a:hover{background:none; display:block; width:80px;text-align:left;}
 /*top_navs*/

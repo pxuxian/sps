@@ -21,7 +21,7 @@
 				<div class="breadcrumb">
 					<img src="/images/logo/error.jpg" alt="" width="180px" height="140px" /> 
 					<span style="font-size: 15px">
-						不好意思，出错了，请联系管理员。
+						不好意思，出错了，请重试或联系管理员。
 						<strong><a href="/">返回首页</a></strong>
 						<strong><a href="/myOrder.action"> 我的订单</a></strong>
 					</span> 

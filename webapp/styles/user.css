@@ -1,4 +1,3 @@
-/*右侧内容区公用样式*/
 .user table tr.botBor td {
 	border-bottom: 0px none;
 }
@@ -6,6 +5,7 @@
 .rightBox {
 	width: 785px;
 	float: right;
+	font-family:"微软雅黑";
 }
 
 .rightTit {
@@ -36,18 +36,8 @@
 
 .rightCon {
 	height: auto;
-	font-family: "宋体";
+	font-family: "瀹嬩綋";
 }
-/*翻页旧版*/
-/*.uPage{ text-align:right; font-family: arial; line-height: 25px; margin-top: 15px;}
-.uPage a { color: #000000; text-align: center;}
-.uPage a:hover { color: #CC0000; text-decoration: underline;}
-.uPage .p { border: 1px solid #ECECEC; font-size: 14px; margin: 0 1px; padding: 3px 7px 2px; position: relative;}
-.uPage .curp { background:#F7F7F7; border: 1px solid #ECECEC; color: #CB0003; font-size: 14px; font-weight: bold; margin: 0 1px; padding: 3px 7px 2px; position: relative;}
-.uPage .n0,.uPage .n1 { border: 1px solid #dddddd; font-family: 宋体; font-size: 12px; margin: 0 1px; padding: 5px 7px 4px; position: relative; top: -1px;}
-.uPage .n0 { color: #d8d8d8;}
-.uPage b{ color:#888;}*/
-/*翻页*/
 .uPageBox {
 	height: auto;
 }
@@ -99,7 +89,7 @@
 	*display: inline;
 	*zoom: 1;
 }
-/*评价详情面包屑*/
+/*璇勪环璇︽儏闈㈠寘灞�/
 .detail-guide {
 	height: 40px;
 	line-height: 40px;
@@ -142,7 +132,7 @@
 	{
 	background: url(../../img/usercenter/userIcon-24.png) no-repeat;
 }
-/*底部商品列表*/
+/*搴曢儴鍟嗗搧鍒楄〃*/
 .userBotW {
 	width: 100%;
 	height: auto;
@@ -381,12 +371,12 @@
 	color: #cc0000;
 	text-decoration: none;
 }
-/*底部商品列表end*/
-/*我的订单*/
+/*搴曢儴鍟嗗搧鍒楄〃end*/
+/*鎴戠殑璁㈠崟*/
 .myodSearch {
 	float: right;
 	padding-top: 11px;
-	font-family: "宋体";
+	font-family: "瀹嬩綋";
 }
 
 .myodSearch .os-time {
@@ -899,7 +889,7 @@
 .infoD li {
 	margin-bottom: 3px;
 }
-/*鎴戠殑鏀惰棌*/
+/*閹存垹娈戦弨鎯版*/
 .mycolNav {
 	height: 31px;
 	padding: 15px 0 6px;
@@ -1132,9 +1122,9 @@
 	color: #999;
 	text-decoration: underline;
 }
-/*璧甸洩鐝奺nd*/
+/*鐠х敻娲╅悵濂簄d*/
 
-/*鏍囬begin*/
+/*閺嶅洭顣絙egin*/
 .user .main {
 	width: 785px;
 	float: right;
@@ -1166,7 +1156,7 @@
 	*display: inline;
 	*zoom: 1;
 }
-/*鏍囬end*/
+/*閺嶅洭顣絜nd*/
 /*tab begin*/
 .user .tab {
 	height: 30px;
@@ -1216,7 +1206,7 @@
 	font-weight: normal;
 }
 /*tab end*/
-/*缈婚〉begin*/
+/*缂堝銆塨egin*/
 .page {
 	margin-top: 15px;
 	float: right;
@@ -1250,8 +1240,8 @@
 	color: #d8d8d8;
 	background: #fff;
 }
-/*缈婚〉end*/
-/*宸茶瘎璁哄尯鍩焍egin*/
+/*缂堝銆塭nd*/
+/*瀹歌尪鐦庣拋鍝勫隘閸╃剭egin*/
 .commentA {
 	border: 1px solid #e4e4e4;
 	border-top: none;
@@ -1377,8 +1367,8 @@
 	width: 64px;
 	height: 64px;
 }
-/*宸茶瘎璁哄尯鍩焑nd*/
-/*寰呰瘎璁哄尯鍩焍egin*/
+/*瀹歌尪鐦庣拋鍝勫隘閸╃剳nd*/
+/*瀵板懓鐦庣拋鍝勫隘閸╃剭egin*/
 .commentW {
 	border: 1px solid #e4e4e4;
 	border-top: none;
@@ -1748,9 +1738,9 @@
 .submit .share a.qq{background-position: -119px 0;}
 .submit .share a.renren{background-position: -154px 0;}
 .submit .share a.other{background-position: -176px -326px;}*/
-/*寮犺４end*/
+/*瀵姾锛攅nd*/
 
-/*鍟嗗搧淇℃伅*/
+/*閸熷棗鎼ф穱鈩冧紖*/
 .sideProduct {
 	width: 198px;
 	border: 1px solid #e4e4e4;
@@ -1867,7 +1857,7 @@
 
 .detailBox {
 	border: 1px solid #e4e4e4;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .commnetTitle {
@@ -2131,10 +2121,10 @@
 	display: none;
 }
 
-/*璐拱鍜ㄨ*/
+/*鐠愵厺鎷遍崪銊嚄*/
 .commentAll {
 	border: 1px solid #e4e4e4;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	width: 785px;
 }
 
@@ -2250,7 +2240,7 @@
 	font-weight: normal;
 }
 
-/*娑堟伅涓績*/
+/*濞戝牊浼呮稉顓炵妇*/
 .infoBox {
 	padding-left: 15px;
 }
@@ -2441,7 +2431,7 @@
 	padding-left: 5px;
 }
 
-/*鍛ㄥ痉蹇梕nd*/
+/*閸涖劌鐥夎箛姊昻d*/
 .rightTit .rt-couponInt {
 	float: right;
 	color: #666;
@@ -2736,7 +2726,7 @@
 	font-size: 14px;
 	font-family: "Microsoft Yahei";
 }
-/*鎴戠殑閲戝竵*/
+/*閹存垹娈戦柌鎴濈*/
 .golden-content {
 	background: #fbfbfb;
 	border-top: 1px solid #e4e4e4;
@@ -2937,7 +2927,7 @@
 	color: #0066CC;
 	padding-left: 5px;
 }
-/* 鎴戠殑棰勭害 */
+/* 閹存垹娈戞０鍕 */
 .commentCon_appoint, .commentCon_notice {
 	border: 1px solid #e4e4e4;
 	border-top: none;
@@ -3260,7 +3250,7 @@
 	background: #c30101;
 	cursor: pointer;
 }
-/* 鍒拌揣閫氱煡 */
+/* 閸掓媽鎻ｉ柅姘辩叀 */
 .toppro-arrNoti {
 	background: url(../../img/usercenter/wh.png) no-repeat left 12px;
 	padding: 2px 0 0 20px;
@@ -3307,8 +3297,8 @@
 	text-align: center;
 	overflow: hidden;
 }
-/*鍒樻end*/
-/*璐︽埛瀹夊叏begin*/
+/*閸掓ɑ顨nd*/
+/*鐠愶附鍩涚�澶婂弿begin*/
 .zpLevel {
 	height: 36px;
 	background: #fbfbfb;
@@ -3641,7 +3631,7 @@
 	line-height: 35px;
 	display: inline-block;
 	font-size: 12px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	border: 1px solid #e4e4e4;
 	background: #f7f7f7;
 	cursor: pointer;
@@ -3732,7 +3722,7 @@
 }
 
 .qjwYzm .qjwYzmChange {
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	color: #666;
 	font-size: 14px;
 }
@@ -3839,7 +3829,7 @@
 	color: #cc0000;
 	float: left;
 	display: inline-block;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	font-size: 12px;
 }
 
@@ -3965,8 +3955,8 @@
 	float: left;
 	font-size: 12px;
 }
-/*璐︽埛瀹夊叏end*/
-/*鍏朵粬绀煎埜*/
+/*鐠愶附鍩涚�澶婂弿end*/
+/*閸忔湹绮粈鐓庡煖*/
 .xsotherCou {
 	height: auto;
 	border: 1px solid #e4e4e4;
@@ -4031,7 +4021,7 @@
 .ocConList .xsoc-t2, .ocConList .xsoc-t3 {
 	font-size: 14px;
 }
-/*鎴戠殑绀煎搧鍗�/
+/*閹存垹娈戠粈鐓庢惂閸楋拷/
 .xsgiftCard{ height:37px;position:relative;line-height: 37px;margin-bottom: 15px;}
 .xsgiftCard *{float: left;display: inline-block;}
 .xsgiftCard b{ width:140px; text-align:right; padding-right:5px; height:37px;}
@@ -4097,7 +4087,7 @@
 .xsgiftList .ocConList .xsoc-t1 {
 	font-size: 14px;
 }
-/*璁㈤槄涓績*/
+/*鐠併垽妲勬稉顓炵妇*/
 .xssubspBox {
 	border: 1px solid #e4e4e4;
 }
@@ -4212,7 +4202,7 @@
 	padding-left: 20px;
 	display: inline-block;
 }
-/*鏀惰揣鍦板潃*/
+/*閺�儼鎻ｉ崷鏉挎絻*/
 .ln_addressBox {
 	border: 1px solid #e4e4e4;
 }
@@ -4424,7 +4414,7 @@
 	text-decoration: none
 }
 
-/*鍩烘湰淇℃伅begin*/
+/*閸╃儤婀版穱鈩冧紖begin*/
 .zpBaseInfo {
 	border: 1px solid #e4e4e4;
 	padding: 15px 31px 31px 31px;
@@ -4941,8 +4931,8 @@
 .rightTit .rt-couponInt  .redStrong {
 	color: #CC0000
 }
-/*鍩烘湰淇℃伅end*/
-/*涓婁紶澶村儚*/
+/*閸╃儤婀版穱鈩冧紖end*/
+/*娑撳﹣绱舵径鏉戝剼*/
 .uploadPhBox {
 	border: 1px solid #e4e4e4;
 	padding: 30px 40px;
@@ -5193,7 +5183,7 @@
 	margin-top: 0px;
 }
 
-/*璁㈠崟璇︽儏begin*/
+/*鐠併垹宕熺拠锔藉剰begin*/
 .zpProcess .ProcessPic, .zpProcess .ProcessPic2 {
 	background: url(../../img/usercenter/order.png) no-repeat;
 }
@@ -5203,7 +5193,7 @@
 	padding: 0 15px;
 	background-color: #fbfbfb;
 	margin: 10px auto 20px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .zpOrderSum .zpTopHalf {
@@ -5581,8 +5571,8 @@
 	color: #FFFFFF;
 	text-decoration: none;
 }
-/*璁㈠崟璇︽儏end*/
-/*鍟嗗搧鍏戞崲begin*/
+/*鐠併垹宕熺拠锔藉剰end*/
+/*閸熷棗鎼ч崗鎴炲床begin*/
 .rightTit span {
 	float: right;
 	height: 24px;
@@ -5693,7 +5683,7 @@
 	line-height: 26px;
 }
 
-/*鍟嗗搧鍏戞崲end*/
+/*閸熷棗鎼ч崗鎴炲床end*/
 .qjwTable .acc {
 	line-height: 37px;
 	height: 37px;
@@ -5725,7 +5715,7 @@
 	line-height: 36px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .ln_addressCon .acc {
@@ -5754,7 +5744,7 @@
 	line-height: 37px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .zpInfo .acc {
@@ -5785,7 +5775,7 @@
 	line-height: 14px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .zpPart2 .accNotic {
@@ -5809,7 +5799,7 @@
 	line-height: 14px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .message_pop .acc {
@@ -5840,7 +5830,7 @@
 	line-height: 14px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .right-content .acc {
@@ -5872,7 +5862,7 @@
 	line-height: 14px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .right-content .accCode {
@@ -5905,7 +5895,7 @@
 	line-height: 14px;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .right-content .accCode .accNoticCode {
@@ -5944,17 +5934,17 @@
 	float: left;
 	display: inline-block;
 	padding-left: 5px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
-/*杈规鍙樼孩*/
+/*鏉堣顢嬮崣妯煎*/
 #allInput .borderRed {
 	border: 1px solid #cc0000;
 }
 
 .qjwTable .qjwSubmit11 {
 	color: #666;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	width: 108px;
 	height: 35px;
 	line-height: 35px;
@@ -5972,7 +5962,7 @@
 	margin-right: 3px;
 }
 
-/*绌洪〉闈egin*/
+/*缁屾椽銆夐棃顣坋gin*/
 .commentAll .commentEmpty {
 	height: 59px;
 	text-align: center;
@@ -6069,9 +6059,9 @@
 .goldenEmpty td, .niuCoinEmpty td {
 	border-top: none;
 }
-/*绌洪〉闈nd*/
+/*缁屾椽銆夐棃顣媙d*/
 
-/* 寮圭獥*/
+/* 瀵湱鐛�/
 .popup .popupNoticeCon {
 	width: 395px;
 	height: 139px;
@@ -6083,7 +6073,7 @@
 	text-align: left;
 	font-size: 14px;
 	padding-left: 81px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	padding-bottom: 20px;
 }
 
@@ -6101,7 +6091,7 @@
 	margin: 8px 9px 0 0;
 	color: #666;
 	font-size: 14px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .popupNoticeCon .obtain .phoneTxt {
@@ -6111,7 +6101,7 @@
 	color: #666;
 	font-size: 16px;
 	font-weight: 700;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	border: 1px solid #e4e4e4;
 }
 
@@ -6123,7 +6113,7 @@
 	line-height: 35px;
 	display: inline-block;
 	font-size: 12px;
-	font-family: "瀹嬩綋" border : 1px solid #e4e4e4;
+	font-family: "鐎瑰缍� border : 1px solid #e4e4e4;
 	background: #f7f7f7;
 	cursor: pointer;
 	overflow: hidden;
@@ -6168,7 +6158,7 @@
 	border: 0;
 	cursor: pointer;
 }
-/* 寮圭獥 end */
+/* 瀵湱鐛�end */
 .popup .refund-pop {
 	padding: 20px;
 	width: 350px;
@@ -6221,7 +6211,7 @@
 	padding: 6px 12px;
 	margin: 0 15px;
 	font-size: 14px;
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 }
 
 .refund-btn a:hover {
@@ -6249,10 +6239,10 @@
 	color: #0066cc;
 }
 
-/*鑷畾涔塧lert寮圭獥start*/
+/*閼奉亜鐣炬稊濉ert瀵湱鐛tart*/
 .popIcon {
 	background: url(../../img/usercenter/popIcon.png) no-repeat 0 0;
-} /*鍏叡icon*/
+} /*閸忣剙鍙con*/
 .pop-modal {
 	display: none;
 	background: #000;
@@ -6267,7 +6257,7 @@
 	_position: absolute;
 	_top: expression(eval(document.documentElement.scrollTop));
 }
-/*寮瑰眰鏍峰紡1*/
+/*瀵懓鐪伴弽宄扮础1*/
 .pop-wrap1 {
 	display: none;
 	width: 400px;
@@ -6409,9 +6399,9 @@
 	color: #666666;
 	background: #fff;
 }
-/*鑷畾涔塧lert寮圭獥end*/
+/*閼奉亜鐣炬稊濉ert瀵湱鐛nd*/
 
-/*鎴戠殑浣滃搧*/
+/*閹存垹娈戞担婊冩惂*/
 .mt0 {
 	margin-top: 0;
 }
@@ -6645,7 +6635,7 @@
 }
 
 .waitingBox {
-	font-family: "瀹嬩綋";
+	font-family: "鐎瑰缍�;
 	color: #666;
 	text-align: center;
 	line-height: 20px;

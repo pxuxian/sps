@@ -55,7 +55,6 @@ $('document').ready(function() {
 		</div>
 		<div class="main clearfix">
 			<div class="login_box">
-				<span>成为会员</span>
 				<div class="login_con">
 					<form action="login.action" id="loginForm" method="post">
 						<div class="control-group">

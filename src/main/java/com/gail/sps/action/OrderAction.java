@@ -36,6 +36,7 @@ public class OrderAction extends BaseAction {
     private Order order;
     private List<ProductCategory> pcList;
     private List<Order> orderList;
+    private String msg;
 
     private void init() throws Exception {
         this.pcList = productCategoryService.limitSelect();
@@ -56,20 +57,20 @@ public class OrderAction extends BaseAction {
     }
 
     @SuppressWarnings("unchecked")
-	@Action(value = "submitOrder", results = { @Result(name = "success", location = "/submitOrderSuccess.jsp")})
+	@Action(value = "submitOrder", results = { @Result(name = "success", location = "/success.jsp")})
     public String submitOrder() {
         try {
             this.init();
             if (order.getUser() != null) {
             	User u = order.getUser();
             	userService.register(u);
-            	u = userService.getByUserName(u.getUsername());
-            	session.put("sessionUser", u);
+            	session.put("sessionUser", userService.getByUserName(u.getUsername()));
             }
             Cart cart = (Cart) session.get("sessionCart");
             User user = (User) session.get("sessionUser");
             order.setUser(user);
             orderService.submit(order, cart);
+            this.msg = "订单提交成功，查看订单并支付";
             
             session.remove("sessionCart");
         } catch (Exception e) {
@@ -113,6 +114,14 @@ public class OrderAction extends BaseAction {
 
 	public void setOrderList(List<Order> orderList) {
 		this.orderList = orderList;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
 }

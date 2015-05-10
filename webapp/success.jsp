@@ -22,7 +22,9 @@
 					<img src="/images/logo/success.gif" alt="" width="150px" height="150px" /> 
 					<span style="font-size: 15px">
 						${msg }
-						<strong><a href="/">首页</a></strong> 
+						<c:if test="${!empty sessionScope.sessionUser }">
+							<strong><a href="myOrder.action">我的订单</a></strong>
+						</c:if> 
 					</span> 
 					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 				</div>

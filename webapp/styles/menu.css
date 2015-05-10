@@ -29,7 +29,7 @@
 #nav .impot{background: #76665f;color: #fff;border-radius: 9px;}
 #nav li p {clear: both;width: 185px;height: 22px;line-height: 22px;margin: 0 auto;padding: 0;}
 #nav .item h3 i {background: url(http://misc.jiuxian.com/img/icon-hot.png) no-repeat;display: inline-block;width: 24px;height: 10px;margin-left: 10px;_margin-top: 8px;position: relative;vertical-align: middle;}
-#nav li h3 span {width: 18px;font-weight: 200;font-size: 12px;font-family: "新宋体";position: absolute;right: 0px;top: 0px;}
+#nav li h3 span {width: 18px;font-weight: 200;font-size: 12px;font-family: "微软雅黑";position: absolute;right: 0px;top: 0px;}
 #nav .single{background: #f1f1f1;}
 #nav .double{background: #fff;}
 .menu_eject {z-index: 1011;clear: both;zoom: 1;box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);position: absolute;left: 209px;top: 0px;width: 750px;*width: 760px;_width: 760px;background: #fff;border: #ddd solid 1px;}

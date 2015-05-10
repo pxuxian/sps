@@ -9,52 +9,61 @@
 <title>订单结算</title>
 
 <script type="text/javascript">
-$('document').ready(function() {
-	var userNameFlag = true;
-	$('#uname').blur(function(){
-		var username = $('#uname').val();
-		$('#uname').focus(function(){$(this).next().text("");});
-        if (username.length<4 || username.length>12){
-			$(this).next().text("用户名长度不符合，长度应大于4个字符或小于12个字符");
-			userNameFlag = false;
-            return false;
-		}
-		var url = "ajax_reg.action";
-		var data = {'user.username':username};
-		$.post(url, data, function(msg) {
-			if(msg != '0'){
-				$('#username').next().text("sorry, 已经有这个名字了，请您更换一个!");
-				userNameFlag = false;
-				return;
-			} else {
-				userNameFlag = true;
+	$('document').ready(function() {
+		$('#sub').click(function() {
+			var needReg = $('#needReg').val();
+			if (needReg == '1') {
+				var userNameFlag = true;
+				var username = $('#uname').val();
+				if (username.length<4 || username.length>12) {
+					alert("用户名长度应大于4个字符或小于12个字符，谢谢!");
+					return false;
+				}
+				$.ajaxSetup({
+					async : false
+				});
+				var data = {
+					'user.username' : username
+				};
+				$.post("ajax_reg.action", data, function(msg) {
+					if (msg != '0') {
+						alert("用户名已存在，请您更换一个，谢谢!");
+						userNameFlag = false;
+					} else {
+						userNameFlag = true;
+					}
+				});
+				if (userNameFlag == false) {
+					return false;
+				}
+				var pass = $('#password').val();
+				var pass2 = $('#password2').val();
+				if (pass.length<6 || pass.length>18) {
+					alert("为了您的账户安全，密码至少得设置6个字符，谢谢!");
+					return false;
+				} else if (pass != pass2) {
+					alert("您两次输入的密码不一致，谢谢!");
+					return false;
+				}
 			}
+			var receiver = $('#receiver').val();
+			var address = $('#address').val();
+			var mobile = $('#mobile').val();
+			if (receiver.length <= 0) {
+				alert("请输入收货人，谢谢！");
+				return false;
+			}
+			if (address.length <= 0) {
+				alert("请输入收货详细地址，谢谢！");
+				return false;
+			}
+			if (mobile.length <= 0) {
+				alert("请输入手机号码，谢谢！");
+				return false;
+			}
+			$("#orderForm").submit();
 		});
 	});
-	
-	$('#sub').click(function() {
-		if (userNameFlag == false) {
-			$('#username').next().text("sorry, 已经有这个名字了，请您更换一个!");
-			return false;
-		}
-        var flogs = true;
-        var pass = $('#password').val();
-        var pass2 = $('#password2').val();
-        $('#password').focus(function(){$(this).next().text("");});
-        $('#password2').focus(function(){$(this).next().text("");});
-		if(pass.length<6 || pass.length>18){
-			$('#password').next().text("为了您的账户安全，密码至少得设置6个字符");
-			flogs = false;
-		}else if(pass != pass2){
-			$('#password2').next().text("sorry, 您两次输入的密码不一致");
-			flogs = false;
-        }
-        if(flogs == false){
-            return false;
-        }
-        $("#orderForm").submit();
-	});
-});
 </script>
 
 </head>
@@ -68,7 +77,9 @@ $('document').ready(function() {
 					<c:if test="${empty sessionScope.sessionUser }">
 						<div class="step-1">
 							<div class="stepTitle">
-								<div class="field-tit">顺便注册一下</div>
+								<div class="field-tit">顺便注册一下，才能购买 ): </div>&nbsp;&nbsp;
+								<a href="login.jsp">去登录</a>
+								<input type="hidden" id="needReg" value="1" />
 							</div>
 							<div class="orderAddressForm">
 								<div class="orderList">
@@ -76,16 +87,14 @@ $('document').ready(function() {
 									<div class="field">
 										<input id="uname" name="order.user.username" type="text"
 											class="form-2" style="border-color: #FEA9A9" />
-										<p style="color: red; height: 10px; font-size: 10px; position: relative; top: -5px;"></p>
 									</div>
 								</div>
 								<br />
 								<div class="orderList">
 									<span class="title"><em>*</em>密码：</span>
 									<div class="field">
-										<input id="password" name="order.user.password" type="password"
-											class="form-2" />
-										<p style="color: red; height: 10px; font-size: 10px; position: relative; top: -5px;"></p>
+										<input id="password" name="order.user.password"
+											type="password" class="form-2" />
 									</div>
 								</div>
 								<br />
@@ -93,7 +102,6 @@ $('document').ready(function() {
 									<span class="title"><em>*</em>确认密码：</span>
 									<div class="field">
 										<input id="password2" type="password" class="form-2" />
-										<p style="color: red; height: 10px; font-size: 10px; position: relative; top: -5px;"></p>
 									</div>
 								</div>
 							</div>
@@ -107,24 +115,23 @@ $('document').ready(function() {
 							<div class="orderList">
 								<span class="title"><em>*</em>收货人：</span>
 								<div class="field">
-									<input name="order.receiver" type="text" class="form-2"
-										value="" maxlength="25" style="border-color: #FEA9A9" />
+									<input id="receiver" name="order.receiver" type="text"
+										class="form-2" style="border-color: #FEA9A9" />
 								</div>
 							</div>
 							<div class="orderList">
 								<span class="title"><em>*</em>详细地址：</span>
 								<div class="field">
-									<input name="order.address" type="text" class="form-2"
-										id="new_detail" value="" maxlength="50" />
+									<input id="address" name="order.address" type="text"
+										class="form-2" />
 								</div>
 							</div>
 							<div class="orderList">
 								<span class="title"><em>*</em>手机：</span>
 								<div class="field">
-									<input name="order.mobile" type="text" class="form-2" value=""
-										id="new_phone" />&nbsp;&nbsp;或固定电话： <input
-										name="order.telphone" type="text" class="form-2" id="new_tele"
-										value="" />&nbsp;&nbsp;格式：区号-电话
+									<input id="mobile" name="order.mobile" type="text"
+										class="form-2" />&nbsp;&nbsp;或固定电话： <input
+										name="order.telphone" type="text" class="form-2" id="new_tele" />&nbsp;&nbsp;格式：区号-电话
 								</div>
 							</div>
 						</div>
@@ -210,10 +217,8 @@ $('document').ready(function() {
 				<div class="orderInfo">
 					<div class="step-9" align="right">
 						<span style='font-size: 20px; font-family: "微软雅黑";'>应付总金额：￥<font
-							color="red">${order.total }</font>
-							<button class="btn-submit-order" id="sub" type="submit">
-								<span style='font-size: 20px; font-family: "微软雅黑";'>提交订单</span>
-							</button>
+							color="red">${order.total }</font> 
+							<a href="javascript:void(0);" class="cart_b_paybtn ml10 " id="sub">提交订单</a>
 						</span>
 					</div>
 				</div>

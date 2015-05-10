@@ -5,20 +5,24 @@
 <html>
 <head>
 <script type="text/javascript">
-		$(function(){ 
-			$("#cart_box").click(function() {
-				window.location.href = "/showCart.action";
-			}); 
+	$(function() {
+		$("#cart_box").click(function() {
+			window.location.href = "/showCart.action";
 		});
-	</script>
+	});
+</script>
 </head>
 <body>
 	<div class="top-box">
-		<c:if test="${!empty sessionScope.sessionUser }">
-			<a href="myOrder.action">我的订单</a>
-			<a href="logout.action">退出</a>
-		</c:if>
-		
+		<div align="right" style="width:90%">
+			<c:if test="${!empty sessionScope.sessionUser }">
+				<a href="myOrder.action">我的订单</a>
+				<a href="logout.action">退出</a>
+			</c:if>
+			<c:if test="${empty sessionScope.sessionUser }">
+				<a href="login.jsp">登录</a>
+			</c:if>
+		</div>
 		<div class="top-box01">
 			<div class="container-top">
 				<div class="logo-green">
@@ -58,7 +62,8 @@
 						<div class="nav-mes-minicart" style="display: none;">
 							<div id="cart_list" style="display: inline-block;">
 								<div class="mini-cart-cp">
-									<c:forEach items="${sessionScope.sessionCart.cartItemList }" var="cartItem">
+									<c:forEach items="${sessionScope.sessionCart.cartItemList }"
+										var="cartItem">
 										<div class="mini-cart-cpbox">
 											<div class="mini-cart-cpleft">
 												<a href="/detail.action?id=${cartItem.product.id }"><img

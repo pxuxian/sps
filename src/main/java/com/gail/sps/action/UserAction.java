@@ -43,13 +43,13 @@ public class UserAction extends BaseAction {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Action(value = "reg", results = { @Result(name = "success", location = "/success.jsp") })
+	@Action(value = "reg", results = { @Result(name = "success", location = "/index.jsp") })
 	public String reg() {
 		try {
 			this.init();
 			userService.register(user);
 			session.put("sessionUser", user);
-			this.msg = "注册成功";
+//			this.msg = "注册成功";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
@@ -92,7 +92,7 @@ public class UserAction extends BaseAction {
 	}
 	
 	@SuppressWarnings("unchecked")
-	@Action(value = "login", results = { @Result(name = "success", location = "/success.jsp") })
+	@Action(value = "login", results = { @Result(name = "success", location = "/index.jsp") })
 	public String login() {
 		try {
 			this.init();
@@ -102,7 +102,7 @@ public class UserAction extends BaseAction {
 			}
 			this.user = userService.getByUserName(user.getUsername());
 			session.put("sessionUser", user);
-			this.msg = "登录成功";
+//			this.msg = "登录成功";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
