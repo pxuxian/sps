@@ -9,11 +9,11 @@
 <meta name="description" content="天天果园官方网站提供水果生鲜" />
 <title>今日特供-绿色网购</title>
 <style type="text/css">
-img {
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-}
+/* img {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+} */
 </style>
 </head>
 
@@ -58,9 +58,9 @@ img {
 						<div class="onelist-cp01">
 							<div class="onelist-cp01-title">
 								<h3>今日特供</h3>
-								<h4>
+								<!-- <h4>
 									<a href="">查看更多 &gt;</a>
-								</h4>
+								</h4> -->
 							</div>
 							<div class="onelist-cp01-box">
 								<c:forEach items="${productList1 }" var="p" varStatus="status">
@@ -69,11 +69,12 @@ img {
 										<ul>
 											<li class="cplist-p01" style="position: relative;"><a
 												href="detail.action?id=${p.id }" target="_blank"> <img
-													src="/upload/img/product/logo/${p.logo }" />
+													src="/upload/img/product/logo/${p.logo }" style="border:1px solid #00DD00;" />
 											</a>
-												<!-- <div class="icon-red"></div> --></li>
-											<li class="cplist-p02"><a href="detail.jsp"
-												target="_blank">${p.name } </a></li>
+											<!-- <div class="icon-red"></div> --></li>
+											<li class="cplist-p02">
+												<a href="detail.action?id=${p.id }" target="_blank">${p.name } </a>
+											</li>
 											<!-- <li class="cplist-p03" style="float: none;">12个装</li> -->
 											<li class="cplist-p04"><span class="green01"
 												style="float: left;">抢购价: ￥${p.price }</span></li>
@@ -85,9 +86,9 @@ img {
 						<div class="onelist-cp01">
 							<div class="onelist-cp01-title">
 								<h3>优惠专区</h3>
-								<h4>
+								<!-- <h4>
 									<a href="">查看更多 &gt;</a>
-								</h4>
+								</h4> -->
 							</div>
 							<div class="onelist-cp01-box">
 								<c:forEach items="${productList2 }" var="p" varStatus="status">
@@ -96,11 +97,12 @@ img {
 										<ul>
 											<li class="cplist-p01" style="position: relative;"><a
 												href="detail.action?id=${p.id }" target="_blank"> <img
-													src="/upload/img/product/logo/${p.logo }" />
+													src="/upload/img/product/logo/${p.logo }" style="border:1px solid #00DD00;"/>
 											</a>
-												<!-- <div class="icon-green"></div> --></li>
-											<li class="cplist-p02"><a href="detail.jsp"
-												target="_blank">${p.name } </a></li>
+											<!-- <div class="icon-green"></div> --></li>
+											<li class="cplist-p02">
+												<a href="detail.action?id=${p.id }" target="_blank">${p.name } </a>
+											</li>
 											<!-- <li class="cplist-p03" style="float: none;">4斤装</li> -->
 											<li class="cplist-p04"><span class="green01"
 												style="float: left;">抢购价: ￥${p.price }</span></li>

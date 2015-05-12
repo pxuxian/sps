@@ -78,6 +78,7 @@ $('document').ready(function() {
 						<div class="control-group">
 							<div class="controls">
 								<input type="button" id="sub" value="登录" />
+								<button><a href="reg.jsp">去注册</a></button>
 							</div>
 						</div>
 					</form>

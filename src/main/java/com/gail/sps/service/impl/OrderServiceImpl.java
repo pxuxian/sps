@@ -49,15 +49,16 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 	public Order generaterOrder(Cart cart) throws Exception {
 		Order order = new Order();
 		if (cart == null) {
-			return order;
+			throw new Exception("购物车为空，不能提交订单");
 		}
 		List<OrderProduct> orderProducts = new ArrayList<OrderProduct>();
 		List<CartItem> cartItemList = cart.getCartItemList();
-		if (cartItemList != null) {
-			for (CartItem ci : cartItemList) {
-				orderProducts.add(new OrderProduct(order, ci.getProduct(), ci.getProduct().getPrice(), ci.getCount(),
-						ci.getSubtotal()));
-			}
+		if (cartItemList == null || cartItemList.size() == 0) {
+			throw new Exception("购物车为空，不能提交订单");
+		}
+		for (CartItem ci : cartItemList) {
+			orderProducts.add(new OrderProduct(order, ci.getProduct(), ci.getProduct().getPrice(), ci.getCount(), ci
+					.getSubtotal()));
 		}
 		order.setOrderProducts(orderProducts);
 		order.setPostage(0);

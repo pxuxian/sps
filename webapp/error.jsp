@@ -21,17 +21,22 @@
 				<div class="breadcrumb">
 					<img src="/images/logo/error.jpg" alt="" width="180px" height="140px" /> 
 					<span style="font-size: 15px">
-						不好意思，出错了，请重试或联系管理员。
+						<c:if test="${!empty msg }">
+							${msg }。 
+						</c:if>
+						<c:if test="${empty msg }">
+							不好意思，出错了，请重试或联系管理员。
+						</c:if>
 						<strong><a href="/">返回首页</a></strong>
-						<strong><a href="/myOrder.action"> 我的订单</a></strong>
+						<c:if test="${!empty sessionUser }">
+							<strong><a href="/myOrder.action"> 我的订单</a></strong>
+						</c:if>
 					</span> 
 					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -57,6 +57,7 @@
 		select <include refid="fields" />
 		from <include refid="table_name" /> p
 		<include refid="baseSearchCondition" />
+		order by id desc 
 		limit #{startPos}, #{pageSize}
 	</select>
 	

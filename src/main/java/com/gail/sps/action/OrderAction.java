@@ -74,6 +74,7 @@ public class OrderAction extends BaseAction {
             
             session.remove("sessionCart");
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
             return "error";
         }
