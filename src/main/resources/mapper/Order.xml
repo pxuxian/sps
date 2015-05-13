@@ -35,6 +35,9 @@
 			<if test="receiver!=null and receiver!=''">
 				and o.receiver like CONCAT('%','${receiver}','%' )
 			</if>
+			<if test="number !=null and number !=''">
+				and o.number like CONCAT('%','${number}','%' ) 
+			</if>
 			<if test="user!=null">
 				and o.user_id=#{user.id}
 			</if>
