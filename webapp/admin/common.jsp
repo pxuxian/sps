@@ -39,5 +39,15 @@ body {
 </style>
 </head>
 <body>
+	<c:if test="${empty sessionUser }">
+		<%
+			response.sendRedirect("login.jsp");
+		%>
+	</c:if>
+	<c:if test="${sessionUser.role.id != 100 }">
+		<%
+			response.sendRedirect("index.jsp");
+		%>
+	</c:if>
 </body>
 </html>

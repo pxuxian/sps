@@ -150,10 +150,5 @@
 <link type="text/css" rel="stylesheet" href="./styles/m-webim-lite.css" />
 </head>
 <body>
-	<c:if test="${empty sessionUser or sessionUser.role.id<3 }">
-		<%
-			response.sendRedirect("login.jsp");
-		%>
-	</c:if>
 </body>
 </html>
