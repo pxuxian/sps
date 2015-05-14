@@ -16,6 +16,7 @@ import com.gail.sps.service.OrderService;
 @Scope("prototype")
 @ParentPackage("basePackage")
 @Namespace("/admin/order")
+@Result(name = "error", location="/admin/error.jsp")
 public class AdminOrderAction extends BaseAction {
 	@Autowired
 	private OrderService orderService;
@@ -39,9 +40,34 @@ public class AdminOrderAction extends BaseAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "success";
+		return SUCCESS;
+	}
+	
+	@Action(value = "detail", results = { @Result(name = "success", location = "/admin/order/detail.jsp") })
+	public String detail() {
+		try {
+			this.order = orderService.getById(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		}
+		return SUCCESS;
 	}
 
+	@Action(value = "delete", results = { @Result(name = "success", location = "/admin/order/list.jsp") })
+	public String delete() {
+		try {
+			this.init();
+			orderService.delete(id);
+			this.orderList = orderService.limitSelect(order);
+		} catch (Exception e) {
+			this.msg = e.getMessage();
+			e.printStackTrace();
+			return ERROR;
+		}
+		return SUCCESS;
+	}
+	
 	public Order getOrder() {
 		return order;
 	}

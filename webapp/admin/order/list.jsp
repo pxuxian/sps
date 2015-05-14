@@ -14,19 +14,28 @@
 			window.location.href = "/admin/product/toAdd.action";
 		});
 	});
-
+*/
 	function del(id) {
 		if (confirm("确定要删除吗？")) {
-			var url = "/admin/product/delete.action?p.id=" + id;
+			var url = "/admin/order/delete.action?id=" + id;
 			window.location.href = url;
 		}
-	} */
+	}
 </script>
 </head>
 <body>
 	<form class="form-inline definewidth m20" action="/admin/order/list.action" method="post" id="searchForm">
 		编号： <input type="text" name="order.number" class="abc input-default"
 			value="${order.number }">&nbsp;&nbsp;
+		订单状态：
+			<select name="order.status">
+				<option value="">所有</option>
+				<option value="0">待支付</option>
+				<option value="1">已取消</option>
+				<option value="2">已支付，待发货</option>
+				<option value="3">已发货</option>
+				<option value="4">完成</option>
+			</select>
 		<button type="submit" class="btn btn-primary">查询</button>
 	</form>
 	<table class="table table-bordered table-hover definewidth m10">
@@ -50,6 +59,8 @@
 				<td>${o.total }</td>
 				<td>${o.statusStr }</td>
 				<td> 
+					<a href="/admin/order/detail.action?id=${id }">查看</a>
+					<a onclick="javascript:delete(${o.id}))">删除</a>
 				</td>
 			</tr>
 		</c:forEach>

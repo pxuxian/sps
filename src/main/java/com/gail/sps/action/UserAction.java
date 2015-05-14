@@ -36,7 +36,6 @@ public class UserAction extends BaseAction {
 
 	private User user;
 	private List<ProductCategory> pcList;
-	private String msg;
 
 	private void init() throws Exception {
 		this.pcList = productCategoryService.limitSelect();
@@ -137,14 +136,6 @@ public class UserAction extends BaseAction {
 
 	public void setPcList(List<ProductCategory> pcList) {
 		this.pcList = pcList;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
 	}
 
 }

@@ -21,6 +21,7 @@ import com.gail.sps.util.FileUtil;
 @Scope("prototype")
 @ParentPackage("basePackage")
 @Namespace("/admin/product")
+@Result(name = "error", location="/admin/error.jsp")
 public class ProductAction extends BaseAction {
     @Autowired
     private ProductService productService;
@@ -50,7 +51,7 @@ public class ProductAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "list", results = { @Result(name = "success", location = "/admin/product/list.jsp") })
@@ -61,7 +62,7 @@ public class ProductAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "toAdd", results = { @Result(name = "success", location = "/admin/product/add.jsp") })
@@ -71,7 +72,7 @@ public class ProductAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "add", results = { @Result(name = "success", location = "/admin/product/list.jsp") })
@@ -87,9 +88,10 @@ public class ProductAction extends BaseAction {
             this.p = new Product();
             this.productList = productService.limitSelect();
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "toModify", results = { @Result(name = "success", location = "/admin/product/edit.jsp") })
@@ -100,7 +102,7 @@ public class ProductAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "update", results = { @Result(name = "success", location = "/admin/product/list.jsp") })
@@ -116,9 +118,11 @@ public class ProductAction extends BaseAction {
             this.p = new Product();
             this.productList = productService.limitSelect();
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "delete", results = { @Result(name = "success", location = "/admin/product/list.jsp") })
@@ -128,9 +132,10 @@ public class ProductAction extends BaseAction {
             this.p = new Product();
             this.productList = productService.limitSelect();
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     public Product getP() {

@@ -32,6 +32,9 @@
 	
 	<sql id="baseSearchCondition">
 		<where>
+			<if test="status != null">
+				and o.status=#{status}
+			</if>
 			<if test="receiver!=null and receiver!=''">
 				and o.receiver like CONCAT('%','${receiver}','%' )
 			</if>

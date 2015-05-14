@@ -34,7 +34,7 @@ public class ProductAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     public Product getP() {

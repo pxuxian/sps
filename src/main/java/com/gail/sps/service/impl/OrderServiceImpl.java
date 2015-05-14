@@ -122,4 +122,14 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 		return "";
 	}
 
+	@Override
+	public void delete(Integer id) throws Exception {
+		Order order = this.getById(id);
+		if (order == null) {
+			throw new Exception("订单不存在");
+		}
+		order.setStatus(-1);
+		this.orderDao.updateStatus(order);
+	}
+	
 }

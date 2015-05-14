@@ -36,7 +36,6 @@ public class OrderAction extends BaseAction {
     private Order order;
     private List<ProductCategory> pcList;
     private List<Order> orderList;
-    private String msg;
 
     private void init() throws Exception {
         this.pcList = productCategoryService.limitSelect();
@@ -51,9 +50,11 @@ public class OrderAction extends BaseAction {
             this.order = orderService.generaterOrder(cart);
             session.put("sessionOrder", this.order);
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
 
     @SuppressWarnings("unchecked")
@@ -76,9 +77,9 @@ public class OrderAction extends BaseAction {
         } catch (Exception e) {
         	this.msg = e.getMessage();
             e.printStackTrace();
-            return "error";
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "myOrder", results = { @Result(name = "success", location = "/orderList.jsp")})
@@ -87,10 +88,11 @@ public class OrderAction extends BaseAction {
             this.init();
             this.orderList = orderService.listByUser((User)session.get("sessionUser"));
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
-            return "error";
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
     
     @Action(value = "cancelOrder", results = { @Result(name = "success", location = "/orderList.jsp")})
@@ -103,10 +105,11 @@ public class OrderAction extends BaseAction {
             }
             this.orderList = orderService.listByUser((User)session.get("sessionUser"));
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
-            return "error";
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
     
     public Order getOrder() {
@@ -131,14 +134,6 @@ public class OrderAction extends BaseAction {
 
 	public void setOrderList(List<Order> orderList) {
 		this.orderList = orderList;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
 	}
 
 }

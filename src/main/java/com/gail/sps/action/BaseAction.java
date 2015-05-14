@@ -6,6 +6,10 @@ public class BaseAction {
     protected int pageSize;
     protected static final int DEFAULTPAGEINDEX = 1;
     protected static final int DEFAULTPAGESIZE = 10;
+    protected String msg;
+    
+    protected static final String SUCCESS = "success";
+    protected static final String ERROR = "error";
 
     public int getId() {
         return id;
@@ -38,5 +42,13 @@ public class BaseAction {
     public static int getDefaultpagesize() {
         return DEFAULTPAGESIZE;
     }
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 
 }

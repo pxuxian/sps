@@ -25,7 +25,7 @@ public class Order extends BaseModel {
 	private double postage; // 邮费
 	private double discount; // 优惠
 	private double total; // 总计
-	private int status;
+	private Integer status;
 	private String statusStr;
 
 	public int getId() {
@@ -144,11 +144,11 @@ public class Order extends BaseModel {
 		this.amount = amount;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

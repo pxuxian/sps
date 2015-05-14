@@ -41,7 +41,7 @@ public class IndexAction extends BaseAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     public List<Product> getProductList1() {

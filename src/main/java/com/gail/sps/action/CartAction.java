@@ -24,6 +24,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Scope("prototype")
 @ParentPackage("basePackage")
 @Namespace("/")
+@Result(name = "error", location="/error.jsp")
 public class CartAction extends BaseAction {
     @Autowired
     private ProductCategoryService productCategoryService;
@@ -54,11 +55,10 @@ public class CartAction extends BaseAction {
             } else {
                 this.cart = (Cart) sessionCart;
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return SUCCESS;
     }
 
     @SuppressWarnings({ "unchecked" })
@@ -75,9 +75,11 @@ public class CartAction extends BaseAction {
             this.cart = cartService.addCartItem(cart, cartItem);
             session.put("sessionCart", this.cart);
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
 
     @SuppressWarnings("unchecked")
@@ -94,9 +96,11 @@ public class CartAction extends BaseAction {
             this.cart = cartService.modifyCartItem(cart, id, op);
             session.put("sessionCart", cart);
         } catch (Exception e) {
+        	this.msg = e.getMessage();
             e.printStackTrace();
+            return ERROR;
         }
-        return "success";
+        return SUCCESS;
     }
 
     public CartItem getCartItem() {
