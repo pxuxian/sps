@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,14 +24,25 @@
 	src="/admin/styles/assets/js/config-min.js"></script>
 </head>
 <body>
+	<c:if test="${empty sessionUser }">
+		<%
+			response.sendRedirect("/login.jsp");
+		%>
+	</c:if>
+	<c:if test="${sessionUser.role.id != 100 }">
+		<%
+			response.sendRedirect("/index.jsp");
+		%>
+	</c:if>
 	<div class="header">
 		<div class="dl-title">
 			<!--<img src="/chinapost/Public/assets/img/top.png">-->
 		</div>
 		<div class="dl-log">
-			欢迎您，<span class="dl-log-user">root</span><a
-				href="/chinapost/index.php?m=Public&a=logout" title="退出系统"
-				class="dl-log-quit">[退出]</a>
+			<c:if test="${!empty sessionUser }">
+				欢迎您，<span class="dl-log-user">${sessionUser.username }</span>
+				<a href="/logout.action" title="退出系统" class="dl-log-quit">[退出]</a>
+			</c:if>
 		</div>
 	</div>
 	<div class="content">
@@ -58,23 +72,21 @@
 						text : '产品分类',
 						href : '/admin/category/list.action'
 					} ]
-				},
-				{
+				}, {
 					text : '产品管理',
 					items : [ {
 						id : '12',
 						text : '产品列表',
 						href : '/admin/product/list.action'
 					} ]
-				},
-				{
+				}, {
 					text : '订单管理',
 					items : [ {
 						id : '13',
 						text : '订单列表',
 						href : '/admin/order/list.action'
 					} ]
-				}]
+				} ]
 			} ];
 			new PageUtil.MainPage({
 				modulesConfig : config

@@ -22,6 +22,7 @@
 	<div class="top-box">
 		<div align="right" style="width:90%">
 			<c:if test="${!empty sessionScope.sessionUser }">
+				${sessionUser.username }
 				<a href="myOrder.action">我的订单</a>
 				<a href="logout.action">退出</a>
 			</c:if>

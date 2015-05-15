@@ -9,12 +9,6 @@
 <html>
 <head>
 <script>
-	/* $(function() {
-		$('#addnew').click(function() {
-			window.location.href = "/admin/product/toAdd.action";
-		});
-	});
-*/
 	function del(id) {
 		if (confirm("确定要删除吗？")) {
 			var url = "/admin/order/delete.action?id=" + id;
@@ -30,11 +24,11 @@
 		订单状态：
 			<select name="order.status">
 				<option value="">所有</option>
-				<option value="0">待支付</option>
-				<option value="1">已取消</option>
-				<option value="2">已支付，待发货</option>
-				<option value="3">已发货</option>
-				<option value="4">完成</option>
+				<option value="0" <c:if test="${order.status==0 }"> selected="selected"</c:if>>待支付</option>
+				<option value="1" <c:if test="${order.status==1 }"> selected="selected"</c:if>>已取消</option>
+				<option value="2" <c:if test="${order.status==2 }"> selected="selected"</c:if>>已支付，待发货</option>
+				<option value="3" <c:if test="${order.status==3 }"> selected="selected"</c:if>>已发货</option>
+				<option value="4" <c:if test="${order.status==4 }"> selected="selected"</c:if>>完成</option>
 			</select>
 		<button type="submit" class="btn btn-primary">查询</button>
 	</form>
@@ -59,8 +53,8 @@
 				<td>${o.total }</td>
 				<td>${o.statusStr }</td>
 				<td> 
-					<a href="/admin/order/detail.action?id=${id }">查看</a>
-					<a onclick="javascript:delete(${o.id}))">删除</a>
+					<a href="/admin/order/detail.action?id=${o.id }">查看</a>
+					<a href="javascript:void(0);" onclick="del(${o.id});">删除</a>
 				</td>
 			</tr>
 		</c:forEach>
