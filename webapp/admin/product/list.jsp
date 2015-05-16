@@ -39,6 +39,7 @@
 				<th>编号</th>
 				<th>分类</th>
 				<th>名称</th>
+				<th>产地</th>
 				<th>描述</th>
 				<th>价格</th>
 				<th>操作</th>
@@ -49,7 +50,10 @@
 				<td>${p.code }</td>
 				<td>${p.category.name }</td>
 				<td>${p.name }</td>
-				<td>${p.descrip }</td>
+				<td>${p.place }</td>
+				<td>
+					<c:out value="${fn:substring(p.descrip, 0, 10)}" /> ...
+				</td>
 				<td>${p.price }</td>
 				<td><a href="/admin/product/toModify.action?p.id=${p.id }">编辑</a>
 					&nbsp; <a href="javascript:void(0)" onclick="del(${p.id})">删除</a>

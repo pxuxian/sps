@@ -10,6 +10,7 @@
 		<result column="status" property="status" />
 		<result column="section_id" property="sectionId" />
 		<result column="descrip" property="descrip" />
+		<result column="place" property="place" />
 		<result column="price" property="price" />
 		<result column="logo" property="logo" />
 		<association column="category_id" property="category" select="getProductCategory" />
@@ -19,7 +20,7 @@
 		t_product
 	</sql>
 	<sql id="fields">
-		p.id, p.category_id, p.code, p.name, p.detail, p.status, p.section_id, p.descrip, p.price, p.logo
+		p.id, p.category_id, p.code, p.name, p.detail, p.status, p.section_id, p.descrip, p.place, p.price, p.logo
 	</sql>
 	
 	<sql id="baseSearchCondition">
@@ -63,7 +64,7 @@
 	
 	<insert id="save" parameterType="Product">
 		insert into <include refid="table_name" />
-		values (null, #{categoryId}, #{code}, #{sectionId}, #{name}, #{descrip}, #{price}, #{logo}, #{detail}, #{status})
+		values (null, #{categoryId}, #{code}, #{sectionId}, #{name}, #{descrip}, #{place}, #{price}, #{logo}, #{detail}, #{status})
 	</insert>
 	
 	<update id="update" parameterType="Product">
@@ -83,6 +84,9 @@
 			</if>
 			<if test="descrip!=null">
 				descrip=#{descrip},
+			</if>
+			<if test="place!=null">
+				place=#{place},
 			</if>
 			<if test="price!=null">
 				price=#{price},

@@ -34,6 +34,7 @@ create table t_product (
 	section_id int(11),
 	name varchar(50) not null,
 	descrip varchar(100),
+	place varchar(20),
 	price double(10,2),
 	logo text,
 	detail text,

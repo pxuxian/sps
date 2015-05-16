@@ -15,6 +15,7 @@ public class Product extends BaseModel {
     private ProductCategory category;
     private int sectionId;
     private String descrip;
+    private String place;
     private double price;
     private String logo;
     private String detail;
@@ -107,5 +108,13 @@ public class Product extends BaseModel {
     public void setLogo(String logo) {
         this.logo = logo;
     }
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
 
 }

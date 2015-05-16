@@ -4,6 +4,9 @@
 <%@ include file="common.jsp"%>
 <html>
 <head>
+<meta name="keywords" content="今日特供,土特产,土特产专卖,特产" />
+<meta name="description" content="今日特供,土特产,土特产专卖,特产" />
+<title>今日特供-土特产专卖</title>
 <script type="text/javascript">
 	$(function() {
 		$("#cart_box").click(function() {
@@ -21,15 +24,18 @@
 <body>
 	<div class="top-box">
 		<div align="right" style="width:90%">
-			<c:if test="${!empty sessionScope.sessionUser }">
-				${sessionUser.username }
-				<a href="myOrder.action">我的订单</a>
-				<a href="logout.action">退出</a>
+			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
+				<a href="/admin.action">管理后台</a>
 			</c:if>
 			<c:if test="${empty sessionScope.sessionUser }">
 				<a href="reg.jsp">注册</a>
 				<a href="login.jsp">登录</a>
 			</c:if>
+			<c:if test="${!empty sessionScope.sessionUser }">
+				<a href="myOrder.action">我的订单</a>
+				<a href="logout.action">退出</a>
+			</c:if>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=402152952&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:402152952:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
 		</div>
 		<div class="top-box01">
 			<div class="container-top">
@@ -115,13 +121,13 @@
 				<div class="nav">
 					<div class="nav-all">
 						<div class="nav-all-title">
-							<a href="">全部商品</a> <i></i>
+							<a href="/">全部商品</a> <i></i>
 						</div>
 						<div class="nav-all-class statis_class">
 							<div>
 								<ul>
 									<c:forEach items="${pcList }" var="pc">
-										<li><a href="">${pc.name }</a></li>
+										<li><a href="/">${pc.name }</a></li>
 									</c:forEach>
 								</ul>
 							</div>
@@ -129,9 +135,9 @@
 					</div>
 					<div class="nav-other" style="font-weight: 600;">
 						<ul>
-							<li><a href="./">首页</a></li>
+							<li><a href="/">首页</a></li>
 							<c:forEach items="${pcList }" var="pc">
-								<li><a href="">${pc.name }</a></li>
+								<li><a href="/">${pc.name }</a></li>
 							</c:forEach>
 						</ul>
 					</div>

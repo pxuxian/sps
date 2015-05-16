@@ -21,7 +21,14 @@ public class ProductCategoryServiceImpl extends GenericeServiceImpl<ProductCateg
         return this.productCategoryDao;
     }
 
-    public PaginatedList<ProductCategory> limitSelect() throws Exception {
+    @Override
+	protected void setDetail(ProductCategory t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public PaginatedList<ProductCategory> limitSelect() throws Exception {
         return this.limitSelect(new ProductCategory());
     }
 

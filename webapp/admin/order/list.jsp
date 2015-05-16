@@ -53,7 +53,7 @@
 				<td>${o.total }</td>
 				<td>${o.statusStr }</td>
 				<td> 
-					<a href="/admin/order/detail.action?id=${o.id }">查看</a>
+					<a href="/admin/order/detail.action?id=${o.id }">详情</a>
 					<a href="javascript:void(0);" onclick="del(${o.id});">删除</a>
 				</td>
 			</tr>

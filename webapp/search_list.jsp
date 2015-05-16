@@ -86,7 +86,7 @@
 										<li class="cplist-p04"><span class="green01"
 											id="pro_price_4058">￥${p.price }</span>
 											<div class="cplist-p05-btn02">
-												<a href="addCart.action?cartItem.productId=${p.id }"
+												<a href="addCart.action?cartItem.productId=${p.id }&cartItem.count=1"
 													target="_blank" class="btn-buynow-other"></a>
 											</div>
 										</li>

@@ -36,7 +36,7 @@ public class AdminOrderAction extends BaseAction {
 	public String list() {
 		try {
 			this.init();
-			this.orderList = orderService.limitSelect(order);
+			this.orderList = orderService.limitSelectDetail(order);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,7 +46,7 @@ public class AdminOrderAction extends BaseAction {
 	@Action(value = "detail", results = { @Result(name = "success", location = "/admin/order/detail.jsp") })
 	public String detail() {
 		try {
-			this.order = orderService.getById(id);
+			this.order = orderService.getByIdDetail(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
@@ -59,7 +59,7 @@ public class AdminOrderAction extends BaseAction {
 		try {
 			this.init();
 			orderService.delete(id);
-			this.orderList = orderService.limitSelect(order);
+			this.orderList = orderService.limitSelectDetail(order);
 		} catch (Exception e) {
 			this.msg = e.getMessage();
 			e.printStackTrace();

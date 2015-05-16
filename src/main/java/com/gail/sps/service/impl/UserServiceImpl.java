@@ -16,15 +16,20 @@ public class UserServiceImpl extends GenericeServiceImpl<User, Integer> implemen
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Override
+	public GenericDao<User, Integer> getDao() {
+		return userDao;
+	}
+	
+	@Override
+	protected void setDetail(User t) {
+		
+	}
 
 	@Override
 	public PaginatedList<User> limitSelect() throws Exception {
 		return this.limitSelect(new User());
-	}
-
-	@Override
-	public GenericDao<User, Integer> getDao() {
-		return userDao;
 	}
 
 	@Transactional

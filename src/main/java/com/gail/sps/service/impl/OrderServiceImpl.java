@@ -33,16 +33,18 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 	public GenericDao<Order, Integer> getDao() {
 		return orderDao;
 	}
-
+	
 	@Override
-	public PaginatedList<Order> limitSelect(Order t) throws Exception {
-		List<Order> orderList = super.limitSelect(t);
-		if (orderList != null) {
-			for (Order order : orderList) {
-				order.setStatusStr(OrderStatus.getString(order.getStatus()));
+	protected void setDetail(Order od) throws Exception {
+		List<OrderProduct> orderProducts = orderDao.listOrderProduct(od.getId());
+		if (orderProducts != null) {
+			for (OrderProduct op : orderProducts) {
+				op.setProduct(productDao.getById(op.getProductId()));
 			}
+			od.setOrderProducts(orderProducts);
+			od.setCount(orderProducts.size());
 		}
-		return (PaginatedList<Order>) orderList;
+		od.setStatusStr(OrderStatus.getString(od.getStatus()));
 	}
 
 	@Override
@@ -94,19 +96,7 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 		if (user != null) {
 			Order order = new Order();
 			order.setUser(user);
-			List<Order> orderList = this.limitSelect(order);
-			for (Order od : orderList) {
-				List<OrderProduct> orderProducts = orderDao.listOrderProduct(od.getId());
-				if (orderProducts != null) {
-					for (OrderProduct op : orderProducts) {
-						op.setProduct(productDao.getById(op.getProductId()));
-					}
-					od.setOrderProducts(orderProducts);
-					od.setCount(orderProducts.size());
-				}
-				od.setStatusStr(OrderStatus.getString(od.getStatus()));
-			}
-			return orderList;
+			return this.limitSelectDetail(order);
 		}
 		return null;
 	}

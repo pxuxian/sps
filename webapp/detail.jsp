@@ -22,7 +22,7 @@
 			<div class="w" style="margin: 0px;">
 				<div class="breadcrumb">
 					<strong><a href="/">首页</a></strong><span>&nbsp;&gt;&nbsp; <a
-						href="">${p.category.name }</a>&nbsp;&gt;&nbsp;
+						href="/">${p.category.name }</a>&nbsp;&gt;&nbsp;
 					</span> <span>${p.name }</span>
 				</div>
 			</div>
@@ -31,14 +31,14 @@
 					<div class="detail-one-left">
 						<div class="detail-bigpic">
 							<div>
-								<img src="/upload/img/product/logo/${p.logo }" id="defaultImg">
+								<img src="/upload/img/product/logo/${p.logo }" id="defaultImg" style="border:1px solid #00DD00;" />
 							</div>
 						</div>
 						<div class="detail-samllpic">
 							<ul>
 								<li><img
 									onmouseover="javascript:showDaTu(&#39;http://127.0.0.1/upload/img/product/logo/${p.logo }&#39;)"
-									src="/upload/img/product/logo/${p.logo }"></li>
+									src="/upload/img/product/logo/${p.logo }" style="border:1px solid #00DD00;"/></li>
 							</ul>
 						</div>
 					</div>
@@ -56,13 +56,11 @@
 							</div>
 						</div>
 
-						<!--detail-xxtwo-t start-->
 						<div class="detail-xxtwo-t">
 							<div class="contbox">
-								<div id="summary-stock"></div>
+								<div id="summary-stock">产地：${p.place }</div>
 							</div>
 						</div>
-						<!--detail-xxtwo-t end-->
 
 						<form action="/addCart.action" method="post" id="cartForm" target="_blank">
 							<input type="hidden" name="cartItem.productId" value="${p.id }" />
@@ -118,7 +116,7 @@
 				<div class="detail-right-history01">
 					<div class="title_Browse">
 						<p>热销人气商品</p>
-						<span> <a href="">MORE+</a>
+						<span> <a href="/">MORE+</a>
 						</span>
 					</div>
 					<div class="title_Browse_box">

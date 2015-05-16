@@ -21,14 +21,23 @@ public abstract class GenericeServiceImpl<T extends BaseModel, ID extends Serial
      *
      * @return
      */
-    public abstract GenericDao<T, ID> getDao();
+    protected abstract GenericDao<T, ID> getDao();
+    
+    protected abstract void setDetail(T t) throws Exception; 
 
     @Override
 	public T getById(ID id) throws Exception {
         return this.getDao().getById(id);
     }
-
+    
     @Override
+	public T getByIdDetail(ID id) throws Exception {
+    	T t = this.getById(id);
+    	setDetail(t);
+		return t;
+	}
+
+	@Override
 	public PaginatedList<T> limitSelect(T t) throws Exception {
         int total = this.getDao().count(t);
         PaginatedList<T> resultList = new PaginatedArrayList<T>(total, t.getPage(), t.getPageSize());
@@ -39,6 +48,17 @@ public abstract class GenericeServiceImpl<T extends BaseModel, ID extends Serial
     }
 
     @Override
+	public PaginatedList<T> limitSelectDetail(T t) throws Exception {
+    	PaginatedList<T> list = this.limitSelect(t);
+    	if (list != null) {
+    		for (T item : list) {
+				this.setDetail(item);
+			}
+    	}
+		return list;
+	}
+
+	@Override
 	public void save(T t) throws Exception {
         this.getDao().save(t);
     }

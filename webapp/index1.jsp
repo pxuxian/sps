@@ -5,9 +5,6 @@
 
 <html>
 <head>
-<meta name="keywords" content="天天果园官网,鲜果网购,智利樱桃,车厘子" />
-<meta name="description" content="天天果园官方网站提供水果生鲜" />
-<title>今日特供-绿色网购</title>
 <style type="text/css">
 /* img {
 	border-radius: 5px;
@@ -59,7 +56,7 @@
 							<div class="onelist-cp01-title">
 								<h3>今日特供</h3>
 								<!-- <h4>
-									<a href="">查看更多 &gt;</a>
+									<a href="/">查看更多 &gt;</a>
 								</h4> -->
 							</div>
 							<div class="onelist-cp01-box">
@@ -75,7 +72,7 @@
 											<li class="cplist-p02">
 												<a href="detail.action?id=${p.id }" target="_blank">${p.name } </a>
 											</li>
-											<!-- <li class="cplist-p03" style="float: none;">12个装</li> -->
+											<li class="cplist-p03" style="float: none;">产地：${p.place }</li>
 											<li class="cplist-p04"><span class="green01"
 												style="float: left;">抢购价: ￥${p.price }</span></li>
 										</ul>
@@ -87,7 +84,7 @@
 							<div class="onelist-cp01-title">
 								<h3>优惠专区</h3>
 								<!-- <h4>
-									<a href="">查看更多 &gt;</a>
+									<a href="/">查看更多 &gt;</a>
 								</h4> -->
 							</div>
 							<div class="onelist-cp01-box">
@@ -103,7 +100,7 @@
 											<li class="cplist-p02">
 												<a href="detail.action?id=${p.id }" target="_blank">${p.name } </a>
 											</li>
-											<!-- <li class="cplist-p03" style="float: none;">4斤装</li> -->
+											<li class="cplist-p03" style="float: none;">产地：${p.place }</li>
 											<li class="cplist-p04"><span class="green01"
 												style="float: left;">抢购价: ￥${p.price }</span></li>
 										</ul>
@@ -116,17 +113,16 @@
 					<div class="onelist-right">
 						<!-- <div class="onelist-right-gg01 statis_index_rightactive">
 							<ul>
-								<li><a href="" target="_blank"><img
+								<li><a href="/" target="_blank"><img
 										title="全场满300赠加拿大北极甜虾" src="./images/1427940255_pic.jpg" /></a></li>
 								<li><a href="javascript:void(0);" style="cursor: default"><img
 										title="APP" src="./images/1427794630_pic.jpg" /></a></li>
 							</ul>
 						</div> -->
-
 						<div class="onelist-right-gg02">
 							<div class="title_1 statis_index_hotproduct">
 								<h4>热销人气商品</h4>
-								<span><a href="">MORE+</a></span>
+								<span><a href="/">MORE+</a></span>
 							</div>
 							<div class="onelist-right-box  statis_index_hotproduct">
 								<div class="onelist-right-three ">
@@ -136,7 +132,7 @@
 												src="/images/hot_1.jpg" width="80" height="78" /></a>
 										</dt>
 										<dd>
-											<a href="" target="_blank">泰国龙眼</a>
+											<a href="/" target="_blank">泰国龙眼</a>
 										</dd>
 										<dd class="font_1">现价：￥68</dd>
 										<dd class="old-price">原价：￥88</dd>
@@ -149,8 +145,7 @@
 			</div>
 		</div>
 		<!--中间产品内容结束-->
-
-		<jsp:include page="footer.jsp" />
 	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

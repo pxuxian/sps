@@ -15,6 +15,8 @@ import com.gail.sps.util.PaginatedList;
 public interface IGenericeService<T extends BaseModel, ID extends Serializable> {
 
     T getById(ID id) throws Exception;
+    
+    T getByIdDetail(ID id) throws Exception;
 
     /**
      * 带分页的查询
@@ -24,6 +26,8 @@ public interface IGenericeService<T extends BaseModel, ID extends Serializable> 
      * @throws Exception
      */
     PaginatedList<T> limitSelect(T t) throws Exception;
+    
+    PaginatedList<T> limitSelectDetail(T t) throws Exception;
 
     PaginatedList<T> limitSelect() throws Exception;
 

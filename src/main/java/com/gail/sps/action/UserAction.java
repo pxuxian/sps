@@ -42,7 +42,7 @@ public class UserAction extends BaseAction {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Action(value = "reg", results = { @Result(name = "success", location = "/index.jsp") })
+	@Action(value = "reg", results = { @Result(name = "success", location = "/", type="redirect") })
 	public String reg() {
 		try {
 			this.init();
@@ -91,7 +91,7 @@ public class UserAction extends BaseAction {
 	}
 	
 	@SuppressWarnings("unchecked")
-	@Action(value = "login", results = { @Result(name = "success", location = "/index.jsp") })
+	@Action(value = "login", results = { @Result(name = "success", location = "/", type="redirect") })
 	public String login() {
 		try {
 			this.init();
@@ -109,7 +109,7 @@ public class UserAction extends BaseAction {
 		return "success";
 	}
 	
-	@Action(value = "logout", results = { @Result(name = "success", location = "/index.jsp") })
+	@Action(value = "logout", results = { @Result(name = "success", location = "/", type="redirect") })
 	public String logout() {
 		try {
 			this.init();

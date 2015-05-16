@@ -20,11 +20,17 @@ public class ProductServiceImpl extends GenericeServiceImpl<Product, Integer> im
         return this.productDao;
     }
 
-    public PaginatedList<Product> limitSelect() throws Exception {
+    @Override
+	public PaginatedList<Product> limitSelect() throws Exception {
         return this.limitSelect(new Product());
     }
 
     @Override
+	protected void setDetail(Product t) {
+		
+	}
+
+	@Override
     public void save(Product t) throws Exception {
         t.setStatus(1);
         super.save(t);

@@ -27,7 +27,7 @@
 		<!-- 左侧导航begin -->
 		<div class="sideNav">
 			<h1>
-				<a href="http://member.jiuxian.com/index.htm"><i></i><span>我的特供</span></a>
+				<a href="/"><i></i><span>我的特供</span></a>
 			</h1>
 			<div class="navList">
 				<div class="func func1 clearfix">
@@ -87,11 +87,11 @@
 											<tr class="ord-detailTab">
 												<td class="tdmoh1">
 													<div class="ordPicBox clearfix">
-														<a class="proId" href="detail.action?id=$" target="_blank">
+														<a class="proId" href="detail.action?id=${orderProduct.product.id }" target="_blank">
 															<img
 															src="/upload/img/product/logo/${orderProduct.product.logo }"
 															width="50" height="50" />
-														</a> <a class="proId" href="detail.action?id=$"
+														</a> <a class="proId" href="detail.action?id=${orderProduct.product.id }"
 															target="_blank"> ${orderProduct.product.name } </a>
 													</div>
 												</td>
