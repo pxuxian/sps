@@ -37,7 +37,7 @@ public class IndexAction extends BaseAction {
             p.setPageSize(8);
             p.setSectionId(2);
             this.productList2 = productService.limitSelect(p);
-            this.pcList = productCategoryService.limitSelect();
+            this.pcList = productCategoryService.limitSelect(new ProductCategory());
         } catch (Exception e) {
             e.printStackTrace();
         }

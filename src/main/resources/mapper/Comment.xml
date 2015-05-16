@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gail.sps.dao.CommentDao">
+	<resultMap type="Comment" id="CommentRs">
+		<result column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="product_id" property="productId" />
+		<result column="create_time" property="createTime" />
+		<result column="content" property="content" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<sql id="table_name">
+		t_comment
+	</sql>
+	<sql id="fields">
+		c.id, c.user_id, c.product_id, c.create_time, c.content, c.status
+	</sql>
+	
+	<sql id="baseSearchCondition">
+		<where>
+			c.status=0
+		</where>
+	</sql>
+	
+	<select id="queryByProductId" parameterType="Integer" resultMap="CommentRs">
+		select <include refid="fields" /> 
+		from <include refid="table_name" /> c
+		where product_id=#{productId}
+	</select>
+	
+	<select id="count" parameterType="Comment" resultType="Integer">
+		select count(1) 
+		from <include refid="table_name" /> c
+		<include refid="baseSearchCondition" />
+	</select>
+
+	<select id="limitSelect" parameterType="Comment" resultMap="CommentRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> c
+		<include refid="baseSearchCondition" />
+		limit #{startPos}, #{pageSize}
+	</select>
+	
+	<insert id="save" parameterType="Comment">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into <include refid="table_name" />
+		values (null, #{userId}, #{productId}, now(), #{content}, #{status })
+	</insert>
+	
+</mapper>

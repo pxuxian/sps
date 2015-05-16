@@ -68,7 +68,7 @@ public class ProductAction extends BaseAction {
     @Action(value = "toAdd", results = { @Result(name = "success", location = "/admin/product/add.jsp") })
     public String toAdd() {
         try {
-            this.pcList = productCategoryService.limitSelect();
+            this.pcList = productCategoryService.limitSelect(new ProductCategory());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -86,7 +86,7 @@ public class ProductAction extends BaseAction {
             }
             productService.save(p);
             this.p = new Product();
-            this.productList = productService.limitSelect();
+            this.productList = productService.limitSelect(new Product());
         } catch (Exception e) {
         	this.msg = e.getMessage();
             e.printStackTrace();
@@ -98,7 +98,7 @@ public class ProductAction extends BaseAction {
     public String toModify() {
         try {
             this.p = productService.getById(this.p.getId());
-            this.pcList = productCategoryService.limitSelect();
+            this.pcList = productCategoryService.limitSelect(new ProductCategory());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,7 +116,7 @@ public class ProductAction extends BaseAction {
             }
             productService.update(p);
             this.p = new Product();
-            this.productList = productService.limitSelect();
+            this.productList = productService.limitSelect(new Product());
         } catch (Exception e) {
         	this.msg = e.getMessage();
             e.printStackTrace();
@@ -130,7 +130,7 @@ public class ProductAction extends BaseAction {
         try {
             productService.delete(p.getId());
             this.p = new Product();
-            this.productList = productService.limitSelect();
+            this.productList = productService.limitSelect(new Product());
         } catch (Exception e) {
         	this.msg = e.getMessage();
             e.printStackTrace();

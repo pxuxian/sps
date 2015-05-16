@@ -9,8 +9,10 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 
+import com.gail.sps.model.Comment;
 import com.gail.sps.model.Product;
 import com.gail.sps.model.ProductCategory;
+import com.gail.sps.service.CommentService;
 import com.gail.sps.service.ProductCategoryService;
 import com.gail.sps.service.ProductService;
 
@@ -22,15 +24,19 @@ public class ProductAction extends BaseAction {
     private ProductService productService;
     @Autowired
     private ProductCategoryService productCategoryService;
+    @Autowired
+    private CommentService commentService;
 
     private Product p;
     private List<ProductCategory> pcList;
+    private List<Comment> commentList;
 
     @Action(value = "detail", results = { @Result(name = "success", location = "/detail.jsp") })
     public String detail() {
         try {
             this.p = productService.getById(id);
-            this.pcList = productCategoryService.limitSelect();
+            this.pcList = productCategoryService.limitSelect(new ProductCategory());
+            this.commentList = commentService.queryByProductId(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,5 +58,13 @@ public class ProductAction extends BaseAction {
     public void setPcList(List<ProductCategory> pcList) {
         this.pcList = pcList;
     }
+
+	public List<Comment> getCommentList() {
+		return commentList;
+	}
+
+	public void setCommentList(List<Comment> commentList) {
+		this.commentList = commentList;
+	}
 
 }

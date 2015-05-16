@@ -66,3 +66,14 @@ create table t_order_product (
 	price double(10,2) not null,
 	count int(11) not null
 );
+
+drop table if exists t_comment;
+create table t_comment (
+	id int(11) primary key auto_increment,
+	user_id int(11), 
+	product_id int(11) not null,
+	create_time datetime not null,
+	content varchar(200),
+	status int(11) not null default 0
+);
+insert into t_comment values(null, null, 1, now(), '便宜又好吃，赞！！！', 0);

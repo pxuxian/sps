@@ -42,7 +42,7 @@ public class CartAction extends BaseAction {
     private List<ProductCategory> pcList;
 
     private void init() throws Exception {
-        this.pcList = productCategoryService.limitSelect();
+        this.pcList = productCategoryService.limitSelect(new ProductCategory());
     }
 
     @Action(value = "showCart", results = { @Result(name = "success", location = "/cart.jsp") })

@@ -24,7 +24,7 @@ public abstract class GenericeServiceImpl<T extends BaseModel, ID extends Serial
     protected abstract GenericDao<T, ID> getDao();
     
     protected abstract void setDetail(T t) throws Exception; 
-
+    
     @Override
 	public T getById(ID id) throws Exception {
         return this.getDao().getById(id);

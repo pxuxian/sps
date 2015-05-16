@@ -29,8 +29,6 @@ public interface IGenericeService<T extends BaseModel, ID extends Serializable> 
     
     PaginatedList<T> limitSelectDetail(T t) throws Exception;
 
-    PaginatedList<T> limitSelect() throws Exception;
-
     void save(T t) throws Exception;
 
     void delete(ID id) throws Exception;

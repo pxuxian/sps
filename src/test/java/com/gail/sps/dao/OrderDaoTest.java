@@ -48,7 +48,7 @@ public class OrderDaoTest {
     	Order order = new Order();
     	order.setPage(1);
     	order.setPageSize(10);
-    	List<Order> orderList = orderService.limitSelect();
+    	List<Order> orderList = orderService.limitSelect(new Order());
     }
 
 }

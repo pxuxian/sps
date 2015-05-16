@@ -89,20 +89,37 @@
 							<a href="javascript:void(0);" class="now-js" id="sp-xq">商品详情</a>
 						</div>
 						<div class="detail-js-pl" id="pro_detail">
-							<p class="detail-pl01">
-								<!-- <span>产地：美国</span> <span>净重：单个重量约220克-250克</span> -->
-							</p>
-							<p></p>
-							<p></p>
 							<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt">
 								${p.detail }</p>
 							<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt">&nbsp;</p>
 							<p></p>
 						</div>
+						
+						<div class="detail-js-title">
+							<a href="javascript:void(0);" class="now-js" id="sp-xq">用户评论</a>
+						</div>
+						<div class="detail-js-pl" id="pro_detail">
+							<table>
+								<c:forEach items="${commentList }" var="comment">
+									<tr>
+										<td width="100px">
+											<c:if test="${empty comment.user }">
+												今日特供用户
+											</c:if>
+											<c:if test="${!empty comment.user }">
+												${comment.user.username }
+											</c:if>
+										</td>
+										<td width="500px">
+											${comment.content }
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-
 			<div class="detail-box-right">
 				<!--viewed start-->
 				<!-- <div class="detail-right-history01" id="detail_recent_product"

@@ -35,7 +35,7 @@ public class SearchAction extends BaseAction {
             p.setPageSize(20);
             p.setName(wd);
             this.productList = productService.limitSelect(p);
-            this.pcList = productCategoryService.limitSelect();
+            this.pcList = productCategoryService.limitSelect(new ProductCategory());
         } catch (Exception e) {
             e.printStackTrace();
         }

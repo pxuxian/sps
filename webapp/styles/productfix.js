@@ -1,5 +1,5 @@
 // JavaScript Document
-$(document).ready(function(){
+/*$(document).ready(function(){
 	var topMain=665;//是头部的高度加头部与nav导航之间的距离
 	var listnav=$(".detail-js-title");
 	$(window).scroll(function(){
@@ -9,8 +9,8 @@ $(document).ready(function(){
 			listnav.removeClass("detail-fix");
 		}
 	});
-})/*产品评论简介切换及固定 */
-
+})产品评论简介切换及固定 
+*/
 
 
 $(function(){

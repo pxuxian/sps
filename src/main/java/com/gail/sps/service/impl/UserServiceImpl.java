@@ -9,7 +9,6 @@ import com.gail.sps.dao.UserDao;
 import com.gail.sps.model.Role;
 import com.gail.sps.model.User;
 import com.gail.sps.service.UserService;
-import com.gail.sps.util.PaginatedList;
 
 @Component
 public class UserServiceImpl extends GenericeServiceImpl<User, Integer> implements UserService {
@@ -25,11 +24,6 @@ public class UserServiceImpl extends GenericeServiceImpl<User, Integer> implemen
 	@Override
 	protected void setDetail(User t) {
 		
-	}
-
-	@Override
-	public PaginatedList<User> limitSelect() throws Exception {
-		return this.limitSelect(new User());
 	}
 
 	@Transactional

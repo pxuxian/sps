@@ -38,7 +38,7 @@ public class UserAction extends BaseAction {
 	private List<ProductCategory> pcList;
 
 	private void init() throws Exception {
-		this.pcList = productCategoryService.limitSelect();
+		this.pcList = productCategoryService.limitSelect(new ProductCategory());
 	}
 
 	@SuppressWarnings("unchecked")

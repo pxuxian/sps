@@ -18,7 +18,6 @@ import com.gail.sps.model.Order;
 import com.gail.sps.model.OrderProduct;
 import com.gail.sps.model.User;
 import com.gail.sps.service.OrderService;
-import com.gail.sps.util.PaginatedList;
 
 @Component
 @Transactional
@@ -84,11 +83,6 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 			orderProduct.setOrder(order);
 			orderDao.saveOrderProduct(orderProduct);
 		}
-	}
-
-	@Override
-	public PaginatedList<Order> limitSelect() throws Exception {
-		return this.limitSelect(new Order());
 	}
 
 	@Override

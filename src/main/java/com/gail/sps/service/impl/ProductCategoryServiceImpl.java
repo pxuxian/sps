@@ -7,7 +7,6 @@ import com.gail.sps.dao.GenericDao;
 import com.gail.sps.dao.ProductCategoryDao;
 import com.gail.sps.model.ProductCategory;
 import com.gail.sps.service.ProductCategoryService;
-import com.gail.sps.util.PaginatedList;
 
 @Component
 public class ProductCategoryServiceImpl extends GenericeServiceImpl<ProductCategory, Integer> implements
@@ -26,10 +25,5 @@ public class ProductCategoryServiceImpl extends GenericeServiceImpl<ProductCateg
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public PaginatedList<ProductCategory> limitSelect() throws Exception {
-        return this.limitSelect(new ProductCategory());
-    }
 
 }
