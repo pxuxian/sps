@@ -73,7 +73,8 @@ create table t_comment (
 	user_id int(11), 
 	product_id int(11) not null,
 	create_time datetime not null,
-	content varchar(200),
+	content varchar(200) not null,
+	star_level int(11) not null default 5,
 	status int(11) not null default 0
 );
-insert into t_comment values(null, null, 1, now(), '便宜又好吃，赞！！！', 0);
+insert into t_comment values(null, null, 1, now(), '便宜又好吃，赞！！！', null, 0);

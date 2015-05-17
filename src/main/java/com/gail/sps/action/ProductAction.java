@@ -20,44 +20,58 @@ import com.gail.sps.service.ProductService;
 @ParentPackage("basePackage")
 @Namespace("/")
 public class ProductAction extends BaseAction {
-    @Autowired
-    private ProductService productService;
-    @Autowired
-    private ProductCategoryService productCategoryService;
-    @Autowired
-    private CommentService commentService;
+	@Autowired
+	private ProductService productService;
+	@Autowired
+	private ProductCategoryService productCategoryService;
+	@Autowired
+	private CommentService commentService;
 
-    private Product p;
-    private List<ProductCategory> pcList;
-    private List<Comment> commentList;
+	private Product p;
+	private List<ProductCategory> pcList;
+	private Comment comment;
+	private List<Comment> commentList;
 
-    @Action(value = "detail", results = { @Result(name = "success", location = "/detail.jsp") })
-    public String detail() {
-        try {
-            this.p = productService.getById(id);
-            this.pcList = productCategoryService.limitSelect(new ProductCategory());
-            this.commentList = commentService.queryByProductId(id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return SUCCESS;
-    }
+	@Action(value = "detail", results = { @Result(name = "success", location = "/detail.jsp") })
+	public String detail() {
+		try {
+			this.p = productService.getById(id);
+			this.pcList = productCategoryService.limitSelect(new ProductCategory());
+			this.commentList = commentService.queryByProductId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 
-    public Product getP() {
-        return p;
-    }
+	@Action(value = "addComment", results = { @Result(name = "success", location = "/detail.action?id=${id}", type = "redirect") })
+	public String addComment() {
+		try {
+			commentService.save(comment);
+			this.p = productService.getById(id);
+			this.pcList = productCategoryService.limitSelect(new ProductCategory());
+			this.commentList = commentService.queryByProductId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 
-    public void setP(Product p) {
-        this.p = p;
-    }
+	public Product getP() {
+		return p;
+	}
 
-    public List<ProductCategory> getPcList() {
-        return pcList;
-    }
+	public void setP(Product p) {
+		this.p = p;
+	}
 
-    public void setPcList(List<ProductCategory> pcList) {
-        this.pcList = pcList;
-    }
+	public List<ProductCategory> getPcList() {
+		return pcList;
+	}
+
+	public void setPcList(List<ProductCategory> pcList) {
+		this.pcList = pcList;
+	}
 
 	public List<Comment> getCommentList() {
 		return commentList;
@@ -65,6 +79,14 @@ public class ProductAction extends BaseAction {
 
 	public void setCommentList(List<Comment> commentList) {
 		this.commentList = commentList;
+	}
+
+	public Comment getComment() {
+		return comment;
+	}
+
+	public void setComment(Comment comment) {
+		this.comment = comment;
 	}
 
 }

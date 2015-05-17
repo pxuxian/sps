@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>订单结算</title>
+<title>今日特供-订单结算</title>
 
 <script type="text/javascript">
 	$('document').ready(function() {

@@ -11,6 +11,20 @@
 		$("#buy_now").click(function(){ 
 			$("#cartForm").submit();
 		}); 
+		
+		$("#addComment").click(function(){ 
+			var userId = $("#userId").val();
+			if (userId == null || userId == '') {
+				alert("请先登录再发表评论，谢谢！");
+				return false;
+			}
+			var content = $("#content").val();
+			if (content == null || content == '') {
+				alert("评论内容不能为空，谢谢！");
+				return false;
+			}
+			$("#commentForm").submit();
+		}); 
 	}); 
 </script>
 </head>
@@ -31,14 +45,16 @@
 					<div class="detail-one-left">
 						<div class="detail-bigpic">
 							<div>
-								<img src="/upload/img/product/logo/${p.logo }" id="defaultImg" style="border:1px solid #00DD00;" />
+								<img src="/upload/img/product/logo/${p.logo }" id="defaultImg"
+									style="border: 1px solid #00DD00;" />
 							</div>
 						</div>
 						<div class="detail-samllpic">
 							<ul>
 								<li><img
 									onmouseover="javascript:showDaTu(&#39;http://127.0.0.1/upload/img/product/logo/${p.logo }&#39;)"
-									src="/upload/img/product/logo/${p.logo }" style="border:1px solid #00DD00;"/></li>
+									src="/upload/img/product/logo/${p.logo }"
+									style="border: 1px solid #00DD00;" /></li>
 							</ul>
 						</div>
 					</div>
@@ -55,20 +71,19 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="detail-xxtwo-t">
 							<div class="contbox">
 								<div id="summary-stock">产地：${p.place }</div>
 							</div>
 						</div>
-
-						<form action="/addCart.action" method="post" id="cartForm" target="_blank">
+						<form action="/addCart.action" method="post" id="cartForm"
+							target="_blank">
 							<input type="hidden" name="cartItem.productId" value="${p.id }" />
 							<div class="detail-xxthree">
 								<div class="detail-buy01">
 									<span><img onclick="decNum()" src="/images/bag_dec.gif"></span>
-									<span><input type="text" id="buy_num" name="cartItem.count"
-										value="1" class="number-add"></span> <span><img
+									<span><input type="text" id="buy_num"
+										name="cartItem.count" value="1" class="number-add"></span> <span><img
 										onclick="addNum()" src="/images/bag_add.gif"></span>
 								</div>
 								<div class="detail-buy02">
@@ -94,28 +109,66 @@
 							<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt">&nbsp;</p>
 							<p></p>
 						</div>
-						
+
 						<div class="detail-js-title">
 							<a href="javascript:void(0);" class="now-js" id="sp-xq">用户评论</a>
 						</div>
-						<div class="detail-js-pl" id="pro_detail">
-							<table>
-								<c:forEach items="${commentList }" var="comment">
-									<tr>
-										<td width="100px">
-											<c:if test="${empty comment.user }">
-												今日特供用户
-											</c:if>
-											<c:if test="${!empty comment.user }">
-												${comment.user.username }
-											</c:if>
-										</td>
-										<td width="500px">
-											${comment.content }
-										</td>
-									</tr>
-								</c:forEach>
-							</table>
+						<div class="detail-allsays01">
+							<c:forEach items="${commentList }" var="comment">
+								<div class="detail-user-says">
+									<div class="detail-user-says-left">
+										<img src="/images/logo/user.jpg" style="width:50px;">
+									</div>
+									<div class="detail-user-says-right">
+										<ul>
+											<li><c:if test="${empty comment.user }">
+													匿名用户
+												</c:if> <c:if test="${!empty comment.user }">
+													${comment.user.username }
+												</c:if></li>
+											<li>${comment.content }</li>
+											<li>
+												<p class="user-ping">
+													<c:forEach begin="1" end="${comment.starLevel }">
+														<span class="star"></span>
+													</c:forEach>
+												</p> <span class="gray"><fmt:formatDate
+														value="${comment.createTime }"
+														pattern="yyyy-MM-dd HH:mm:ss" /> </span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</c:forEach>
+							<form action="/addComment.action" method="post" id="commentForm">
+								<input type="hidden" name="id" value="${p.id }" />
+								<input type="hidden" name="comment.userId" value="${sessionScope.sessionUser.id }" id="userId" />
+								<input type="hidden" name="comment.productId" value="${p.id }" />
+								<div class="detail-user-says">
+									我要评论
+									<div class="detail-user-says-left">
+									</div>
+									<div class="detail-user-says-right">
+										<ul>
+											<li>星级：<br /> 
+												<c:forEach begin="1" end="5" varStatus="i">
+													<p class="user-ping" style="width:100px;">
+														<input type="radio" name="comment.starLevel" value="${i.count }" <c:if test="${i.count==5 }"> checked="checked"</c:if>>
+														<c:forEach begin="1" end="${i.count }">
+															<span class="star"></span>
+														</c:forEach>
+													</p>
+												</c:forEach> 
+											</li>
+											<li><textarea style="height:100px;" cols="80"
+													name="comment.content" id="content"></textarea></li>
+											<li>
+												<input type="button" id="addComment" value="发表评论">
+											</li>
+										</ul>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

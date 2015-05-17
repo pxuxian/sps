@@ -8,6 +8,7 @@
 		<result column="product_id" property="productId" />
 		<result column="create_time" property="createTime" />
 		<result column="content" property="content" />
+		<result column="star_level" property="starLevel" />
 		<result column="status" property="status" />
 	</resultMap>
 
@@ -15,7 +16,7 @@
 		t_comment
 	</sql>
 	<sql id="fields">
-		c.id, c.user_id, c.product_id, c.create_time, c.content, c.status
+		c.id, c.user_id, c.product_id, c.create_time, c.content, c.star_level, c.status
 	</sql>
 	
 	<sql id="baseSearchCondition">
@@ -48,7 +49,7 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 		insert into <include refid="table_name" />
-		values (null, #{userId}, #{productId}, now(), #{content}, #{status })
+		values (null, #{userId}, #{productId}, now(), #{content}, #{starLevel}, #{status })
 	</insert>
 	
 </mapper>
