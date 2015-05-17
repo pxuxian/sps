@@ -15,7 +15,7 @@
 			if (needReg == '1') {
 				var userNameFlag = true;
 				var username = $('#uname').val();
-				if (username.length<=0) {
+				if (username.length <= 0) {
 					alert("请输入注册用户名，谢谢!");
 					return false;
 				}
@@ -38,7 +38,7 @@
 				}
 				var pass = $('#password').val();
 				var pass2 = $('#password2').val();
-				if (pass.length<=0) {
+				if (pass.length <= 0) {
 					alert("请输入密码，谢谢!");
 					return false;
 				} else if (pass != pass2) {
@@ -77,9 +77,10 @@
 					<c:if test="${empty sessionScope.sessionUser }">
 						<div class="step-1">
 							<div class="stepTitle">
-								<div class="field-tit">你还没有登录 ，顺便注册一下 ): </div>&nbsp;&nbsp;&nbsp;
-								已经注册过，<a href="login.jsp"><font color="#FF8800">去登录</font></a>
-								<input type="hidden" id="needReg" value="1" />
+								<div class="field-tit">你还没有登录 ，顺便注册一下 ):</div>
+								&nbsp;&nbsp;&nbsp; 已经注册过，<a href="login.jsp"><font
+									color="#FF8800">去登录</font></a> <input type="hidden" id="needReg"
+									value="1" />
 							</div>
 							<div class="orderAddressForm">
 								<div class="orderList">
@@ -94,14 +95,15 @@
 									<span class="title"><em>*</em>密码：</span>
 									<div class="field">
 										<input id="password" name="order.user.password"
-											type="password" class="form-2" />
+											type="password" class="form-2" style="border-color: #FEA9A9" />
 									</div>
 								</div>
 								<br />
 								<div class="orderList">
 									<span class="title"><em>*</em>确认密码：</span>
 									<div class="field">
-										<input id="password2" type="password" class="form-2" />
+										<input id="password2" type="password" class="form-2"
+											style="border-color: #FEA9A9" />
 									</div>
 								</div>
 							</div>
@@ -123,15 +125,16 @@
 								<span class="title"><em>*</em>详细地址：</span>
 								<div class="field">
 									<input id="address" name="order.address" type="text"
-										class="form-2" />
+										class="form-2" style="width: 408px; border-color: #FEA9A9" />
 								</div>
 							</div>
 							<div class="orderList">
 								<span class="title"><em>*</em>手机：</span>
 								<div class="field">
 									<input id="mobile" name="order.mobile" type="text"
-										class="form-2" />&nbsp;&nbsp;或固定电话： <input
-										name="order.telphone" type="text" class="form-2" id="new_tele" />&nbsp;&nbsp;格式：区号-电话
+										class="form-2" style="border-color: #FEA9A9" />&nbsp;&nbsp;或固定电话：
+									<input name="order.telphone" type="text" class="form-2"
+										style="border-color: #FEA9A9" />&nbsp;&nbsp;格式：区号-电话
 								</div>
 							</div>
 						</div>
@@ -217,8 +220,8 @@
 				<div class="orderInfo">
 					<div class="step-9" align="right">
 						<span style='font-size: 20px; font-family: "微软雅黑";'>应付总金额：￥<font
-							color="red">${order.total }</font> 
-							<a href="javascript:void(0);" class="cart_b_paybtn ml10 " id="sub">提交订单</a>
+							color="red">${order.total }</font> <a href="javascript:void(0);"
+							class="cart_b_paybtn ml10 " id="sub">提交订单</a>
 						</span>
 					</div>
 				</div>
