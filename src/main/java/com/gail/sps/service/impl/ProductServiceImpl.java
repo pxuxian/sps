@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.gail.sps.dao.GenericDao;
 import com.gail.sps.dao.ProductDao;
+import com.gail.sps.model.BaseModel;
 import com.gail.sps.model.Product;
 import com.gail.sps.service.ProductService;
 
@@ -29,7 +30,7 @@ public class ProductServiceImpl extends GenericeServiceImpl<Product, Integer> im
 
 	@Override
     public void save(Product t) throws Exception {
-        t.setStatus(1);
+        t.setStatus(BaseModel.STATUS_OK);
         super.save(t);
     }
 
