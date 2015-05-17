@@ -185,24 +185,24 @@
 				<!--viewed end-->
 				<div class="detail-right-history01">
 					<div class="title_Browse">
-						<p>热销人气商品</p>
-						<span> <a href="/">MORE+</a>
-						</span>
+						<p style="font-family:微软雅黑;">热销人气商品</p>
 					</div>
 					<div class="title_Browse_box">
-						<div class="Browse_box1 ">
-							<dl>
-								<dt>
-									<a target="_blank" href="detail.action?id=${p.id }"><img
-										src="/upload/img/product/logo/${p.logo }" width="80"
-										height="78"></a>
-								</dt>
-								<dd>
-									<a target="_blank" href="detail.action?id=${p.id }">${p.name }</a>
-								</dd>
-								<dd class="font_2">现价：￥${p.price }</dd>
-							</dl>
-						</div>
+						<c:forEach items="${hotProductList }" var="p">
+							<div class="Browse_box1 ">
+								<dl>
+									<dt>
+										<a target="_blank" href="detail.action?id=${p.id }"><img
+											src="/upload/img/product/logo/${p.logo }" width="80"
+											height="78"></a>
+									</dt>
+									<dd>
+										<a target="_blank" href="detail.action?id=${p.id }">${p.name }</a>
+									</dd>
+									<dd class="font_2">现价：￥${p.price }</dd>
+								</dl>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

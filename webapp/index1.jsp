@@ -110,7 +110,7 @@
 						</div>
 					</div>
 
-					<div class="onelist-right">
+					<div class="onelist-right" style="font-family:微软雅黑;">
 						<!-- <div class="onelist-right-gg01 statis_index_rightactive">
 							<ul>
 								<li><a href="/" target="_blank"><img
@@ -121,23 +121,26 @@
 						</div> -->
 						<div class="onelist-right-gg02">
 							<div class="title_1 statis_index_hotproduct">
-								<h4>热销人气商品</h4>
-								<span><a href="/">MORE+</a></span>
+								<h4 style="font-family:微软雅黑;">热销人气商品</h4>
+								<!-- <span><a href="/">MORE+</a></span> -->
 							</div>
 							<div class="onelist-right-box  statis_index_hotproduct">
-								<div class="onelist-right-three ">
-									<dl>
-										<dt>
-											<a href="/" target="_blank"><img
-												src="/images/hot_1.jpg" width="80" height="78" /></a>
-										</dt>
-										<dd>
-											<a href="/" target="_blank">泰国龙眼</a>
-										</dd>
-										<dd class="font_1">现价：￥68</dd>
-										<dd class="old-price">原价：￥88</dd>
-									</dl>
-								</div>
+								<c:forEach items="${hotProductList }" var="p">
+									<div class="onelist-right-three ">
+										<dl>
+											<dt>
+												<a href="/detail.action?id=${p.id }" target="_blank">
+													<img src="/upload/img/product/logo/${p.logo }" width="80" height="78" />
+												</a>
+											</dt>
+											<dd>
+												<a href="/detail.action?id=${p.id }" target="_blank">${p.name }</a>
+											</dd>
+											<dd class="font_1">现价：￥${p.price }</dd>
+											<!-- <dd class="old-price">原价：￥88</dd> -->
+										</dl>
+									</div>
+								</c:forEach>
 							</div>
 						</div>
 					</div>

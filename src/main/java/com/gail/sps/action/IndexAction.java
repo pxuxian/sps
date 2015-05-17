@@ -26,6 +26,7 @@ public class IndexAction extends BaseAction {
     private List<Product> productList1;
     private List<Product> productList2;
     private List<ProductCategory> pcList;
+    private List<Product> hotProductList;
 
     @Action(value = "/index", results = { @Result(name = "success", location = "/index1.jsp") })
     public String list() {
@@ -38,6 +39,7 @@ public class IndexAction extends BaseAction {
             p.setSectionId(2);
             this.productList2 = productService.limitSelect(p);
             this.pcList = productCategoryService.limitSelect(new ProductCategory());
+            this.hotProductList = productService.listHotProducts();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,5 +69,13 @@ public class IndexAction extends BaseAction {
     public void setPcList(List<ProductCategory> pcList) {
         this.pcList = pcList;
     }
+
+	public List<Product> getHotProductList() {
+		return hotProductList;
+	}
+
+	public void setHotProductList(List<Product> hotProductList) {
+		this.hotProductList = hotProductList;
+	}
 
 }

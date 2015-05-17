@@ -29,6 +29,7 @@
 		select <include refid="fields" /> 
 		from <include refid="table_name" /> c
 		where product_id=#{productId}
+		order by create_time desc
 	</select>
 	
 	<select id="count" parameterType="Comment" resultType="Integer">

@@ -103,7 +103,13 @@
 	
 	<delete id="delete" parameterType="Integer">
 		update <include refid="table_name" />
-		set status=0 where id=#{id}
+		set status=-1 where id=#{id}
 	</delete>
+	
+	<select id="listHotProducts" resultType="Integer">
+		select product_id from ( 
+			select product_id, sum(count) ct from t_order_product group by product_id order by ct desc
+		) t limit 5;
+	</select>
 
 </mapper>

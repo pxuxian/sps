@@ -31,6 +31,7 @@ public class ProductAction extends BaseAction {
 	private List<ProductCategory> pcList;
 	private Comment comment;
 	private List<Comment> commentList;
+	private List<Product> hotProductList;
 
 	@Action(value = "detail", results = { @Result(name = "success", location = "/detail.jsp") })
 	public String detail() {
@@ -38,6 +39,7 @@ public class ProductAction extends BaseAction {
 			this.p = productService.getById(id);
 			this.pcList = productCategoryService.limitSelect(new ProductCategory());
 			this.commentList = commentService.queryByProductId(id);
+			this.hotProductList = productService.listHotProducts();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -87,6 +89,14 @@ public class ProductAction extends BaseAction {
 
 	public void setComment(Comment comment) {
 		this.comment = comment;
+	}
+
+	public List<Product> getHotProductList() {
+		return hotProductList;
+	}
+
+	public void setHotProductList(List<Product> hotProductList) {
+		this.hotProductList = hotProductList;
 	}
 
 }
