@@ -14,31 +14,13 @@
 <link href="./styles/user_1200.css" id="newLink" rel="stylesheet"
 	type="text/css"></link>
 <title>今日特供-我的订单</title>
-
 </head>
-
 <body>
 	<jsp:include page="top.jsp" />
-
 	<div class="user clearfix">
-		<div class="uBread">
-			<a href="javascript:;">交易管理</a><i>&gt;</i><em>我的订单</em>
-		</div>
 		<!-- 左侧导航begin -->
-		<div class="sideNav">
-			<h1>
-				<a href="/"><i></i><span>我的特供</span></a>
-			</h1>
-			<div class="navList">
-				<div class="func func1 clearfix">
-					<p class="title">
-						<i></i><span>交易管理</span>
-					</p>
-					<a class="item on" href="/myOrder.action"><span>我的订单</span><i></i></a>
-				</div>
-			</div>
-		</div>
-		<!-- 右侧 -->
+		<jsp:include page="nav.jsp" />
+		
 		<div class="rightBox">
 			<div class="rightTit">
 				<h2>

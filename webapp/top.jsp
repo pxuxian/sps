@@ -25,6 +25,7 @@
 	<jsp:include page="lineservice.html" />
 	<div class="top-box">
 		<div align="right" style="width:90%">
+			${sessionScope.sessionUser.username }
 			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
 				<a href="/admin.action">管理后台</a>
 			</c:if>
