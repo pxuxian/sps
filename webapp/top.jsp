@@ -22,6 +22,7 @@
 </script>
 </head>
 <body>
+	<jsp:include page="lineservice.html" />
 	<div class="top-box">
 		<div align="right" style="width:90%">
 			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
@@ -35,7 +36,6 @@
 				<a href="myOrder.action">我的订单</a>
 				<a href="logout.action">退出</a>
 			</c:if>
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=402152952&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:402152952:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
 		</div>
 		<div class="top-box01">
 			<div class="container-top">
