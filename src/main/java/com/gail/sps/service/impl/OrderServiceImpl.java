@@ -77,6 +77,7 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 		Order od = this.generaterOrder(cart);
 		order.setNumber(System.currentTimeMillis() + "");
 		order.setCreateTime(new Date());
+		order.setStatus(OrderStatus.NEW);
 		orderDao.save(order);
 		List<OrderProduct> orderProducts = od.getOrderProducts();
 		for (OrderProduct orderProduct : orderProducts) {

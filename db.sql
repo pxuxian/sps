@@ -77,4 +77,4 @@ create table t_comment (
 	star_level int(11) not null default 5,
 	status int(11) not null default 0
 );
-insert into t_comment values(null, null, 1, now(), '便宜又好吃，赞！！！', null, 0);
+insert into t_comment values(null, 1, 1, now(), '便宜又好吃，赞！！！', 5, 0);
