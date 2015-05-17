@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class BaseModel implements Serializable {
     private static final long serialVersionUID = 1146828794233342776L;
 
-    public static final int STATUS_OK = 0;
-    public static final int STATUS_DELETE = 2;
+    public static final int STATUS_OK = 1;
+    public static final int STATUS_DELETE = -1;
 
     /**
      * 分页：当前页

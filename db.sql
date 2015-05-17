@@ -34,12 +34,15 @@ create table t_product (
 	section_id int(11),
 	name varchar(50) not null,
 	descrip varchar(100),
-	place varchar(20),
+	place varchar(50),
+	spec varchar(100),
 	price double(10,2),
 	logo text,
 	detail text,
 	status int(11) not null
 );
+--alter table t_product add spec varchar(100) after place;
+
 
 drop table if exists t_order;
 create table t_order (

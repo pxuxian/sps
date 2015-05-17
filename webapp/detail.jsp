@@ -72,9 +72,10 @@
 							</div>
 						</div>
 						<div class="detail-xxtwo-t">
-							<div class="contbox">
-								<div id="summary-stock">产地：${p.place }</div>
-							</div>
+							<div id="summary-stock">规格：${p.spec }</div>
+						</div>
+						<div class="detail-xxtwo-t">
+							<div id="summary-stock">产地：${p.place }</div>
 						</div>
 						<form action="/addCart.action" method="post" id="cartForm"
 							target="_blank">

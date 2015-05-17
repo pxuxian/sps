@@ -41,6 +41,10 @@
 			<td><input type="text" name="p.place" value="${p.place }" /></td>
 		</tr>
 		<tr>
+			<td width="10%" class="tableleft">规格</td>
+			<td><input type="text" name="p.spec" value="${p.spec }" /></td>
+		</tr>
+		<tr>
 			<td width="10%" class="tableleft">描述</td>
 			<td>
 				<textarea rows="10" cols="50" name="p.descrip">${p.descrip }</textarea>

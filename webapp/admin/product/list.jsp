@@ -40,6 +40,7 @@
 				<th>分类</th>
 				<th>名称</th>
 				<th>产地</th>
+				<th>规格</th>
 				<th>描述</th>
 				<th>价格</th>
 				<th>操作</th>
@@ -51,6 +52,7 @@
 				<td>${p.category.name }</td>
 				<td>${p.name }</td>
 				<td>${p.place }</td>
+				<td>${p.spec }</td>
 				<td>
 					<c:out value="${fn:substring(p.descrip, 0, 10)}" /> ...
 				</td>

@@ -66,17 +66,17 @@
 			var config = [ {
 				id : '1',
 				menu : [ {
-					text : '产品分类',
+					text : '基础数据',
 					items : [ {
 						id : '12',
-						text : '产品分类',
+						text : '商品分类',
 						href : '/admin/category/list.action'
 					} ]
 				}, {
-					text : '产品管理',
+					text : '商品管理',
 					items : [ {
 						id : '12',
-						text : '产品列表',
+						text : '商品列表',
 						href : '/admin/product/list.action'
 					} ]
 				}, {

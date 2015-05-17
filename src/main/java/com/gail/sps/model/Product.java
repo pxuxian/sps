@@ -16,6 +16,7 @@ public class Product extends BaseModel {
     private int sectionId;
     private String descrip;
     private String place;
+    private String spec; // 规格
     private double price;
     private String logo;
     private String detail;
@@ -115,6 +116,14 @@ public class Product extends BaseModel {
 
 	public void setPlace(String place) {
 		this.place = place;
+	}
+
+	public String getSpec() {
+		return spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
 	}
 
 }
