@@ -121,6 +121,17 @@ public class UserAction extends BaseAction {
 		}
 		return "success";
 	}
+	
+	@Action(value = "info", results = { @Result(name = "success", location = "/userInfo.jsp") })
+	public String info() {
+		try {
+			this.init();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
 
 	public User getUser() {
 		return user;

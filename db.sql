@@ -81,3 +81,9 @@ create table t_comment (
 	status int(11) not null default 0
 );
 insert into t_comment values(null, 1, 1, now(), '便宜又好吃，赞！！！', 5, 0);
+
+select product_id from ( 
+			select op.product_id, sum(op.count) ct from t_order_product op, t_order o 
+			where op.order_id=o.id and o.status>0
+			group by op.product_id order by ct desc
+		) t limit 5;

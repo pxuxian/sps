@@ -75,14 +75,12 @@
 										<dd class="col_3 fl"></dd>
 										<dd class="col_4 fl rel ">${cartItem.product.price }</dd>
 										<dd class="col_5 fl rel">
-											<a class="goodsSub fl"
+											<a class="goodsSub fl" style="height:22px;"
 												href="javascript:modifyCartNumDec(${cartItem.product.id });">-</a>
 											<input id="buy_num" class="goodsTxt fl" type="text"
-												value="${cartItem.count }" name="goodsCount" /> <a
-												class="goodsPlus fl"
+												value="${cartItem.count }" name="goodsCount" style="height:22px;" /> <a
+												class="goodsPlus fl" style="height:22px;"
 												href="javascript:modifyCartNumAdd(${cartItem.product.id });">+</a>
-											<input type="hidden" name="oldNum_100114656007" id="oldNum_1"
-												value="1" />
 										</dd>
 										<dd class="col_6 fl">
 											<strong class="corg">${cartItem.subtotal }</strong>

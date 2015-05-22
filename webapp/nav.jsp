@@ -21,7 +21,7 @@
 			</div>
 			<div class="func func1 clearfix">
 				<p class="title">
-					<i></i><span style="font-family: 微软雅黑;">设置</span>
+					<i></i><span style="font-family: 微软雅黑;">我的账户</span>
 				</p>
 				<a class="item on" href="/info.action"><span>个人信息</span><i></i></a>
 				<a class="item on" href="/account.action"><span>账户安全</span><i></i></a>
