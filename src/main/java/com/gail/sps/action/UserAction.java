@@ -126,6 +126,55 @@ public class UserAction extends BaseAction {
 	public String info() {
 		try {
 			this.init();
+			User sessionUser = (User)session.get("sessionUser");
+			this.user = userService.getById(sessionUser.getId());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Action(value = "modifyUserInfo", results = { @Result(name = "success", location = "/adminSuccess.jsp") })
+	public String modifyUserInfo() {
+		try {
+			this.init();
+			User sessionUser = (User)session.get("sessionUser");
+			user.setId(sessionUser.getId());
+			userService.update(user);
+			session.put("sessionUser", userService.getById(user.getId()));
+			this.msg = "用户信息修改成功。";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
+	
+	@Action(value = "toModifyPwd", results = { @Result(name = "success", location = "/userAccount.jsp") })
+	public String toModifyPwd() {
+		try {
+			this.init();
+			User sessionUser = (User)session.get("sessionUser");
+			this.user = userService.getById(sessionUser.getId());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		return "success";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Action(value = "modifyPwd", results = { @Result(name = "success", location = "/adminSuccess.jsp") })
+	public String modifyPwd() {
+		try {
+			this.init();
+			User sessionUser = (User)session.get("sessionUser");
+			user.setId(sessionUser.getId());
+			userService.update(user);
+			session.put("sessionUser", userService.getById(user.getId()));
+			this.msg = "用户密码修改成功。";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";

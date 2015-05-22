@@ -1,6 +1,6 @@
-drop database if exists sps;
-create database sps;
-use sps;
+drop database if exists sq_mygail;
+create database sq_mygail;
+use sq_mygail;
 
 drop table if exists t_role;
 create table t_role (
@@ -14,10 +14,13 @@ drop table if exists t_user;
 create table t_user (
 	id int(11) primary key auto_increment,
 	role_id int(11) not null,
-	username varchar(50) UNIQUE not null,
+	username varchar(100) UNIQUE not null,
 	password varchar(50) not null,
+	nick_name varchar(100),
+	email varchar(50),
 	status int(11) not null
 );
+insert into t_user values(1, 100, 'pxuxian', 'pxuxian', '', 'pxuxian@qq.com', 1);
 
 drop table if exists t_product_category;
 create table t_product_category (

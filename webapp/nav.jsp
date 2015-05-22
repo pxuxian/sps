@@ -24,7 +24,7 @@
 					<i></i><span style="font-family: 微软雅黑;">我的账户</span>
 				</p>
 				<a class="item on" href="/info.action"><span>个人信息</span><i></i></a>
-				<a class="item on" href="/account.action"><span>账户安全</span><i></i></a>
+				<a class="item on" href="/toModifyPwd.action"><span>修改密码</span><i></i></a>
 			</div>
 		</div>
 	</div>

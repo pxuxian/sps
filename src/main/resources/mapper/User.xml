@@ -6,6 +6,8 @@
 		<result column="id" property="id" />
 		<result column="username" property="username" />
 		<result column="password" property="password" />
+		<result column="nick_name" property="nickName" />
+		<result column="email" property="email" />
 		<result column="status" property="status" />
 		<association column="role_id" property="role" select="getRoleById" />
 	</resultMap>
@@ -14,7 +16,7 @@
 		t_user
 	</sql>
 	<sql id="fields">
-		u.id, u.username, u.password, u.role_id, u.status
+		u.id, u.username, u.password, u.role_id, u.status, u.nick_name, u.email
 	</sql>
 	
 	<sql id="baseSearchCondition">
@@ -72,7 +74,23 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 		insert into <include refid="table_name" />
-		values (null, #{role.id}, #{username}, #{password}, #{status })
+		values (null, #{role.id}, #{username}, #{password}, #{nickName}, #{email}, #{status })
 	</insert>
+	
+	<update id="update" parameterType="User">
+		update <include refid="table_name" />
+		<set>
+			<if test="nickName != null">
+				nick_name=#{nickName},
+			</if>
+			<if test="email != null">
+				email=#{email},
+			</if>
+			<if test="password != null">
+				password=#{password},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
 	
 </mapper>

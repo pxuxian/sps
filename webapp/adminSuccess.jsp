@@ -13,46 +13,26 @@
 <link href="./styles/user_nav.css" rel="stylesheet" type="text/css"></link>
 <link href="./styles/user_1200.css" id="newLink" rel="stylesheet"
 	type="text/css"></link>
-<title>今日特供-个人信息</title>
+<title>今日特供-操作成功</title>
 </head>
 <body>
 	<jsp:include page="top.jsp" />
 	<div class="user clearfix">
-		<!-- 左侧导航begin -->
 		<jsp:include page="nav.jsp" />
 
 		<div class="rightBox">
 			<div class="rightTit">
 				<h2>
-					<i></i>个人信息
+					<i></i>操作成功
 				</h2>
 			</div>
 			<div class="rightCon">
 				<div class="myordCon" style="font-family: 微软雅黑;">
-					<form action="/modifyUserInfo.action" method="post" id="userInfo">
-						<table>
-							<tr>
-								<td width="100px" style="font-size: 15px">用户名：</td>
-								<td width="500px" style="font-size: 15px">${user.username }</td>
-							</tr>
-							<tr>
-								<td width="100px" style="font-size: 15px">昵称：</td>
-								<td width="500px" style="font-size: 15px"><input type="text"
-									name="user.nickName" value="${user.nickName }" /></td>
-							</tr>
-							<tr>
-								<td width="100px" style="font-size: 15px">邮箱：</td>
-								<td width="500px" style="font-size: 15px"><input type="text"
-									name="user.email" value="${user.email }" /></td>
-							</tr>
-							<tr>
-								<td width="100px" style="font-size: 15px"></td>
-								<td width="500px" style="font-size: 15px">
-									<input type="submit" id="modifyInfo" value="修改" />
-								</td>
-							</tr>
-						</table>
-					</form>
+					<img src="/images/logo/success.gif" alt="" width="60px" height="60px" /> 
+					<span style="font-size: 13px">
+						<br /> &nbsp; &nbsp; 
+						${msg }
+					</span>
 				</div>
 			</div>
 		</div>

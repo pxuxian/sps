@@ -6,6 +6,8 @@ public class User extends BaseModel {
 	private int id;
 	private String username;
 	private String password;
+	private String nickName;
+	private String email;
 	private Role Role;
 	private int status;
 
@@ -54,6 +56,22 @@ public class User extends BaseModel {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override

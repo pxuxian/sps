@@ -25,18 +25,30 @@
 	<jsp:include page="lineservice.html" />
 	<div class="top-box">
 		<div align="right" style="width:90%">
-			${sessionScope.sessionUser.username }
+			欢迎您，
+			<c:choose>
+				<c:when test="${!empty sessionScope.sessionUser.nickName }">
+					${sessionScope.sessionUser.nickName }
+				</c:when>
+				<c:otherwise>
+					${sessionScope.sessionUser.username }
+				</c:otherwise>
+			</c:choose>
+				
 			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
 				<a href="/admin.action">管理后台</a>
 			</c:if>
-			<c:if test="${empty sessionScope.sessionUser }">
-				<a href="reg.jsp">注册</a>
-				<a href="login.jsp">登录</a>
-			</c:if>
-			<c:if test="${!empty sessionScope.sessionUser }">
-				<a href="myOrder.action">我的订单</a>
-				<a href="logout.action">退出</a>
-			</c:if>
+			
+			<c:choose>
+				<c:when test="${empty sessionScope.sessionUser }">
+					<a href="reg.jsp">注册</a>
+					<a href="login.jsp">登录</a>
+				</c:when>
+				<c:otherwise>
+					<a href="myOrder.action">我的订单</a>
+					<a href="logout.action">退出</a>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div class="top-box01">
 			<div class="container-top">
