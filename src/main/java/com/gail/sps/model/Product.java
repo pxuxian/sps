@@ -11,7 +11,7 @@ public class Product extends BaseModel {
     private int id;
     private String code;
     private String name;
-    private int categoryId;
+    private Integer categoryId;
     private ProductCategory category;
     private int sectionId;
     private String descrip;
@@ -46,11 +46,11 @@ public class Product extends BaseModel {
         this.name = name;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

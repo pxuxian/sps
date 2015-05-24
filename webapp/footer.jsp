@@ -35,9 +35,9 @@
 		<div class="w foot-message" align="center">
 			<hr>
 			<p>
-				版权所有 © 2015 今日特供 保留所有权利 | <a href="http://www.miitbeian.gov.cn/"
-					target="_blank" rel="nofollow">京ICP备12042163</a>
-			</p>
+				版权所有 © 2015 今日特供 保留所有权利 
+<!-- 					| <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">京ICP备12042163</a>
+ -->			</p>
 			<p class="foot-text">今日特供 土特产专卖</p>
 		</div>
 	</div>

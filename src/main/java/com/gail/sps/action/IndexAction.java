@@ -27,17 +27,24 @@ public class IndexAction extends BaseAction {
     private List<Product> productList2;
     private List<ProductCategory> pcList;
     private List<Product> hotProductList;
-
+    private String cid;
+    
     @Action(value = "/index", results = { @Result(name = "success", location = "/index1.jsp") })
     public String list() {
         try {
             Product p = new Product();
-            p.setPageSize(8);
+            p.setPageSize(16);
             p.setSectionId(1);
+            if (cid != null) {
+            	String[] param = cid.split(",");
+            	if (param.length == 2) {
+            		p.setCategoryId(Integer.valueOf(param[1].trim()));
+            	}
+            }
             this.productList1 = productService.limitSelect(p);
-            p.setPageSize(8);
-            p.setSectionId(2);
-            this.productList2 = productService.limitSelect(p);
+//            p.setPageSize(8);
+//            p.setSectionId(2);
+//            this.productList2 = productService.limitSelect(p);
             this.pcList = productCategoryService.limitSelect(new ProductCategory());
             this.hotProductList = productService.listHotProducts();
         } catch (Exception e) {
@@ -76,6 +83,14 @@ public class IndexAction extends BaseAction {
 
 	public void setHotProductList(List<Product> hotProductList) {
 		this.hotProductList = hotProductList;
+	}
+
+	public String getCid() {
+		return cid;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
 	}
 
 }

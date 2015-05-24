@@ -11,5 +11,7 @@ public interface OrderDao extends GenericDao<Order, Integer> {
     
     List<OrderProduct> listOrderProduct(Integer orderId) throws Exception;
     
+    List<Order> listOrders(Integer productId, Integer userId) throws Exception;
+    
     void updateStatus(Order order) throws Exception;
 }

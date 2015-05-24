@@ -81,9 +81,9 @@ create table t_comment (
 	create_time datetime not null,
 	content varchar(200) not null,
 	star_level int(11) not null default 5,
-	status int(11) not null default 0
+	status int(11) not null default 1
 );
-insert into t_comment values(null, 1, 1, now(), '便宜又好吃，赞！！！', 5, 0);
+insert into t_comment values(null, 1, 1, now(), '便宜又好吃，赞！！！', 5, 1);
 
 select product_id from ( 
 			select op.product_id, sum(op.count) ct from t_order_product op, t_order o 

@@ -4,15 +4,15 @@
 <%@include file="common.jsp"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>今日特供-${p.name }</title>
 <script type="text/javascript">
-	$(function(){ 
+	$('document').ready(function() {
 		$("#buy_now").click(function(){ 
 			$("#cartForm").submit();
 		}); 
 		
-		$("#addComment").click(function(){ 
+		$("#addComment").click(function() { 
 			var userId = $("#userId").val();
 			if (userId == null || userId == '') {
 				alert("请先登录再发表评论，谢谢！");
@@ -23,9 +23,27 @@
 				alert("评论内容不能为空，谢谢！");
 				return false;
 			}
-			$("#commentForm").submit();
-		}); 
-	}); 
+			var productId = $("#productId").val();
+			var starLevel = $("#starLevel").val();
+			
+			var url = "ajax_addComment.action";
+			var data = {
+				'comment.content': content, 
+				'comment.userId': userId, 
+				'comment.productId': productId,
+				'comment.starLevel': starLevel
+			};
+			$.post(url, data, function(msg) {
+				if(msg != ''){
+					alert(msg);
+					return;
+				} else {
+					alert('评论成功！');
+					window.location.reload();
+				}
+			});
+		});
+	});
 </script>
 </head>
 <body>
@@ -141,35 +159,34 @@
 									</div>
 								</div>
 							</c:forEach>
-							<form action="/addComment.action" method="post" id="commentForm">
-								<input type="hidden" name="id" value="${p.id }" />
-								<input type="hidden" name="comment.userId" value="${sessionScope.sessionUser.id }" id="userId" />
-								<input type="hidden" name="comment.productId" value="${p.id }" />
-								<div class="detail-user-says">
-									我要评论
-									<div class="detail-user-says-left">
-									</div>
-									<div class="detail-user-says-right">
-										<ul>
-											<li>星级：<br /> 
-												<c:forEach begin="1" end="5" varStatus="i">
-													<p class="user-ping" style="width:100px;">
-														<input type="radio" name="comment.starLevel" value="${i.count }" <c:if test="${i.count==5 }"> checked="checked"</c:if>>
+							<input type="hidden" id="userId" name="comment.userId" value="${sessionScope.sessionUser.id }" />
+							<input type="hidden" id="productId" name="comment.productId" value="${p.id }"/>
+							<div class="detail-user-says">
+								我要评论
+								<div class="detail-user-says-left">
+								</div>
+								<div class="detail-user-says-right">
+									<ul>
+										<li>星级：<br /> 
+											<c:forEach begin="1" end="5" varStatus="i">
+												<p class="user-ping" style="width:100px;">
+													<label>
+														<input type="radio" name="comment.starLevel" value="${i.count }" <c:if test="${i.count==5 }"> id="starLevel" checked="checked"</c:if>>
 														<c:forEach begin="1" end="${i.count }">
 															<span class="star"></span>
 														</c:forEach>
-													</p>
-												</c:forEach> 
-											</li>
-											<li><textarea style="height:100px;" cols="80"
-													name="comment.content" id="content"></textarea></li>
-											<li>
-												<input type="button" id="addComment" value="发表评论">
-											</li>
-										</ul>
-									</div>
+													</label>
+												</p>
+											</c:forEach> 
+										</li>
+										<li><textarea style="height:100px;" cols="80"
+												name="comment.content" id="content"></textarea></li>
+										<li>
+											<input type="button" id="addComment" value="发表评论">
+										</li>
+									</ul>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

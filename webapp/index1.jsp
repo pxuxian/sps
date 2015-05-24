@@ -2,9 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="common.jsp"%>
-
 <html>
 <head>
+<meta name="keywords" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<meta name="description" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚</title>
 <style type="text/css">
 /* img {
 	border-radius: 5px;
@@ -54,7 +56,7 @@
 					<div class="onelist-left">
 						<div class="onelist-cp01">
 							<div class="onelist-cp01-title">
-								<h3>今日特供</h3>
+								<h3>热品展示</h3>
 								<!-- <h4>
 									<a href="/">查看更多 &gt;</a>
 								</h4> -->
@@ -80,7 +82,7 @@
 								</c:forEach>
 							</div>
 						</div>
-						<div class="onelist-cp01">
+						<%-- <div class="onelist-cp01">
 							<div class="onelist-cp01-title">
 								<h3>优惠专区</h3>
 								<!-- <h4>
@@ -107,7 +109,7 @@
 									</div>
 								</c:forEach>
 							</div>
-						</div>
+						</div> --%>
 					</div>
 
 					<div class="onelist-right" style="font-family:微软雅黑;">

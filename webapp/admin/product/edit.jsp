@@ -59,7 +59,7 @@
 			<td>
 				<select name="p.sectionId">
 					<option value="-1" <c:if test="${p.sectionId == -1 }">selected="selected"</c:if>></option>
-					<option value="1" <c:if test="${p.sectionId == 1 }">selected="selected"</c:if>>今日特供</option>
+					<option value="1" <c:if test="${p.sectionId == 1 }">selected="selected"</c:if>>热品展示</option>
 					<option value="2" <c:if test="${p.sectionId == 2 }">selected="selected"</c:if>>优惠专区</option>
 				</select> &nbsp; 
 				<img alt="" src="/upload/img/product/logo/${p.logo }" />

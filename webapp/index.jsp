@@ -3,11 +3,24 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-<meta name="keywords" content="天天果园官网,鲜果网购,智利樱桃,车厘子" />
-<meta name="description" content="天天果园官方网站提供水果生鲜" />
-<title>今日特供-绿色网购</title>
+<meta name="keywords" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<meta name="description" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚</title>
 </head>
 <body>
+	<%
+		String cid = request.getParameter("cid");
+		if (cid != null) {
+	%>
+	<jsp:forward page="/index.action">
+		<jsp:param name="cid" value="cid" />
+	</jsp:forward>
+	<%
+		} else {
+	%>
 	<jsp:forward page="/index.action" />
+	<%
+		}
+	%>
 </body>
 </html>

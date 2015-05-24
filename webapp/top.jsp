@@ -4,9 +4,9 @@
 <%@ include file="common.jsp"%>
 <html>
 <head>
-<meta name="keywords" content="今日特供,土特产,土特产专卖,特产" />
-<meta name="description" content="今日特供,土特产,土特产专卖,特产" />
-<title>今日特供-土特产专卖</title>
+<meta name="keywords" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<meta name="description" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
+<title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚</title>
 <script type="text/javascript">
 	$(function() {
 		$("#cart_box").click(function() {
@@ -25,28 +25,26 @@
 	<jsp:include page="lineservice.html" />
 	<div class="top-box">
 		<div align="right" style="width:90%">
-			欢迎您，
 			<c:choose>
 				<c:when test="${!empty sessionScope.sessionUser.nickName }">
-					${sessionScope.sessionUser.nickName }
+					欢迎您 ${sessionScope.sessionUser.nickName }
 				</c:when>
 				<c:otherwise>
-					${sessionScope.sessionUser.username }
+					欢迎您 ${sessionScope.sessionUser.username }
 				</c:otherwise>
 			</c:choose>
-				
-			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
-				<a href="/admin.action">管理后台</a>
-			</c:if>
 			
+			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
+				| <a href="/admin.action">管理后台</a>
+			</c:if>
 			<c:choose>
 				<c:when test="${empty sessionScope.sessionUser }">
-					<a href="reg.jsp">注册</a>
-					<a href="login.jsp">登录</a>
+					 | <a href="reg.jsp">注册</a>
+					 | <a href="login.jsp">登录</a>
 				</c:when>
 				<c:otherwise>
-					<a href="myOrder.action">我的订单</a>
-					<a href="logout.action">退出</a>
+					 | <a href="myOrder.action">我的订单</a>
+					 | <a href="logout.action">退出</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -75,7 +73,7 @@
 					<div class="search-ft">
 						<ul>
 							<li>热点搜索：</li>
-							<li><a href="search.action?wd=苹果">苹果</a></li>
+							<li><a href="search.action?wd=土鸡">土鸡</a></li>
 						</ul>
 					</div>
 				</div>
@@ -140,7 +138,7 @@
 							<div>
 								<ul>
 									<c:forEach items="${pcList }" var="pc">
-										<li><a href="/">${pc.name }</a></li>
+										<li><a href="/?cid=${pc.id }">${pc.name }</a></li>
 									</c:forEach>
 								</ul>
 							</div>
@@ -150,7 +148,7 @@
 						<ul>
 							<li><a href="/">首页</a></li>
 							<c:forEach items="${pcList }" var="pc">
-								<li><a href="/">${pc.name }</a></li>
+								<li><a href="/?cid=${pc.id }">${pc.name }</a></li>
 							</c:forEach>
 						</ul>
 					</div>

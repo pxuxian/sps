@@ -55,7 +55,7 @@
 			<td>
 				<select name="p.sectionId">
 					<option value="-1"></option>
-					<option value="1">今日特供</option>
+					<option value="1">热品展示</option>
 					<option value="2">优惠专区</option>
 				</select> &nbsp; 
 				<input type="file" name="logoFile" />  

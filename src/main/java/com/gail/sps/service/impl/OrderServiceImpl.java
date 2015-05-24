@@ -116,5 +116,10 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 		order.setStatus(-1);
 		this.orderDao.updateStatus(order);
 	}
+
+	@Override
+	public List<Order> listOrders(Integer productId, Integer userId) throws Exception {
+		return orderDao.listOrders(productId, userId);
+	}
 	
 }

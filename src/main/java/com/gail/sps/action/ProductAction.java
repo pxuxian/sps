@@ -1,7 +1,11 @@
 package com.gail.sps.action;
 
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -26,6 +30,7 @@ public class ProductAction extends BaseAction {
 	private ProductCategoryService productCategoryService;
 	@Autowired
 	private CommentService commentService;
+	HttpServletResponse response = ServletActionContext.getResponse();
 
 	private Product p;
 	private List<ProductCategory> pcList;
@@ -46,17 +51,20 @@ public class ProductAction extends BaseAction {
 		return SUCCESS;
 	}
 
-	@Action(value = "addComment", results = { @Result(name = "success", location = "/detail.action?id=${id}", type = "redirect") })
-	public String addComment() {
+	@Action(value = "ajax_addComment")
+	public void ajax_addComment() {
+		response.setContentType("text/html;charset=UTF-8");
+		response.setHeader("Cache-Control", "no-cache");
+		PrintWriter out =  null;
 		try {
-			commentService.save(comment);
-			this.p = productService.getById(id);
-			this.pcList = productCategoryService.limitSelect(new ProductCategory());
-			this.commentList = commentService.queryByProductId(id);
+			out = response.getWriter();
+			commentService.addComment(comment);
+			out.write("");
 		} catch (Exception e) {
 			e.printStackTrace();
+			out.write(e.getMessage());
 		}
-		return SUCCESS;
+		out.close();
 	}
 
 	public Product getP() {

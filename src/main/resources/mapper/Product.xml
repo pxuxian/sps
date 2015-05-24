@@ -36,6 +36,9 @@
 			<if test="sectionId!=null and sectionId!=''">
 				and p.section_id = #{sectionId}
 			</if>
+			<if test="categoryId != null and categoryId > 0">
+				and p.category_id = #{categoryId}
+			</if>
 			 and p.status=1
 		</where>
 	</sql>
