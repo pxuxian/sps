@@ -6,7 +6,7 @@
 <head>
 <meta name="keywords" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
 <meta name="description" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
-<title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚</title>
+<title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚！</title>
 <script type="text/javascript">
 	$(function() {
 		$("#cart_box").click(function() {
@@ -22,35 +22,35 @@
 </script>
 </head>
 <body>
-	<jsp:include page="lineservice.html" />
+	<div align="right" style="width:90%;margin-top:3px;">
+		<c:choose>
+			<c:when test="${!empty sessionScope.sessionUser.nickName }">
+				欢迎您 ${sessionScope.sessionUser.nickName }
+			</c:when>
+			<c:otherwise>
+				欢迎您 ${sessionScope.sessionUser.username }
+			</c:otherwise>
+		</c:choose>
+		
+		<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
+			| <a href="/admin.action">管理后台</a>
+		</c:if>
+		<c:choose>
+			<c:when test="${empty sessionScope.sessionUser }">
+				 | <a href="reg.jsp">注册</a>
+				 | <a href="login.jsp">登录</a>
+			</c:when>
+			<c:otherwise>
+				 | <a href="myOrder.action">我的订单</a>
+				 | <a href="logout.action">退出</a>
+			</c:otherwise>
+		</c:choose>
+	</div>
 	<div class="top-box">
-		<div align="right" style="width:90%">
-			<c:choose>
-				<c:when test="${!empty sessionScope.sessionUser.nickName }">
-					欢迎您 ${sessionScope.sessionUser.nickName }
-				</c:when>
-				<c:otherwise>
-					欢迎您 ${sessionScope.sessionUser.username }
-				</c:otherwise>
-			</c:choose>
-			
-			<c:if test="${!empty sessionScope.sessionUser and sessionScope.sessionUser.role.id==100 }">
-				| <a href="/admin.action">管理后台</a>
-			</c:if>
-			<c:choose>
-				<c:when test="${empty sessionScope.sessionUser }">
-					 | <a href="reg.jsp">注册</a>
-					 | <a href="login.jsp">登录</a>
-				</c:when>
-				<c:otherwise>
-					 | <a href="myOrder.action">我的订单</a>
-					 | <a href="logout.action">退出</a>
-				</c:otherwise>
-			</c:choose>
-		</div>
 		<div class="top-box01">
 			<div class="container-top">
 				<div class="logo-green">
+					<br>
 					<h1>
 						<a href="/"><img src="./images/logo/logo.jpg" alt="今日特供-绿色网购" width="250px" height="80px" /></a>
 					</h1>
@@ -59,6 +59,7 @@
 					<div class="logo-adress-one"></div>
 				</div>
 				<div class="search-wrap statis_search">
+					<a href="/news.jsp">news</a>
 					<form action="search.action" method="post" id="searchForm">
 						<div class="search-panel">
 							<div class="input-wrap" align="center">
@@ -127,6 +128,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<div class="top-box02">
 			<div class="container">
 				<div class="nav">
@@ -156,6 +158,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

@@ -86,6 +86,13 @@
 						text : '订单列表',
 						href : '/admin/order/list.action'
 					} ]
+				}, {
+					text : '其它',
+					items : [ {
+						id : '14',
+						text : '新闻列表',
+						href : '/admin/news/list.action'
+					} ]
 				} ]
 			} ];
 			new PageUtil.MainPage({

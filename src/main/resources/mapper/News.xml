@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gail.sps.dao.NewsDao">
+	<resultMap type="News" id="NewsRs">
+		<result column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="create_time" property="createTime" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<sql id="table_name">
+		t_news
+	</sql>
+	<sql id="fields">
+		t.id, t.title, t.content, t.create_time, t.status
+	</sql>
+	
+	<sql id="baseSearchCondition">
+		<where>
+			t.status=1
+		</where>
+	</sql>
+	
+	<select id="listTopNews" resultMap="NewsRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> t
+		limit 2;
+	</select>
+	
+	<select id="getById" parameterType="Integer" resultMap="NewsRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> t
+		where id=#{id}
+	</select>
+	
+	<select id="count" parameterType="News" resultType="Integer">
+		select count(1) 
+		from <include refid="table_name" /> t
+		<include refid="baseSearchCondition" />
+	</select>
+
+	<select id="limitSelect" parameterType="News" resultMap="NewsRs">
+		select <include refid="fields" />
+		from <include refid="table_name" /> t
+		<include refid="baseSearchCondition" />
+		limit #{startPos}, #{pageSize}
+	</select>
+	
+	<insert id="save" parameterType="News">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into <include refid="table_name" />
+		values (null, #{title}, #{content}, now(), #{status })
+	</insert>
+	
+	<update id="update" parameterType="News">
+		update t_news
+		<set>
+			<if test="title!=null">
+				title=#{title},
+			</if>
+			<if test="content!=null">
+				content=#{content},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		update t_news set status=0 where id=#{id}
+	</delete>
+	
+</mapper>

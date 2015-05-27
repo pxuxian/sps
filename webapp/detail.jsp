@@ -83,7 +83,7 @@
 								<p>&nbsp;</p>
 								<div class="more-cp">
 									<label for="price_5191"> <span class="green01">￥<span
-											id="pro_price_5191" class="prod_price">${p.price }</span></span> <span>商品编号:
+											id="pro_price_5191" class="prod_price">${p.price } (包邮)</span></span> <span>商品编号:
 											${p.code }</span>
 									</label>
 								</div>
