@@ -1,7 +1,11 @@
 package com.gail.sps.action.admin;
 
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -20,6 +24,7 @@ import com.gail.sps.service.NewsService;
 public class NewsAction extends BaseAction {
 	@Autowired
 	private NewsService newsService;
+	HttpServletResponse response = ServletActionContext.getResponse();
 
 	private News news;
 	private List<News> newsList;
@@ -31,7 +36,39 @@ public class NewsAction extends BaseAction {
 		news.setPage(page == 0 ? DEFAULTPAGEINDEX : page);
 		news.setPageSize(pageSize == 0 ? DEFAULTPAGESIZE : pageSize);
 	}
-	
+
+	@Action(value = "/listTopNews")
+	public void listTopNews() {
+		try {
+			response.setContentType("text/html;charset=UTF-8");
+			response.setHeader("Cache-Control", "no-cache");
+			PrintWriter out = response.getWriter();
+			List<News> newsList = newsService.listTopNews();
+			if (newsList != null) {
+				StringBuffer newsLink = new StringBuffer();
+				for (News news : newsList) {
+					newsLink.append("<a href='/news.action?id='" + news.getId()
+							+ " style='text-decoration: underline;'><font color='red'>" + news.getTitle() + "</font></a> ");
+					newsLink.append("&nbsp;&nbsp;");
+				}
+				out.write(newsLink.toString());
+			}
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Action(value = "news", results = { @Result(name = "success", location = "/news.jsp") })
+	public String news() {
+		try {
+			this.news = newsService.getById(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
+	}
+
 	@Action(value = "list", results = { @Result(name = "success", location = "/admin/news/list.jsp") })
 	public String list() {
 		try {

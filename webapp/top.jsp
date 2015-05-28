@@ -8,17 +8,29 @@
 <meta name="description" content="今日特供,特产,农村特产,土特产,土特产专卖,绿色食品" />
 <title>今日特供-莫笑农家腊酒浑，丰年留客足鸡豚！</title>
 <script type="text/javascript">
-	$(function() {
+	$('document').ready(function() {
 		$("#cart_box").click(function() {
 			window.location.href = "/showCart.action";
 		});
+		
 		$("#search_button").click(function() {
 			var wd = $('#search_keyword').val();
-				window.location.href = "/search.action?wd=" + wd;
+			window.location.href = "/search.action?wd=" + wd;
 		});
 		
-		search_button
+		listTopNews();
 	});
+	
+	function listTopNews() {
+		var url = "listTopNews.action";
+		var data = {};
+		$.post(url, data, function(msg) {
+			if(msg != null && msg != '') {
+				$("#topNews").html(msg);
+			}
+		});
+	}
+	
 </script>
 </head>
 <body>
@@ -59,7 +71,7 @@
 					<div class="logo-adress-one"></div>
 				</div>
 				<div class="search-wrap statis_search">
-					<a href="/news.jsp">news</a>
+					<span id="topNews"></span>
 					<form action="search.action" method="post" id="searchForm">
 						<div class="search-panel">
 							<div class="input-wrap" align="center">
