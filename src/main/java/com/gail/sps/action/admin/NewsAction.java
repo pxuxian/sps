@@ -2,6 +2,7 @@ package com.gail.sps.action.admin;
 
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,6 +18,7 @@ import com.gail.sps.action.BaseAction;
 import com.gail.sps.model.BaseModel;
 import com.gail.sps.model.News;
 import com.gail.sps.service.NewsService;
+import com.opensymphony.xwork2.ActionContext;
 
 @Scope("prototype")
 @ParentPackage("basePackage")
@@ -25,6 +27,8 @@ public class NewsAction extends BaseAction {
 	@Autowired
 	private NewsService newsService;
 	HttpServletResponse response = ServletActionContext.getResponse();
+	@SuppressWarnings("rawtypes")
+	Map application = ActionContext.getContext().getApplication();
 
 	private News news;
 	private List<News> newsList;
