@@ -26,7 +26,7 @@
 	<select id="listTopNews" resultMap="NewsRs">
 		select <include refid="fields" />
 		from <include refid="table_name" /> t
-		limit 2;
+		where t.status=1 limit 2;
 	</select>
 	
 	<select id="getById" parameterType="Integer" resultMap="NewsRs">

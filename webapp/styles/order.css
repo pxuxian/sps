@@ -1421,6 +1421,17 @@
 	padding-right: 3px;
 }
 
+.div-content {
+	background: #f6f6f6;
+	padding: 0 10px 0 33px;
+	line-height: 66px;
+	border: 1px solid #ddd;
+	border-top: none;
+	*position: relative;
+	*float: left;
+	zoom: 1
+}
+
 .step-9 {
 	height: 66px;
 	background: #f6f6f6;
