@@ -47,8 +47,8 @@ public class NewsAction extends BaseAction {
 			if (newsList != null) {
 				StringBuffer newsLink = new StringBuffer();
 				for (News news : newsList) {
-					newsLink.append("<a href='/news.action?id='" + news.getId()
-							+ " style='text-decoration: underline;'><font color='red'>" + news.getTitle() + "</font></a> ");
+					newsLink.append("<a href='/news.action?id=" + news.getId()
+							+ "' style='text-decoration: underline;'><font color='red'>" + news.getTitle() + "</font></a> ");
 					newsLink.append("&nbsp;&nbsp;");
 				}
 				out.write(newsLink.toString());
@@ -59,7 +59,7 @@ public class NewsAction extends BaseAction {
 		}
 	}
 
-	@Action(value = "news", results = { @Result(name = "success", location = "/news.jsp") })
+	@Action(value = "/news", results = { @Result(name = "success", location = "/news.jsp") })
 	public String news() {
 		try {
 			this.news = newsService.getById(id);

@@ -13,11 +13,7 @@
 
 	<div class="cartWrap">
 		<div class="cartMain">
-			<div class="orderInfo">
-				<div class="step-9">
-					dfadfaasdasdasd
-				</div>
-			</div>
+			<div class="div-content">${news.content }</div>
 		</div>
 	</div>
 	<jsp:include page="footer.jsp" />
