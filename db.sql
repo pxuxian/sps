@@ -1,6 +1,6 @@
-drop database if exists sq_mygail;
-create database sq_mygail;
-use sq_mygail;
+drop database if exists sq_mygail1;
+create database sq_mygail1;
+use sq_mygail1;
 
 drop table if exists t_role;
 create table t_role (
@@ -44,8 +44,6 @@ create table t_product (
 	detail text,
 	status int(11) not null
 );
---alter table t_product add spec varchar(100) after place;
-
 
 drop table if exists t_order;
 create table t_order (
