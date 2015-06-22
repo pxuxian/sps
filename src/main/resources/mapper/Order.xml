@@ -53,6 +53,12 @@
 		from <include refid="table_name" /> o
 		where id=#{id}
 	</select>
+	
+	<select id="getByNo" parameterType="String" resultMap="OrderRs">
+		select <include refid="fields" /> 
+		from <include refid="table_name" /> o
+		where number=#{number}
+	</select>
 
 	<select id="count" parameterType="Order" resultType="Integer">
 		select count(1) 

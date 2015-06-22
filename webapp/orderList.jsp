@@ -90,7 +90,7 @@
 														</p>
 														<c:if test="${order.status == 0 }">
 															<p>
-																<a class="ope04" href="javascript:;" onclick="">付款</a>
+																<a class="ope04" target="_blank" href="/toPay.action?id=${order.id }">付款</a>
 															</p>
 															<%-- <p>
 																<a class="ope01 ordPointCancle"

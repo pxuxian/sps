@@ -19,11 +19,11 @@
 		<div class="detail-box-middle" style="margin-top: 8px;">
 			<div class="w" style="margin: 0px;">
 				<div class="breadcrumb">
-					<img src="/images/logo/success.gif" alt="" width="150px" height="150px" /> 
+					<img src="/images/logo/success.gif" alt="" width="100px" height="100px" /> 
 					<span style="font-size: 15px">
 						${msg }
 						<c:if test="${!empty sessionScope.sessionUser }">
-							<strong><a href="myOrder.action">我的订单</a></strong>
+							<strong><a href="/myOrder.action">我的订单</a></strong>
 						</c:if> 
 					</span> 
 					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />

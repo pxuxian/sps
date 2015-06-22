@@ -18,4 +18,6 @@ public interface OrderService extends IGenericeService<Order, Integer> {
     
     public String cancel(Integer id) throws Exception;
     
+    public void paySuccess(String orderNo) throws Exception;
+    
 }

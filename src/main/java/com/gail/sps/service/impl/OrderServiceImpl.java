@@ -37,11 +37,13 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 	protected void setDetail(Order od) throws Exception {
 		List<OrderProduct> orderProducts = orderDao.listOrderProduct(od.getId());
 		if (orderProducts != null) {
+			int count = 0;
 			for (OrderProduct op : orderProducts) {
 				op.setProduct(productDao.getById(op.getProductId()));
+				count += op.getCount();
 			}
 			od.setOrderProducts(orderProducts);
-			od.setCount(orderProducts.size());
+			od.setCount(count);
 		}
 		od.setStatusStr(OrderStatus.getString(od.getStatus()));
 	}
@@ -120,6 +122,16 @@ public class OrderServiceImpl extends GenericeServiceImpl<Order, Integer> implem
 	@Override
 	public List<Order> listOrders(Integer productId, Integer userId) throws Exception {
 		return orderDao.listOrders(productId, userId);
+	}
+
+	@Override
+	public void paySuccess(String orderNo) throws Exception {
+		Order order = orderDao.getByNo(orderNo);
+		if (order == null || order.getStatus() >= 2) {
+			return;
+		}
+		order.setStatus(OrderStatus.PAYED);
+		orderDao.updateStatus(order);
 	}
 	
 }
