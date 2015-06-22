@@ -15,9 +15,9 @@ public class PayServiceImpl implements PayService {
 
 	// public static final String PAY_SERVICE = "https://service.allinpay.com/gateway/index.do";
 	public static final String PAY_SERVICE = "http://ceshi.allinpay.com/gateway/index.do";
-	// public static final String PICKUP_URL = "http://www.jinritegong.com/pickup.jsp";
+	 public static final String PICKUP_URL = "http://www.jinritegong.com/pay/pickup.jsp";
 	// public static final String RECEIVE_URL = "http://www.jinritegong.com/receive.jsp";
-	public static final String PICKUP_URL = "http://127.0.0.1/pay/pickup.jsp";
+//	public static final String PICKUP_URL = "http://127.0.0.1/pay/pickup.jsp";
 //	public static final String RECEIVE_URL = "http://127.0.0.1/pay/receive.jsp";
 
 	@Autowired

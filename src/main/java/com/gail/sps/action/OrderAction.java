@@ -71,7 +71,8 @@ public class OrderAction extends BaseAction {
             User user = (User) session.get("sessionUser");
             order.setUser(user);
             orderService.submit(order, cart);
-            this.msg = "订单提交成功，查看订单并支付";
+            this.msg = "订单提交成功！";
+            this.successType = SUCCESS_TYPE_SUBMIT_ORDER;
             
             session.remove("sessionCart");
         } catch (Exception e) {

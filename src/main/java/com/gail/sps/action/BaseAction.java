@@ -7,9 +7,12 @@ public class BaseAction {
     protected static final int DEFAULTPAGEINDEX = 1;
     protected static final int DEFAULTPAGESIZE = 10;
     protected String msg;
+    protected int successType;
     
     protected static final String SUCCESS = "success";
     protected static final String ERROR = "error";
+    
+    protected static final int SUCCESS_TYPE_SUBMIT_ORDER = 1; // 订单提交成功
 
     public int getId() {
         return id;
@@ -49,6 +52,14 @@ public class BaseAction {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public int getSuccessType() {
+		return successType;
+	}
+
+	public void setSuccessType(int successType) {
+		this.successType = successType;
 	}
 
 }

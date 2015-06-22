@@ -23,8 +23,6 @@ import com.gail.sps.service.PayService;
 public class PayAction extends BaseAction {
 	HttpServletResponse response = ServletActionContext.getResponse();
 
-//	private String orderNo;
-//	private boolean paySuccess;
 	private PaymentResult paymentResult;
 	
 	@Autowired

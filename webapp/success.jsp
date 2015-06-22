@@ -24,8 +24,14 @@
 						${msg }
 						<c:if test="${!empty sessionScope.sessionUser }">
 							<strong><a href="/myOrder.action">我的订单</a></strong>
-						</c:if> 
+						</c:if>
 					</span> 
+					<c:if test="${successType == 1 }">
+						<form action="/toPay.action" id="toPayForm">
+							<input type="hidden" name="id" value="${order.id }" />
+							<script language="JavaScript">setTimeout("toPayForm.submit();", 1000);</script>
+						</form>
+					</c:if>
 					<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 				</div>
 			</div>
